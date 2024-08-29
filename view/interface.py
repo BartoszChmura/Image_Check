@@ -19,10 +19,10 @@ class ImageViewer:
         self.image_label.pack()
 
         self.delete_button = tk.Button(root, text="Odrzuć", command=self.delete_image)
-        self.delete_button.pack(side=tk.LEFT)
+        self.delete_button.pack(side=tk.RIGHT)
 
         self.keep_button = tk.Button(root, text="Zachowaj", command=self.keep_image)
-        self.keep_button.pack(side=tk.LEFT)
+        self.keep_button.pack(side=tk.RIGHT)
 
         self.prev_button = tk.Button(root, text="Poprzednie", command=self.prev_image)
         self.prev_button.pack(side=tk.LEFT)
@@ -30,13 +30,17 @@ class ImageViewer:
         self.next_button = tk.Button(root, text="Następne", command=self.next_image)
         self.next_button.pack(side=tk.LEFT)
 
+        self.root.bind("<Left>", self.prev_image)
+        self.root.bind("<Right>", self.next_image)
+        self.root.bind("<Escape>", self.close_app)
+
         self.show_image()
 
     def show_image(self):
         if self.image_list:
             image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
             image = Image.open(image_path)
-            image.thumbnail((1000, 800))
+            image.thumbnail((1000, 1000))
             self.photo = ImageTk.PhotoImage(image)
             self.image_label.config(image=self.photo)
             self.root.title(f"Przeglądarka zdjęć - {self.image_list[self.current_index]}")
@@ -62,7 +66,7 @@ class ImageViewer:
                 self.current_index = len(self.image_list) - 1
             self.show_image()
 
-    def next_image(self):
+    def next_image(self, event=None):
         if self.current_index < len(self.image_list) - 1:
             self.current_index += 1
             self.show_image()
@@ -70,7 +74,7 @@ class ImageViewer:
             self.current_index = 0
             self.show_image()
 
-    def prev_image(self):
+    def prev_image(self, event=None):
         if self.current_index > 0:
             self.current_index -= 1
             self.show_image()
@@ -78,8 +82,5 @@ class ImageViewer:
             self.current_index = len(self.image_list) - 1
             self.show_image()
 
-
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = ImageViewer(root)
-    root.mainloop()
+    def close_app(self, event=None):
+        self.root.quit()

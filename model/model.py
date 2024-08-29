@@ -9,7 +9,6 @@ def process_image(model, image_path):
     results = model(image_path, conf = 0.5)
     return results
 
-
 def crop_and_save(image, box, save_path):
     x1, y1, x2, y2 = box
     x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
@@ -19,7 +18,7 @@ def crop_and_save(image, box, save_path):
 def save_full_image(image, save_path):
     cv2.imwrite(save_path, image)
 
-def detect_and_crop_persons(image_folder, model_path, save_folder='./wycinki'):
+def detect_and_crop_persons(image_folder, model_path, save_folder='./zdjecia/sylwetki'):
 
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)

@@ -1,15 +1,15 @@
-from ultralytics import YOLO
-from flare_detection import *
-from sharpness_detection import *
-from saturation_detection import *
-from brightness_detection import *
-from size_detection import *
-from model import *
+from detection.flare_detection import *
+from detection.sharpness_detection import *
+from detection.saturation_detection import *
+from detection.brightness_detection import *
+from detection.size_detection import *
+from view.interface import *
+from model.model import *
 import os
 
 
 def crop_images(image_folder):
-    model_path = 'drugi.pt'
+    model_path = 'model/drugi.pt'
     result = detect_and_crop_persons(image_folder, model_path)
 
 
@@ -22,14 +22,18 @@ def detect_flare(image_path):
 
 def detect_sharpness(image_path, median_laplacian):
     sharpness_laplacian = calculate_image_sharpness_laplacian(image_path)
+
     if sharpness_laplacian < 0.35 * median_laplacian:
         print(f'Ostrość: {sharpness_laplacian} - niska ostrość!')
+    elif sharpness_laplacian > 2 * median_laplacian:
+        print(f'Ostrość: {sharpness_laplacian} - możliwe zaszumienie!')
     else:
         print(f'Ostrość: {sharpness_laplacian}')
 
 
 def detect_saturation(image_path, median_saturation):
     saturation = calculate_saturation(image_path)
+
     if saturation < 0.5 * median_saturation:
         print(f'Nasycenie: {saturation} - niskie nasycenie!')
     else:
@@ -38,11 +42,13 @@ def detect_saturation(image_path, median_saturation):
 
 def detect_brightness(image_path, median_brightness):
     brightness = calculate_brightness(image_path)
+
     print(f'Jasność: {brightness}')
 
 
 def test_model(image_folder):
-    model = load_model('drugi.pt')
+    model = load_model('model/drugi.pt')
+
     for image_name in os.listdir(image_folder):
         image_path = os.path.join(image_folder, image_name)
         process_image(model, image_path)
@@ -50,6 +56,7 @@ def test_model(image_folder):
 
 def detect_sharpness_in_folder(image_folder, median_laplacian):
     print(f'Mediana ostrości zdjęć w folderze: {median_laplacian}')
+
     for image_name in os.listdir(image_folder):
         image_path = os.path.join(image_folder, image_name)
         print(f'Przetwarzanie zdjęcia: {image_name}')
@@ -72,7 +79,12 @@ def process_folder(image_folder):
         detect_saturation(image_path, median_saturation)
         detect_brightness(image_path, median_brightness)
 
+def init_interface():
+    root = tk.Tk()
+    app = ImageViewer(root)
+    root.mainloop()
+
+
 
 if __name__ == "__main__":
-    median_sharpness = calculate_median_sharpness_laplacian('./wycinki')
-    detect_sharpness_in_folder('./wycinki', median_sharpness)
+   process_folder('zdjecia/nowe')

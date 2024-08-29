@@ -2,7 +2,7 @@ import cv2
 import os
 import numpy as np
 
-from size_detection import get_image_size
+from detection.size_detection import get_image_size
 
 
 def calculate_image_sharpness_laplacian(image_path):
