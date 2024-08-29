@@ -19,7 +19,7 @@ def crop_and_save(image, box, save_path):
 def save_full_image(image, save_path):
     cv2.imwrite(save_path, image)
 
-def detect_and_crop_shirts(image_folder, model_path, save_folder='./wycinki'):
+def detect_and_crop_persons(image_folder, model_path, save_folder='./wycinki'):
 
     if not os.path.exists(save_folder):
         os.makedirs(save_folder)

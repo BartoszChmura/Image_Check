@@ -9,6 +9,7 @@ def calculate_saturation(image_path):
     saturation = hsv_img[:, :, 1].mean()
     return saturation
 
+
 def calculate_median_saturation(image_dir):
     saturation_values = []
     images = os.listdir(image_dir)
