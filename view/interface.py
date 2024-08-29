@@ -1,6 +1,8 @@
 import os
 import shutil
 import tkinter as tk
+from tkinter import messagebox
+
 from PIL import Image, ImageTk
 
 
@@ -9,7 +11,7 @@ class ImageViewer:
         self.root = root
         self.root.title("Przeglądarka zdjęć")
 
-        self.folder_path = './zdjecia/nowe'
+        self.folder_path = './zdjecia/do_sprawdzenia'
         self.checked_folder_path = './zdjecia/sprawdzone'
 
         self.image_list = [f for f in os.listdir(self.folder_path) if f.endswith(('png', 'jpg', 'jpeg', 'bmp'))]
@@ -32,7 +34,9 @@ class ImageViewer:
 
         self.root.bind("<Left>", self.prev_image)
         self.root.bind("<Right>", self.next_image)
-        self.root.bind("<Escape>", self.close_app)
+        self.root.bind("<Escape>", self.on_closing)
+
+        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         self.show_image()
 
@@ -46,6 +50,7 @@ class ImageViewer:
             self.root.title(f"Przeglądarka zdjęć - {self.image_list[self.current_index]}")
         else:
             self.image_label.config(text="Brak zdjęć w folderze")
+            self.close_app()
 
     def keep_image(self):
         if self.image_list:
@@ -53,7 +58,9 @@ class ImageViewer:
             new_path = os.path.join(self.checked_folder_path, self.image_list[self.current_index])
             shutil.move(image_path, new_path)
             del self.image_list[self.current_index]
-            if self.current_index >= len(self.image_list):
+            if not self.image_list:
+                self.close_app()
+            elif self.current_index >= len(self.image_list):
                 self.current_index = len(self.image_list) - 1
             self.show_image()
 
@@ -62,7 +69,9 @@ class ImageViewer:
             image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
             os.remove(image_path)
             del self.image_list[self.current_index]
-            if self.current_index >= len(self.image_list):
+            if not self.image_list:
+                self.close_app()
+            elif self.current_index >= len(self.image_list):
                 self.current_index = len(self.image_list) - 1
             self.show_image()
 
@@ -84,3 +93,7 @@ class ImageViewer:
 
     def close_app(self, event=None):
         self.root.quit()
+
+    def on_closing(self, event=None):
+        if messagebox.askokcancel("Zamknij", "Czy na pewno chcesz zamknąć aplikację?"):
+            self.root.quit()

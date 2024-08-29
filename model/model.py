@@ -18,10 +18,41 @@ def crop_and_save(image, box, save_path):
 def save_full_image(image, save_path):
     cv2.imwrite(save_path, image)
 
-def detect_and_crop_persons(image_folder, model_path, save_folder='./zdjecia/sylwetki'):
+def detect_and_crop_person(image_path, model_path, crop_folder):
 
-    if not os.path.exists(save_folder):
-        os.makedirs(save_folder)
+    if not os.path.exists(crop_folder):
+        os.makedirs(crop_folder)
+
+    model = load_model(model_path)
+    found_person = False
+    image = cv2.imread(image_path)
+    results = process_image(model, image_path)
+
+    for result in results:
+        for box in result.boxes:
+            x1, y1, x2, y2 = box.xyxy[0].tolist()
+
+            base_name, ext = os.path.splitext(os.path.basename(image_path))
+            save_name = f"{base_name}_person{ext}"
+            save_path = os.path.join(crop_folder, save_name)
+
+            crop_and_save(image, (x1, y1, x2, y2), save_path)
+
+            found_person = True
+
+    if not found_person:
+        base_name, ext = os.path.splitext(os.path.basename(image_path))
+        save_name = f"{base_name}_no_detection{ext}"
+        save_path = os.path.join(crop_folder, save_name)
+
+        save_full_image(image, save_path)
+
+    return found_person
+
+def detect_and_crop_persons(image_folder, model_path, crop_folder):
+
+    if not os.path.exists(crop_folder):
+        os.makedirs(crop_folder)
 
     model = load_model(model_path)
 
@@ -38,7 +69,7 @@ def detect_and_crop_persons(image_folder, model_path, save_folder='./zdjecia/syl
 
                 base_name, ext = os.path.splitext(image_name)
                 save_name = f"{base_name}_person{ext}"
-                save_path = os.path.join(save_folder, save_name)
+                save_path = os.path.join(crop_folder, save_name)
 
                 crop_and_save(image, (x1, y1, x2, y2), save_path)
 
@@ -47,7 +78,7 @@ def detect_and_crop_persons(image_folder, model_path, save_folder='./zdjecia/syl
         if not found_person:
             base_name, ext = os.path.splitext(image_name)
             save_name = f"{base_name}_no_detection{ext}"
-            save_path = os.path.join(save_folder, save_name)
+            save_path = os.path.join(crop_folder, save_name)
 
             save_full_image(image, save_path)
 
