@@ -139,13 +139,15 @@ def process_folder(image_folder, crop_folder):
 
 
 def init_interface(detected_issues):
-    root = tk.Tk()
-    app = ImageViewer(root, detected_issues)
-    root.mainloop()
+    import sys
+    app = QApplication(sys.argv)
+    viewer = ImageViewer(detected_issues)
+    viewer.show()
+    sys.exit(app.exec_())
+
 
 
 if __name__ == "__main__":
-    crop_images('./zdjecia/nowe', './zdjecia/sylwetki')
     detected_issues = process_folder('./zdjecia/nowe', './zdjecia/sylwetki')
     init_interface(detected_issues)
 

@@ -1,13 +1,15 @@
 import os
 import shutil
-import tkinter as tk
-from tkinter import messagebox
-from PIL import Image, ImageTk
+from PyQt5.QtWidgets import (
+    QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QMessageBox, QHBoxLayout, QGraphicsView, QGraphicsScene
+)
+from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtCore import Qt
+from PIL import Image
 
-class ImageViewer:
-    def __init__(self, root, detected_issues):
-        self.root = root
-        self.root.title("Przeglądarka zdjęć")
+class ImageViewer(QMainWindow):
+    def __init__(self, detected_issues):
+        super().__init__()
 
         self.folder_path = './zdjecia/do_sprawdzenia'
         self.checked_folder_path = './zdjecia/sprawdzone'
@@ -16,37 +18,46 @@ class ImageViewer:
         self.image_list = [f for f in os.listdir(self.folder_path) if f.endswith(('png', 'jpg', 'jpeg', 'bmp'))]
         self.current_index = 0
 
-        self.frame = tk.Frame(root)
-        self.frame.pack()
+        self.user_initiated_close = False
 
-        self.image_label = tk.Label(self.frame)
-        self.image_label.pack(side=tk.LEFT)
+        self.setWindowTitle("Przeglądarka zdjęć")
+        self.setGeometry(100, 100, 1200, 800)
 
-        self.issues_frame = tk.Frame(root, width=200, height=100, bg="white", relief=tk.RAISED, bd=2)
-        self.issues_frame.place(relx=0.75, rely=0.05)
-
-        self.issues_label = tk.Label(self.issues_frame, text="", justify=tk.LEFT, font=("Arial", 12), bg="white")
-        self.issues_label.pack(padx=10, pady=10)
-
-        self.delete_button = tk.Button(root, text="Odrzuć", command=self.delete_image)
-        self.delete_button.pack(side=tk.RIGHT)
-
-        self.keep_button = tk.Button(root, text="Zachowaj", command=self.keep_image)
-        self.keep_button.pack(side=tk.RIGHT)
-
-        self.prev_button = tk.Button(root, text="Poprzednie", command=self.prev_image)
-        self.prev_button.pack(side=tk.LEFT)
-
-        self.next_button = tk.Button(root, text="Następne", command=self.next_image)
-        self.next_button.pack(side=tk.LEFT)
-
-        self.root.bind("<Left>", self.prev_image)
-        self.root.bind("<Right>", self.next_image)
-        self.root.bind("<Escape>", self.on_closing)
-
-        self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
+        self.init_ui()
 
         self.show_image()
+
+    def init_ui(self):
+        self.main_widget = QWidget(self)
+        self.setCentralWidget(self.main_widget)
+
+        self.layout = QVBoxLayout(self.main_widget)
+        self.button_layout = QHBoxLayout()
+
+        self.graphics_view = QGraphicsView(self)
+        self.scene = QGraphicsScene(self)
+        self.graphics_view.setScene(self.scene)
+        self.layout.addWidget(self.graphics_view)
+
+        self.issues_label = QLabel(self)
+        self.issues_label.setText("Brak wykrytych wad")
+        self.layout.addWidget(self.issues_label)
+
+        self.prev_button = QPushButton("Poprzednie", self)
+        self.next_button = QPushButton("Następne", self)
+        self.keep_button = QPushButton("Zachowaj", self)
+        self.delete_button = QPushButton("Odrzuć", self)
+
+        self.button_layout.addWidget(self.prev_button)
+        self.button_layout.addWidget(self.next_button)
+        self.button_layout.addWidget(self.keep_button)
+        self.button_layout.addWidget(self.delete_button)
+        self.layout.addLayout(self.button_layout)
+
+        self.prev_button.clicked.connect(self.prev_image)
+        self.next_button.clicked.connect(self.next_image)
+        self.keep_button.clicked.connect(self.keep_image)
+        self.delete_button.clicked.connect(self.delete_image)
 
     def show_image(self):
         if self.image_list:
@@ -54,16 +65,19 @@ class ImageViewer:
             image_path = os.path.join(self.folder_path, image_name)
             image = Image.open(image_path)
             image.thumbnail((1200, 1200))
-            self.photo = ImageTk.PhotoImage(image)
-            self.image_label.config(image=self.photo)
-            self.root.title(f"Przeglądarka zdjęć - {image_name}")
 
-            # Wyświetlanie wykrytych wad
+            image_data = image.tobytes("raw", "RGB")
+            q_image = QImage(image_data, image.width, image.height, QImage.Format_RGB888)
+
+            pixmap = QPixmap.fromImage(q_image)
+
+            self.scene.clear()
+            self.scene.addPixmap(pixmap)
+            self.setWindowTitle(f"Przeglądarka zdjęć - {image_name}")
+
             issues = self.detected_issues.get(image_name, [])
-            self.issues_label.config(text="Wady:\n" + "\n".join(issues) if issues else "Brak wykrytych wad")
-
+            self.issues_label.setText("Wady:\n" + "\n".join(issues) if issues else "Brak wykrytych wad")
         else:
-            self.image_label.config(text="Brak zdjęć w folderze")
             self.close_app()
 
     def keep_image(self):
@@ -89,7 +103,7 @@ class ImageViewer:
                 self.current_index = len(self.image_list) - 1
             self.show_image()
 
-    def next_image(self, event=None):
+    def next_image(self):
         if self.current_index < len(self.image_list) - 1:
             self.current_index += 1
             self.show_image()
@@ -97,7 +111,7 @@ class ImageViewer:
             self.current_index = 0
             self.show_image()
 
-    def prev_image(self, event=None):
+    def prev_image(self):
         if self.current_index > 0:
             self.current_index -= 1
             self.show_image()
@@ -105,9 +119,22 @@ class ImageViewer:
             self.current_index = len(self.image_list) - 1
             self.show_image()
 
-    def close_app(self, event=None):
-        self.root.quit()
+    def close_app(self):
+        self.user_initiated_close = True
+        self.close()
 
-    def on_closing(self, event=None):
-        if messagebox.askokcancel("Zamknij", "Czy na pewno chcesz zamknąć aplikację?"):
-            self.root.quit()
+    def closeEvent(self, event):
+        if self.user_initiated_close:
+            event.accept()
+        else:
+            reply = QMessageBox.question(self, 'Zamknij', 'Czy na pewno chcesz zamknąć aplikację?',
+                                         QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+            if reply == QMessageBox.Yes:
+                event.accept()
+            else:
+                event.ignore()
+
+    def keyPressEvent(self, event):
+        if event.key() == Qt.Key_Escape:
+            self.user_initiated_close = False
+            self.close()
