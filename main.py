@@ -31,13 +31,13 @@ def detect_sharpness(image_path, median_laplacian):
 
     if sharpness_laplacian < 0.35 * median_laplacian:
         print(f'Ostrość: {sharpness_laplacian} - niska ostrość!')
-        return True
+        return 'niska ostrość'
     elif sharpness_laplacian > 4 * median_laplacian:
         print(f'Ostrość: {sharpness_laplacian} - możliwe zaszumienie!')
-        return True
+        return 'możliwe zaszumienie'
     else:
         print(f'Ostrość: {sharpness_laplacian}')
-        return False
+        return None
 
 
 def detect_saturation(image_path, median_saturation):
@@ -54,8 +54,12 @@ def detect_saturation(image_path, median_saturation):
 def detect_brightness(image_path, median_brightness):
     brightness = calculate_brightness(image_path)
 
-    print(f'Jasność: {brightness}')
-
+    if brightness < 0.25 * median_brightness:
+        print(f'Jasność: {brightness} - niska jasność!')
+        return True
+    else:
+        print(f'Jasność: {brightness}')
+        return False
 
 def test_model(image_folder):
     model = load_model('model/drugi.pt')
@@ -82,29 +86,42 @@ def process_folder(image_folder, crop_folder):
     print(f'Mediana nasycenia zdjęć w folderze: {median_saturation}')
     print(f'Mediana jasności zdjęć w folderze: {median_brightness}')
 
+    detected_issues = {}
+
     for image_name in os.listdir(image_folder):
         image_path = os.path.join(image_folder, image_name)
         print(f'Przetwarzanie zdjęcia: {image_name}')
 
         move_to_check_folder = False
+        issues = []
 
         if detect_flare(image_path):
             move_to_check_folder = True
+            issues.append('jasna poświata')
+
         if detect_saturation(image_path, median_saturation):
             move_to_check_folder = True
+            issues.append('niskie nasycenie')
+
         if detect_brightness(image_path, median_brightness):
             move_to_check_folder = True
+            issues.append('niska jasność')
 
         base_name, ext = os.path.splitext(image_name)
         cropped_image_name = f"{base_name}_person{ext}"
         cropped_image_path = os.path.join(crop_folder, cropped_image_name)
 
         if os.path.exists(cropped_image_path):
-            if detect_sharpness(cropped_image_path, median_laplacian):
+            sharpness_issue = detect_sharpness(cropped_image_path, median_laplacian)
+            if sharpness_issue:
                 move_to_check_folder = True
+                issues.append(sharpness_issue)
         else:
             print("Sylwetka nie znaleziona")
             move_to_check_folder = True
+            issues.append('sylwetka nie znaleziona')
+
+        detected_issues[image_name] = issues
 
         if move_to_check_folder:
             destination_folder = './zdjecia/do_sprawdzenia'
@@ -117,15 +134,18 @@ def process_folder(image_folder, crop_folder):
             shutil.move(image_path, destination_path)
             print('Zdjęcie jest dobre')
 
+    return detected_issues
 
 
-def init_interface():
+
+def init_interface(detected_issues):
     root = tk.Tk()
-    app = ImageViewer(root)
+    app = ImageViewer(root, detected_issues)
     root.mainloop()
 
 
-
 if __name__ == "__main__":
-    init_interface()
+    crop_images('./zdjecia/nowe', './zdjecia/sylwetki')
+    detected_issues = process_folder('./zdjecia/nowe', './zdjecia/sylwetki')
+    init_interface(detected_issues)
 

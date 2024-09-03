@@ -2,23 +2,31 @@ import os
 import shutil
 import tkinter as tk
 from tkinter import messagebox
-
 from PIL import Image, ImageTk
 
-
 class ImageViewer:
-    def __init__(self, root):
+    def __init__(self, root, detected_issues):
         self.root = root
         self.root.title("Przeglądarka zdjęć")
 
         self.folder_path = './zdjecia/do_sprawdzenia'
         self.checked_folder_path = './zdjecia/sprawdzone'
+        self.detected_issues = detected_issues
 
         self.image_list = [f for f in os.listdir(self.folder_path) if f.endswith(('png', 'jpg', 'jpeg', 'bmp'))]
         self.current_index = 0
 
-        self.image_label = tk.Label(root)
-        self.image_label.pack()
+        self.frame = tk.Frame(root)
+        self.frame.pack()
+
+        self.image_label = tk.Label(self.frame)
+        self.image_label.pack(side=tk.LEFT)
+
+        self.issues_frame = tk.Frame(root, width=200, height=100, bg="white", relief=tk.RAISED, bd=2)
+        self.issues_frame.place(relx=0.75, rely=0.05)
+
+        self.issues_label = tk.Label(self.issues_frame, text="", justify=tk.LEFT, font=("Arial", 12), bg="white")
+        self.issues_label.pack(padx=10, pady=10)
 
         self.delete_button = tk.Button(root, text="Odrzuć", command=self.delete_image)
         self.delete_button.pack(side=tk.RIGHT)
@@ -42,12 +50,18 @@ class ImageViewer:
 
     def show_image(self):
         if self.image_list:
-            image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
+            image_name = self.image_list[self.current_index]
+            image_path = os.path.join(self.folder_path, image_name)
             image = Image.open(image_path)
-            image.thumbnail((1000, 1000))
+            image.thumbnail((1200, 1200))
             self.photo = ImageTk.PhotoImage(image)
             self.image_label.config(image=self.photo)
-            self.root.title(f"Przeglądarka zdjęć - {self.image_list[self.current_index]}")
+            self.root.title(f"Przeglądarka zdjęć - {image_name}")
+
+            # Wyświetlanie wykrytych wad
+            issues = self.detected_issues.get(image_name, [])
+            self.issues_label.config(text="Wady:\n" + "\n".join(issues) if issues else "Brak wykrytych wad")
+
         else:
             self.image_label.config(text="Brak zdjęć w folderze")
             self.close_app()
