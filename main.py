@@ -15,6 +15,7 @@ def load_thresholds_from_xml(file_path):
     sharpness_high_threshold = float(root.find('sharpness/high_threshold').text)
     saturation_low_threshold = float(root.find('saturation/low_threshold').text)
     brightness_low_threshold = float(root.find('brightness/low_threshold').text)
+    brightness_high_threshold = float(root.find('brightness/high_threshold').text)
     flare_threshold = float(root.find('flare/threshold').text)
 
     thresholds = {
@@ -26,7 +27,8 @@ def load_thresholds_from_xml(file_path):
             'low': saturation_low_threshold
         },
         'brightness': {
-            'low': brightness_low_threshold
+            'low': brightness_low_threshold,
+            'high': brightness_high_threshold
         },
         'flare': {
             'threshold': flare_threshold
@@ -83,6 +85,9 @@ def detect_brightness(image_path, median_brightness, thresholds):
 
     if brightness < thresholds['brightness']['low'] * median_brightness:
         print(f'Jasność: {brightness} - niska jasność!')
+        return True
+    elif brightness > thresholds['brightness']['high'] * median_brightness:
+        print(f'Jasność: {brightness} - możliwe przejaśnienie')
         return True
     else:
         print(f'Jasność: {brightness}')
@@ -176,8 +181,7 @@ def init_interface(detected_issues):
     sys.exit(app.exec_())
 
 
-
 if __name__ == "__main__":
+    crop_images('./zdjecia/nowe', './zdjecia/sylwetki')
     detected_issues = process_folder('./zdjecia/nowe', './zdjecia/sylwetki')
     init_interface(detected_issues)
-
