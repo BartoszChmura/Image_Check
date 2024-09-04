@@ -3,9 +3,19 @@ import shutil
 from PyQt5.QtWidgets import (
     QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QMessageBox, QHBoxLayout, QGraphicsView, QGraphicsScene
 )
-from PyQt5.QtGui import QPixmap, QImage
+from PyQt5.QtGui import QPixmap, QImage, QWheelEvent, QPainter
 from PyQt5.QtCore import Qt
-from PIL import Image
+
+class CustomGraphicsView(QGraphicsView):
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+
+        self.setDragMode(QGraphicsView.ScrollHandDrag)
+
+    def wheelEvent(self, event: QWheelEvent):
+        event.ignore()
 
 class ImageViewer(QMainWindow):
     def __init__(self, detected_issues):
@@ -21,11 +31,16 @@ class ImageViewer(QMainWindow):
         self.user_initiated_close = False
 
         self.setWindowTitle("Przeglądarka zdjęć")
-        self.setGeometry(100, 100, 1200, 800)
 
+        screen_size = QApplication.primaryScreen().availableGeometry()
+        self.resize(screen_size.width(), screen_size.height())
+
+        self.showMaximized()
         self.init_ui()
 
         self.show_image()
+
+        self.installEventFilter(self)
 
     def init_ui(self):
         self.main_widget = QWidget(self)
@@ -34,9 +49,17 @@ class ImageViewer(QMainWindow):
         self.layout = QVBoxLayout(self.main_widget)
         self.button_layout = QHBoxLayout()
 
-        self.graphics_view = QGraphicsView(self)
+        self.graphics_view = CustomGraphicsView(self)
+        self.graphics_view.setFocusPolicy(Qt.NoFocus)
         self.scene = QGraphicsScene(self)
         self.graphics_view.setScene(self.scene)
+
+        self.graphics_view.setTransformationAnchor(QGraphicsView.NoAnchor)
+        self.graphics_view.setResizeAnchor(QGraphicsView.NoAnchor)
+
+        self.graphics_view.setRenderHint(QPainter.Antialiasing)
+        self.graphics_view.setRenderHint(QPainter.SmoothPixmapTransform)
+
         self.layout.addWidget(self.graphics_view)
 
         self.issues_label = QLabel(self)
@@ -44,9 +67,13 @@ class ImageViewer(QMainWindow):
         self.layout.addWidget(self.issues_label)
 
         self.prev_button = QPushButton("Poprzednie", self)
+        self.prev_button.setFocusPolicy(Qt.NoFocus)
         self.next_button = QPushButton("Następne", self)
+        self.next_button.setFocusPolicy(Qt.NoFocus)
         self.keep_button = QPushButton("Zachowaj", self)
+        self.keep_button.setFocusPolicy(Qt.NoFocus)
         self.delete_button = QPushButton("Odrzuć", self)
+        self.delete_button.setFocusPolicy(Qt.NoFocus)
 
         self.button_layout.addWidget(self.prev_button)
         self.button_layout.addWidget(self.next_button)
@@ -59,18 +86,22 @@ class ImageViewer(QMainWindow):
         self.keep_button.clicked.connect(self.keep_image)
         self.delete_button.clicked.connect(self.delete_image)
 
+        self.main_widget.setFocusPolicy(Qt.StrongFocus)
+        self.main_widget.setFocus()
+
     def show_image(self):
         if self.image_list:
             image_name = self.image_list[self.current_index]
             image_path = os.path.join(self.folder_path, image_name)
-            image = Image.open(image_path)
-            image.thumbnail((1200, 1200))
 
-            image_data = image.tobytes("raw", "RGB")
-            q_image = QImage(image_data, image.width, image.height, QImage.Format_RGB888)
+            q_image = QImage(image_path, "PNG")
+
+            screen_size = QApplication.primaryScreen().availableGeometry().size()
+            max_width, max_height = screen_size.width(), screen_size.height()
+
+            q_image = q_image.scaled(max_width, max_height, Qt.KeepAspectRatio, Qt.SmoothTransformation)
 
             pixmap = QPixmap.fromImage(q_image)
-
             self.scene.clear()
             self.scene.addPixmap(pixmap)
             self.setWindowTitle(f"Przeglądarka zdjęć - {image_name}")
@@ -138,3 +169,32 @@ class ImageViewer(QMainWindow):
         if event.key() == Qt.Key_Escape:
             self.user_initiated_close = False
             self.close()
+        elif event.key() == Qt.Key_Right:
+            self.next_image()
+        elif event.key() == Qt.Key_Left:
+            self.prev_image()
+        else:
+            super().keyPressEvent(event)
+
+    def wheelEvent(self, event: QWheelEvent):
+        zoom_factor = 1.15 if event.angleDelta().y() > 0 else 1 / 1.15
+
+        old_pos = self.graphics_view.mapToScene(event.pos())
+
+        self.graphics_view.scale(zoom_factor, zoom_factor)
+
+        new_pos = self.graphics_view.mapToScene(event.pos())
+        delta = new_pos - old_pos
+
+        self.graphics_view.translate(delta.x(), delta.y())
+        event.accept()
+
+    def mousePressEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.graphics_view.setDragMode(QGraphicsView.ScrollHandDrag)
+        super().mousePressEvent(event)
+
+    def mouseReleaseEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            self.graphics_view.setDragMode(QGraphicsView.NoDrag)
+        super().mouseReleaseEvent(event)
