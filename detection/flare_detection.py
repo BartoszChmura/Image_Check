@@ -7,7 +7,7 @@ def calculate_brightness_histogram(image_path):
     return histogram
 
 
-def check_bright_glow(image_path, threshold=0.01):
+def check_bright_glow(image_path, threshold):
     histogram = calculate_brightness_histogram(image_path)
     total_pixels = sum(histogram)
     low_brightness_pixels = sum(histogram[:25])

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sharpness>
+        <low_threshold>0.2</low_threshold>
+        <high_threshold>4</high_threshold>
+    </sharpness>
+    <saturation>
+        <low_threshold>0.5</low_threshold>
+    </saturation>
+    <brightness>
+        <low_threshold>0.25</low_threshold>
+    </brightness>
+    <flare>
+        <threshold>0.01</threshold>
+    </flare>
+</config>

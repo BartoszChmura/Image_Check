@@ -2,11 +2,38 @@ from detection.flare_detection import *
 from detection.sharpness_detection import *
 from detection.saturation_detection import *
 from detection.brightness_detection import *
-from detection.size_detection import *
 from view.interface import *
 from model.model import *
+import xml.etree.ElementTree as ET
 import os
 
+def load_thresholds_from_xml(file_path):
+    tree = ET.parse(file_path)
+    root = tree.getroot()
+
+    sharpness_low_threshold = float(root.find('sharpness/low_threshold').text)
+    sharpness_high_threshold = float(root.find('sharpness/high_threshold').text)
+    saturation_low_threshold = float(root.find('saturation/low_threshold').text)
+    brightness_low_threshold = float(root.find('brightness/low_threshold').text)
+    flare_threshold = float(root.find('flare/threshold').text)
+
+    thresholds = {
+        'sharpness': {
+            'low': sharpness_low_threshold,
+            'high': sharpness_high_threshold
+        },
+        'saturation': {
+            'low': saturation_low_threshold
+        },
+        'brightness': {
+            'low': brightness_low_threshold
+        },
+        'flare': {
+            'threshold': flare_threshold
+        }
+    }
+
+    return thresholds
 
 def crop_images(image_folder, crop_folder):
     model_path = 'model/drugi.pt'
@@ -17,22 +44,22 @@ def crop_image(image_path, crop_folder):
     result = detect_and_crop_person(image_path, model_path, crop_folder)
 
 
-def detect_flare(image_path):
-    if check_bright_glow(image_path):
-        print(f'Zdjecie ma jasną poświatę')
+def detect_flare(image_path, thresholds):
+    if check_bright_glow(image_path, thresholds['flare']['threshold']):
+        print(f'Zdjęcie ma jasną poświatę')
         return True
     else:
-        print(f'Zdjecie nie ma jasnej poświaty')
+        print(f'Zdjęcie nie ma jasnej poświaty')
         return False
 
 
-def detect_sharpness(image_path, median_laplacian):
+def detect_sharpness(image_path, median_laplacian, thresholds):
     sharpness_laplacian = calculate_image_sharpness_laplacian(image_path)
 
-    if sharpness_laplacian < 0.35 * median_laplacian:
+    if sharpness_laplacian < thresholds['sharpness']['low'] * median_laplacian:
         print(f'Ostrość: {sharpness_laplacian} - niska ostrość!')
         return 'niska ostrość'
-    elif sharpness_laplacian > 4 * median_laplacian:
+    elif sharpness_laplacian > thresholds['sharpness']['high'] * median_laplacian:
         print(f'Ostrość: {sharpness_laplacian} - możliwe zaszumienie!')
         return 'możliwe zaszumienie'
     else:
@@ -40,10 +67,10 @@ def detect_sharpness(image_path, median_laplacian):
         return None
 
 
-def detect_saturation(image_path, median_saturation):
+def detect_saturation(image_path, median_saturation, thresholds):
     saturation = calculate_saturation(image_path)
 
-    if saturation < 0.5 * median_saturation:
+    if saturation < thresholds['saturation']['low'] * median_saturation:
         print(f'Nasycenie: {saturation} - niskie nasycenie!')
         return True
     else:
@@ -51,10 +78,10 @@ def detect_saturation(image_path, median_saturation):
         return False
 
 
-def detect_brightness(image_path, median_brightness):
+def detect_brightness(image_path, median_brightness, thresholds):
     brightness = calculate_brightness(image_path)
 
-    if brightness < 0.25 * median_brightness:
+    if brightness < thresholds['brightness']['low'] * median_brightness:
         print(f'Jasność: {brightness} - niska jasność!')
         return True
     else:
@@ -79,9 +106,12 @@ def detect_sharpness_in_folder(image_folder, median_laplacian):
 
 
 def process_folder(image_folder, crop_folder):
+    thresholds = load_thresholds_from_xml('./config/config.xml')
+
     median_laplacian = calculate_median_sharpness_laplacian(crop_folder)
     median_saturation = calculate_median_saturation(image_folder)
     median_brightness = calculate_median_brightness(image_folder)
+
     print(f'Mediana ostrości zdjęć sylwetek w folderze: {median_laplacian}')
     print(f'Mediana nasycenia zdjęć w folderze: {median_saturation}')
     print(f'Mediana jasności zdjęć w folderze: {median_brightness}')
@@ -95,15 +125,15 @@ def process_folder(image_folder, crop_folder):
         move_to_check_folder = False
         issues = []
 
-        if detect_flare(image_path):
+        if detect_flare(image_path, thresholds):
             move_to_check_folder = True
             issues.append('jasna poświata')
 
-        if detect_saturation(image_path, median_saturation):
+        if detect_saturation(image_path, median_saturation, thresholds):
             move_to_check_folder = True
             issues.append('niskie nasycenie')
 
-        if detect_brightness(image_path, median_brightness):
+        if detect_brightness(image_path, median_brightness, thresholds):
             move_to_check_folder = True
             issues.append('niska jasność')
 
@@ -112,7 +142,7 @@ def process_folder(image_folder, crop_folder):
         cropped_image_path = os.path.join(crop_folder, cropped_image_name)
 
         if os.path.exists(cropped_image_path):
-            sharpness_issue = detect_sharpness(cropped_image_path, median_laplacian)
+            sharpness_issue = detect_sharpness(cropped_image_path, median_laplacian, thresholds)
             if sharpness_issue:
                 move_to_check_folder = True
                 issues.append(sharpness_issue)

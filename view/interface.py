@@ -94,7 +94,7 @@ class ImageViewer(QMainWindow):
             image_name = self.image_list[self.current_index]
             image_path = os.path.join(self.folder_path, image_name)
 
-            q_image = QImage(image_path, "PNG")
+            q_image = QImage(image_path)
 
             screen_size = QApplication.primaryScreen().availableGeometry().size()
             max_width, max_height = screen_size.width(), screen_size.height()
