@@ -31,7 +31,7 @@ class ImageViewer(QMainWindow):
 
         self.user_initiated_close = False
 
-        self.setWindowTitle("Przeglądarka zdjęć")
+        self.setWindowTitle("Image Viewer")
 
         screen_size = QApplication.primaryScreen().availableGeometry()
         self.resize(screen_size.width(), screen_size.height())
@@ -64,16 +64,16 @@ class ImageViewer(QMainWindow):
         self.layout.addWidget(self.graphics_view)
 
         self.issues_label = QLabel(self)
-        self.issues_label.setText("Brak wykrytych wad")
+        self.issues_label.setText("No issues detected")
         self.layout.addWidget(self.issues_label)
 
-        self.prev_button = QPushButton("Poprzednie", self)
+        self.prev_button = QPushButton("Previous", self)
         self.prev_button.setFocusPolicy(Qt.NoFocus)
-        self.next_button = QPushButton("Następne", self)
+        self.next_button = QPushButton("Next", self)
         self.next_button.setFocusPolicy(Qt.NoFocus)
-        self.keep_button = QPushButton("Zachowaj", self)
+        self.keep_button = QPushButton("Save", self)
         self.keep_button.setFocusPolicy(Qt.NoFocus)
-        self.delete_button = QPushButton("Odrzuć", self)
+        self.delete_button = QPushButton("Delete", self)
         self.delete_button.setFocusPolicy(Qt.NoFocus)
 
         self.button_layout.addWidget(self.prev_button)
@@ -105,10 +105,10 @@ class ImageViewer(QMainWindow):
             pixmap = QPixmap.fromImage(q_image)
             self.scene.clear()
             self.scene.addPixmap(pixmap)
-            self.setWindowTitle(f"Przeglądarka zdjęć - {image_name}")
+            self.setWindowTitle(f"Image Viewer - {image_name}")
 
             issues = self.detected_issues.get(image_name, [])
-            self.issues_label.setText("Wady:\n" + "\n".join(issues) if issues else "Brak wykrytych wad")
+            self.issues_label.setText("Issues:\n" + "\n".join(issues) if issues else "No issues detected")
         else:
             self.close_app()
 
@@ -161,7 +161,7 @@ class ImageViewer(QMainWindow):
         if self.user_initiated_close:
             event.accept()
         else:
-            reply = QMessageBox.question(self, 'Zamknij', 'Czy na pewno chcesz zamknąć aplikację?',
+            reply = QMessageBox.question(self, 'Close', 'Do you want to exit?',
                                          QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply == QMessageBox.Yes:
                 self.user_initiated_close = False

@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtCore import QThread, pyqtSignal
 
 from utils.utils import crop_images, process_folder
+from view.config_window import ConfigWindow
 from view.image_viewer import ImageViewer
 
 
@@ -54,7 +55,7 @@ class InitialWindow(QMainWindow):
         self.source_folder = ""
         self.destination_folder = ""
 
-        self.setWindowTitle("Wybór folderów")
+        self.setWindowTitle("Starting Window")
         self.setGeometry(200, 200, 400, 200)
         self.init_ui()
 
@@ -64,17 +65,17 @@ class InitialWindow(QMainWindow):
 
         self.layout = QVBoxLayout(self.main_widget)
 
-        self.source_label = QLabel("Folder źródłowy: Nie wybrano", self)
+        self.source_label = QLabel("Source folder not selected", self)
         self.layout.addWidget(self.source_label)
 
-        self.source_button = QPushButton("Wybierz folder źródłowy", self)
+        self.source_button = QPushButton("Choose source folder", self)
         self.source_button.clicked.connect(self.select_source_folder)
         self.layout.addWidget(self.source_button)
 
-        self.destination_label = QLabel("Folder docelowy: Nie wybrano", self)
+        self.destination_label = QLabel("Destination folder not selected", self)
         self.layout.addWidget(self.destination_label)
 
-        self.destination_button = QPushButton("Wybierz folder docelowy", self)
+        self.destination_button = QPushButton("Choose destination folder", self)
         self.destination_button.clicked.connect(self.select_destination_folder)
         self.layout.addWidget(self.destination_button)
 
@@ -86,18 +87,26 @@ class InitialWindow(QMainWindow):
         self.progress_bar = QProgressBar(self)
         self.layout.addWidget(self.progress_bar)
 
+        self.config_button = QPushButton("Configuration", self)
+        self.config_button.clicked.connect(self.open_config_window)
+        self.layout.addWidget(self.config_button)
+
+    def open_config_window(self):
+        config_window = ConfigWindow(self)
+        config_window.exec_()
+
     def select_source_folder(self):
-        folder = QFileDialog.getExistingDirectory(self, "Wybierz folder źródłowy")
+        folder = QFileDialog.getExistingDirectory(self, "Choose source folder")
         if folder:
             self.source_folder = folder
-            self.source_label.setText(f"Folder źródłowy: {self.source_folder}")
+            self.source_label.setText(f"Source folder: {self.source_folder}")
             self.check_folders_selected()
 
     def select_destination_folder(self):
-        folder = QFileDialog.getExistingDirectory(self, "Wybierz folder docelowy")
+        folder = QFileDialog.getExistingDirectory(self, "Choose destination folder")
         if folder:
             self.destination_folder = folder
-            self.destination_label.setText(f"Folder docelowy: {self.destination_folder}")
+            self.destination_label.setText(f"Destination folder: {self.destination_folder}")
             self.check_folders_selected()
 
     def check_folders_selected(self):
