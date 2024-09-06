@@ -5,15 +5,16 @@ from detection.brightness_detection import calculate_median_brightness, detect_b
 from detection.flare_detection import detect_flare
 from detection.saturation_detection import calculate_median_saturation, detect_saturation
 from detection.sharpness_detection import calculate_median_sharpness_laplacian, detect_sharpness
-from model.model import detect_and_crop_persons, detect_and_crop_person
+from model.model import detect_and_crop_person, load_model
 
 import xml.etree.ElementTree as ET
 
 
 
-def process_folder(image_folder, crop_folder):
+def process_folder(image_folder, crop_folder, progress_callback):
     thresholds = load_thresholds_from_xml('./config/config.xml')
 
+    # Calculating medians and initializing
     median_laplacian = calculate_median_sharpness_laplacian(crop_folder)
     median_saturation = calculate_median_saturation(image_folder)
     median_brightness = calculate_median_brightness(image_folder)
@@ -23,8 +24,9 @@ def process_folder(image_folder, crop_folder):
     print(f'Mediana jasności zdjęć w folderze: {median_brightness}')
 
     detected_issues = {}
+    image_files = os.listdir(image_folder)
 
-    for image_name in os.listdir(image_folder):
+    for image_name in image_files:
         image_path = os.path.join(image_folder, image_name)
         print(f'Przetwarzanie zdjęcia: {image_name}')
 
@@ -70,15 +72,29 @@ def process_folder(image_folder, crop_folder):
             shutil.move(image_path, destination_path)
             print('Zdjęcie jest dobre')
 
+        # Update progress after processing each image
+        progress_callback()
+
     return detected_issues
 
-def crop_images(image_folder, crop_folder):
-    model_path = 'model/drugi.pt'
-    result = detect_and_crop_persons(image_folder, model_path, crop_folder)
 
-def crop_image(image_path, crop_folder):
+
+def crop_images(image_folder, crop_folder, progress_callback):
     model_path = 'model/drugi.pt'
-    result = detect_and_crop_person(image_path, model_path, crop_folder)
+    model = load_model(model_path)
+
+    if not os.path.exists(crop_folder):
+        os.makedirs(crop_folder)
+
+    image_files = os.listdir(image_folder)
+
+    for image_name in image_files:
+        image_path = os.path.join(image_folder, image_name)
+        detect_and_crop_person(image_path, model, crop_folder)
+
+        # Update progress after cropping each image
+        progress_callback()
+
 
 def load_thresholds_from_xml(file_path):
     tree = ET.parse(file_path)

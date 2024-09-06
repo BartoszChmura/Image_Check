@@ -6,7 +6,7 @@ def load_model(model_path):
     return YOLO(model_path)
 
 def process_image(model, image_path):
-    results = model(image_path, conf = 0.5)
+    results = model(image_path, conf=0.5)
     return results
 
 def crop_and_save(image, box, save_path):
@@ -18,14 +18,12 @@ def crop_and_save(image, box, save_path):
 def save_full_image(image, save_path):
     cv2.imwrite(save_path, image)
 
-def detect_and_crop_person(image_path, model_path, crop_folder):
-
-    if not os.path.exists(crop_folder):
-        os.makedirs(crop_folder)
-
-    model = load_model(model_path)
+def detect_and_crop_person(image_path, model, crop_folder):
     found_person = False
     image = cv2.imread(image_path)
+    if image is None:
+        return False
+
     results = process_image(model, image_path)
 
     for result in results:

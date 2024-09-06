@@ -1,12 +1,8 @@
 from PyQt5.QtWidgets import QApplication
-
-from utils.utils import crop_images, process_folder
+from view.starting_window import InitialWindow
 from view.image_viewer import ImageViewer
 
 import sys
-
-from view.starting_window import InitialWindow
-from view.image_viewer import ImageViewer
 
 
 def init_interface():
