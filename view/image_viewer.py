@@ -18,12 +18,13 @@ class CustomGraphicsView(QGraphicsView):
         event.ignore()
 
 class ImageViewer(QMainWindow):
-    def __init__(self, detected_issues):
+    def __init__(self, detected_issues, destination_folder):
         super().__init__()
 
         self.folder_path = './zdjecia/do_sprawdzenia'
         self.checked_folder_path = './zdjecia/sprawdzone'
         self.detected_issues = detected_issues
+        self.destination_folder = destination_folder
 
         self.image_list = [f for f in os.listdir(self.folder_path) if f.endswith(('png', 'jpg', 'jpeg', 'bmp'))]
         self.current_index = 0
@@ -151,7 +152,9 @@ class ImageViewer(QMainWindow):
             self.show_image()
 
     def close_app(self):
-        self.user_initiated_close = True
+        if not self.user_initiated_close:
+            self.user_initiated_close = True
+            self.copy_checked_images_to_destination()
         self.close()
 
     def closeEvent(self, event):
@@ -161,9 +164,19 @@ class ImageViewer(QMainWindow):
             reply = QMessageBox.question(self, 'Zamknij', 'Czy na pewno chcesz zamknąć aplikację?',
                                          QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply == QMessageBox.Yes:
+                self.user_initiated_close = False
                 event.accept()
             else:
                 event.ignore()
+
+    def copy_checked_images_to_destination(self):
+        if self.destination_folder and os.path.exists(self.checked_folder_path):
+            for file_name in os.listdir(self.checked_folder_path):
+                source_path = os.path.join(self.checked_folder_path, file_name)
+                if os.path.isfile(source_path):
+                    destination_path = os.path.join(self.destination_folder, file_name)
+                    shutil.copy(source_path, destination_path)
+            print(f'Wszystkie sprawdzone zdjęcia zostały skopiowane do folderu: {self.destination_folder}')
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
