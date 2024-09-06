@@ -21,3 +21,13 @@ def calculate_median_saturation(image_dir):
 
     median_saturation = np.median(saturation_values)
     return median_saturation
+
+def detect_saturation(image_path, median_saturation, thresholds):
+    saturation = calculate_saturation(image_path)
+
+    if saturation < thresholds['saturation']['low'] * median_saturation:
+        print(f'Nasycenie: {saturation} - niskie nasycenie!')
+        return True
+    else:
+        print(f'Nasycenie: {saturation}')
+        return False

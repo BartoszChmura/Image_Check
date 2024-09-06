@@ -19,3 +19,16 @@ def calculate_median_brightness(image_dir):
 
     median_brightness = np.median(brightness_values)
     return median_brightness
+
+def detect_brightness(image_path, median_brightness, thresholds):
+    brightness = calculate_brightness(image_path)
+
+    if brightness < thresholds['brightness']['low'] * median_brightness:
+        print(f'Jasność: {brightness} - niska jasność!')
+        return True
+    elif brightness > thresholds['brightness']['high'] * median_brightness:
+        print(f'Jasność: {brightness} - możliwe przejaśnienie')
+        return True
+    else:
+        print(f'Jasność: {brightness}')
+        return False
