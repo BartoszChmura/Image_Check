@@ -3,22 +3,22 @@ import shutil
 
 import xml.etree.ElementTree as ET
 
+import cv2
+
 from detection.brightness_detection import calculate_median_brightness, detect_brightness
 from detection.flare_detection import detect_flare
 from detection.saturation_detection import calculate_median_saturation, detect_saturation
 from detection.sharpness_detection import calculate_median_sharpness_laplacian, detect_sharpness
 from model.model import detect_and_crop_person, load_model
 from config.log_config import logger
-
-
+from utils.helpers import get_image_files
 
 
 def process_folder(image_folder, crop_folder, progress_callback):
     try:
         thresholds = load_thresholds_from_xml('./config/config.xml')
     except Exception as e:
-        logger.error(f"Failed to load thresholds from config file: {e}")
-        raise Exception(f"Failed to load thresholds from config file: {e}")
+        raise Exception(f"Failed to load thresholds from config file: {e} - utils.py")
 
     try:
         median_laplacian = calculate_median_sharpness_laplacian(crop_folder)
@@ -26,11 +26,9 @@ def process_folder(image_folder, crop_folder, progress_callback):
         median_brightness = calculate_median_brightness(image_folder)
 
         if median_laplacian is None or median_saturation is None or median_brightness is None:
-            logger.error("Failed to calculate one or more medians. Exiting process.")
-            raise Exception("Failed to calculate one or more medians.")
+            raise Exception("Failed to calculate one or more medians. - utils.py")
 
     except Exception as e:
-        logger.error(f"Failed to calculate medians: {e}")
         raise Exception(f"Failed to calculate medians: {e}")
 
     logger.info(f'Median sharpness of silhouette images in the folder: {median_laplacian}')
@@ -38,11 +36,10 @@ def process_folder(image_folder, crop_folder, progress_callback):
     logger.info(f'Median brightness of images in the folder: {median_brightness}')
 
     detected_issues = {}
-    try:
-        image_files = os.listdir(image_folder)
-    except Exception as e:
-        logger.error(f"Failed to list files in image folder: {e}")
-        raise Exception(f"Failed to list files in image folder: {e}")
+
+    image_files = get_image_files(image_folder)
+    if image_files is None:
+        raise Exception(f"Failed to list files in image folder: {image_folder} - utils.py")
 
     for image_name in image_files:
         image_path = os.path.join(image_folder, image_name)
@@ -54,7 +51,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
         try:
             detected_flare = detect_flare(image_path, thresholds)
             if detected_flare is None:
-                logger.warning("Skipping image due to flare detection error.")
+                logger.warning("Skipping image due to flare detection error. - utils.py")
                 continue
             elif detected_flare:
                 move_to_check_folder = True
@@ -62,7 +59,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
             detected_saturation = detect_saturation(image_path, median_saturation, thresholds)
             if detected_saturation is None:
-                logger.warning("Skipping image due to saturation detection error.")
+                logger.warning("Skipping image due to saturation detection error. - utils.py")
                 continue
             elif detected_saturation:
                 move_to_check_folder = True
@@ -70,15 +67,14 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
             detected_brightness = detect_brightness(image_path, median_brightness, thresholds)
             if detected_brightness is None:
-                logger.warning("Skipping image due to brightness detection error.")
+                logger.warning("Skipping image due to brightness detection error. - utils.py")
                 continue
             elif detected_brightness:
                 move_to_check_folder = True
                 issues.append('low brightness')
 
         except Exception as e:
-            logger.error(f"Error during detections: {e}")
-            raise Exception(f"Error during detections: {e}")
+            raise Exception(f"Error during detections: {e} - utils.py")
 
         base_name, ext = os.path.splitext(image_name)
         cropped_image_name = f"{base_name}_person{ext}"
@@ -88,14 +84,13 @@ def process_folder(image_folder, crop_folder, progress_callback):
             try:
                 sharpness_issue = detect_sharpness(cropped_image_path, median_laplacian, thresholds)
                 if sharpness_issue is None:
-                    logger.warning("Skipping image due to sharpness detection error.")
+                    logger.warning("Skipping image due to sharpness detection error. - utils.py")
                     continue
                 elif sharpness_issue:
                     move_to_check_folder = True
                     issues.append(sharpness_issue)
             except Exception as e:
-                logger.error(f"Failed to detect sharpness: {e}")
-                raise Exception(f"Failed to detect sharpness: {e}")
+                raise Exception(f"Failed to detect sharpness: {e} - utils.py")
 
         else:
             logger.warning("Silhouette not found")
@@ -110,8 +105,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
             shutil.move(image_path, destination_path)
             logger.info(f'Image moved to folder: {destination_folder}')
         except (OSError, IOError) as e:
-            logger.error(f"Failed to move image {image_name}: {e}")
-            raise Exception(f"Failed to move image {image_name}: {e}")
+            raise Exception(f"Failed to move image {image_name}: {e} - utils.py")
 
         progress_callback()
 
@@ -127,22 +121,18 @@ def crop_images(image_folder, crop_folder, progress_callback):
         try:
             os.makedirs(crop_folder)
         except OSError as e:
-            logger.error(f"Failed to create crop folder: {e}")
-            raise Exception(f"Failed to create crop folder: {e}")
+            raise Exception(f"Failed to create crop folder: {e} - utils.py")
 
-    try:
-        image_files = os.listdir(image_folder)
-    except Exception as e:
-        logger.error(f"Failed to list files in image folder: {e}")
-        raise Exception(f"Failed to list files in image folder: {e}")
+    image_files = get_image_files(image_folder)
+    if image_files is None:
+        raise Exception(f"Failed to list files in image folder: {image_folder} - utils.py")
 
     for image_name in image_files:
         image_path = os.path.join(image_folder, image_name)
         try:
             detect_and_crop_person(image_path, model, crop_folder)
         except Exception as e:
-            logger.error(f"Failed to crop person from image {image_name}: {e}")
-            raise Exception(f"Failed to crop person from image {image_name}: {e}")
+            raise Exception(f"Failed to crop person from image {image_name}: {e} - utils.py")
 
         progress_callback()
 
@@ -152,8 +142,7 @@ def load_thresholds_from_xml(file_path):
         tree = ET.parse(file_path)
         root = tree.getroot()
     except (ET.ParseError, FileNotFoundError, IOError) as e:
-        logger.error(f"Error loading or parsing XML file: {e}")
-        raise Exception(f"Error loading or parsing XML file: {e}")
+        raise Exception(f"Error loading or parsing XML file: {e} - utils.py")
 
     try:
         sharpness_low_threshold = float(root.find('sharpness/low_threshold').text)
@@ -163,8 +152,7 @@ def load_thresholds_from_xml(file_path):
         brightness_high_threshold = float(root.find('brightness/high_threshold').text)
         flare_threshold = float(root.find('flare/threshold').text)
     except (AttributeError, ValueError) as e:
-        logger.error(f"Error reading thresholds from config file: {e}")
-        raise Exception(f"Error reading thresholds from config file: {e}")
+        raise Exception(f"Error reading thresholds from config file: {e} - utils.py")
 
     thresholds = {
         'sharpness': {

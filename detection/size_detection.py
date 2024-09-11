@@ -1,20 +1,19 @@
 import cv2
 
 from config.log_config import logger
+from utils.helpers import read_image
+
 
 def get_image_size(image_path):
-    try:
-        image = cv2.imread(image_path)
-        if image is None:
-            raise ValueError(f"Failed to read image from {image_path}")
+    image = read_image(image_path)
+    if image is None:
+        raise Exception(f"Failed to read image from {image_path} - size detection")
 
-        height, width = image.shape[:2]
+    height, width = image.shape[:2]
 
-        total_pixels = width * height
+    total_pixels = width * height
 
-        return total_pixels
+    return total_pixels
 
-    except Exception as e:
-        logger.error(f"Error getting image size for {image_path}: {e}")
-        return None
+
 

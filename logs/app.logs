@@ -1,132 +1,132 @@
-2024-09-11 11:29:31,140 - INFO - Median sharpness of silhouette images in the folder: 18.705352089183215
-2024-09-11 11:29:31,140 - INFO - Median saturation of images in the folder: 31.522022239631994
-2024-09-11 11:29:31,140 - INFO - Median brightness of images in the folder: 62.31764264118136
-2024-09-11 11:29:31,140 - INFO - Image processing: podst (1).png
-2024-09-11 11:29:31,296 - INFO - Image doesn't have light flare
-2024-09-11 11:29:31,460 - INFO - Saturation: 34.847865978277795
-2024-09-11 11:29:31,621 - INFO - Brightness: 60.136045932601476
-2024-09-11 11:29:31,756 - INFO - Sharpness: 22.189642354376534
-2024-09-11 11:29:31,757 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:31,757 - INFO - Image processing: podst (10).png
-2024-09-11 11:29:31,909 - WARNING - Image has light flare
-2024-09-11 11:29:32,072 - INFO - Saturation: 28.368515454687014
-2024-09-11 11:29:32,232 - INFO - Brightness: 65.64934283517596
-2024-09-11 11:29:32,290 - INFO - Sharpness: 35.64777097682114
-2024-09-11 11:29:32,290 - INFO - Image moved to folder: ./images/to_check
-2024-09-11 11:29:32,290 - INFO - Image processing: podst (11).png
-2024-09-11 11:29:32,444 - INFO - Image doesn't have light flare
-2024-09-11 11:29:32,607 - INFO - Saturation: 35.206334021073395
-2024-09-11 11:29:32,767 - INFO - Brightness: 54.54233413137133
-2024-09-11 11:29:32,911 - INFO - Sharpness: 19.438576850562473
-2024-09-11 11:29:32,912 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:32,912 - INFO - Image processing: podst (12).png
-2024-09-11 11:29:33,075 - INFO - Image doesn't have light flare
-2024-09-11 11:29:33,246 - INFO - Saturation: 24.00590142608741
-2024-09-11 11:29:33,411 - INFO - Brightness: 61.08674640558497
-2024-09-11 11:29:33,586 - INFO - Sharpness: 12.066674599659008
-2024-09-11 11:29:33,586 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:33,586 - INFO - Image processing: podst (13).png
-2024-09-11 11:29:33,746 - INFO - Image doesn't have light flare
-2024-09-11 11:29:33,914 - INFO - Saturation: 29.368113434937197
-2024-09-11 11:29:34,084 - INFO - Brightness: 63.84113666887262
-2024-09-11 11:29:34,202 - INFO - Sharpness: 16.451819195623987
-2024-09-11 11:29:34,203 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:34,203 - INFO - Image processing: podst (14).png
-2024-09-11 11:29:34,360 - INFO - Image doesn't have light flare
-2024-09-11 11:29:34,526 - INFO - Saturation: 33.99748236855081
-2024-09-11 11:29:34,693 - INFO - Brightness: 62.27749914032493
-2024-09-11 11:29:34,838 - INFO - Sharpness: 17.394344364982967
-2024-09-11 11:29:34,839 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:34,839 - INFO - Image processing: podst (15).png
-2024-09-11 11:29:34,998 - INFO - Image doesn't have light flare
-2024-09-11 11:29:35,160 - INFO - Saturation: 40.076964114242706
-2024-09-11 11:29:35,327 - INFO - Brightness: 53.32195383058237
-2024-09-11 11:29:35,448 - INFO - Sharpness: 12.75337830840908
-2024-09-11 11:29:35,449 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:35,449 - INFO - Image processing: podst (16).png
-2024-09-11 11:29:35,605 - INFO - Image doesn't have light flare
-2024-09-11 11:29:35,773 - INFO - Saturation: 32.25179826183432
-2024-09-11 11:29:35,936 - INFO - Brightness: 58.81124390117305
-2024-09-11 11:29:36,075 - INFO - Sharpness: 18.68254653798029
-2024-09-11 11:29:36,075 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:36,075 - INFO - Image processing: podst (2).png
-2024-09-11 11:29:36,231 - INFO - Image doesn't have light flare
-2024-09-11 11:29:36,392 - INFO - Saturation: 33.41526174672999
-2024-09-11 11:29:36,549 - INFO - Brightness: 54.335254788227964
-2024-09-11 11:29:36,670 - INFO - Sharpness: 19.84632144732892
-2024-09-11 11:29:36,671 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:36,671 - INFO - Image processing: podst (3).png
-2024-09-11 11:29:36,823 - WARNING - Image has light flare
-2024-09-11 11:29:36,989 - INFO - Saturation: 25.499554185482197
-2024-09-11 11:29:37,161 - INFO - Brightness: 71.8591798699782
-2024-09-11 11:29:37,215 - INFO - Sharpness: 48.43434990478709
-2024-09-11 11:29:37,215 - INFO - Image moved to folder: ./images/to_check
-2024-09-11 11:29:37,215 - INFO - Image processing: podst (4).png
-2024-09-11 11:29:37,370 - INFO - Image doesn't have light flare
-2024-09-11 11:29:37,528 - INFO - Saturation: 44.981156571161634
-2024-09-11 11:29:37,687 - INFO - Brightness: 44.08717559431122
-2024-09-11 11:29:37,836 - INFO - Sharpness: 9.804586057363805
-2024-09-11 11:29:37,837 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:37,837 - INFO - Image processing: podst (5).png
-2024-09-11 11:29:37,987 - INFO - Image doesn't have light flare
-2024-09-11 11:29:38,156 - INFO - Saturation: 31.26913028456867
-2024-09-11 11:29:38,314 - INFO - Brightness: 63.32382638131942
-2024-09-11 11:29:38,432 - INFO - Sharpness: 10.284838546046595
-2024-09-11 11:29:38,432 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:38,432 - INFO - Image processing: podst (6).png
-2024-09-11 11:29:38,584 - INFO - Image doesn't have light flare
-2024-09-11 11:29:38,743 - INFO - Saturation: 27.960147328843558
-2024-09-11 11:29:38,900 - INFO - Brightness: 64.123568316594
-2024-09-11 11:29:39,064 - INFO - Sharpness: 14.635087178104845
-2024-09-11 11:29:39,064 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:39,064 - INFO - Image processing: podst (7).png
-2024-09-11 11:29:39,217 - WARNING - Image has light flare
-2024-09-11 11:29:39,375 - INFO - Saturation: 23.226121470466108
-2024-09-11 11:29:39,532 - INFO - Brightness: 68.45391695538773
-2024-09-11 11:29:39,599 - INFO - Sharpness: 36.61165268175937
-2024-09-11 11:29:39,599 - INFO - Image moved to folder: ./images/to_check
-2024-09-11 11:29:39,599 - INFO - Image processing: podst (8).png
-2024-09-11 11:29:39,750 - INFO - Image doesn't have light flare
-2024-09-11 11:29:39,909 - INFO - Saturation: 31.774914194695317
-2024-09-11 11:29:40,067 - INFO - Brightness: 62.35778614203779
-2024-09-11 11:29:40,225 - INFO - Sharpness: 19.177685506290434
-2024-09-11 11:29:40,225 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:40,225 - INFO - Image processing: podst (9).png
-2024-09-11 11:29:40,379 - INFO - Image doesn't have light flare
-2024-09-11 11:29:40,540 - INFO - Saturation: 28.09632399693761
-2024-09-11 11:29:40,699 - INFO - Brightness: 64.07126398188518
-2024-09-11 11:29:40,856 - INFO - Sharpness: 18.72815764038614
-2024-09-11 11:29:40,857 - INFO - Image moved to folder: ./images/checked
-2024-09-11 11:29:45,202 - INFO - All checked images have been copied to the destination folder: C:/Users/barto/Desktop/out
-2024-09-11 11:29:45,204 - INFO - Deleted file: ./images/checked\podst (1).png
-2024-09-11 11:29:45,205 - INFO - Deleted file: ./images/checked\podst (10).png
-2024-09-11 11:29:45,206 - INFO - Deleted file: ./images/checked\podst (11).png
-2024-09-11 11:29:45,207 - INFO - Deleted file: ./images/checked\podst (12).png
-2024-09-11 11:29:45,209 - INFO - Deleted file: ./images/checked\podst (13).png
-2024-09-11 11:29:45,210 - INFO - Deleted file: ./images/checked\podst (14).png
-2024-09-11 11:29:45,211 - INFO - Deleted file: ./images/checked\podst (15).png
-2024-09-11 11:29:45,212 - INFO - Deleted file: ./images/checked\podst (16).png
-2024-09-11 11:29:45,213 - INFO - Deleted file: ./images/checked\podst (2).png
-2024-09-11 11:29:45,214 - INFO - Deleted file: ./images/checked\podst (3).png
-2024-09-11 11:29:45,215 - INFO - Deleted file: ./images/checked\podst (4).png
-2024-09-11 11:29:45,216 - INFO - Deleted file: ./images/checked\podst (5).png
-2024-09-11 11:29:45,216 - INFO - Deleted file: ./images/checked\podst (6).png
-2024-09-11 11:29:45,217 - INFO - Deleted file: ./images/checked\podst (7).png
-2024-09-11 11:29:45,218 - INFO - Deleted file: ./images/checked\podst (8).png
-2024-09-11 11:29:45,219 - INFO - Deleted file: ./images/checked\podst (9).png
-2024-09-11 11:29:45,220 - INFO - Deleted file: ./images/silhouette\podst (1)_person.png
-2024-09-11 11:29:45,220 - INFO - Deleted file: ./images/silhouette\podst (10)_person.png
-2024-09-11 11:29:45,220 - INFO - Deleted file: ./images/silhouette\podst (11)_person.png
-2024-09-11 11:29:45,221 - INFO - Deleted file: ./images/silhouette\podst (12)_person.png
-2024-09-11 11:29:45,221 - INFO - Deleted file: ./images/silhouette\podst (13)_person.png
-2024-09-11 11:29:45,222 - INFO - Deleted file: ./images/silhouette\podst (14)_person.png
-2024-09-11 11:29:45,222 - INFO - Deleted file: ./images/silhouette\podst (15)_person.png
-2024-09-11 11:29:45,223 - INFO - Deleted file: ./images/silhouette\podst (16)_person.png
-2024-09-11 11:29:45,223 - INFO - Deleted file: ./images/silhouette\podst (2)_person.png
-2024-09-11 11:29:45,223 - INFO - Deleted file: ./images/silhouette\podst (3)_person.png
-2024-09-11 11:29:45,224 - INFO - Deleted file: ./images/silhouette\podst (4)_person.png
-2024-09-11 11:29:45,224 - INFO - Deleted file: ./images/silhouette\podst (5)_person.png
-2024-09-11 11:29:45,224 - INFO - Deleted file: ./images/silhouette\podst (6)_person.png
-2024-09-11 11:29:45,225 - INFO - Deleted file: ./images/silhouette\podst (7)_person.png
-2024-09-11 11:29:45,225 - INFO - Deleted file: ./images/silhouette\podst (8)_person.png
-2024-09-11 11:29:45,226 - INFO - Deleted file: ./images/silhouette\podst (9)_person.png
+2024-09-11 13:37:13,889 - INFO - Median sharpness of silhouette images in the folder: 18.67626359021858
+2024-09-11 13:37:13,889 - INFO - Median saturation of images in the folder: 31.522022239631994
+2024-09-11 13:37:13,890 - INFO - Median brightness of images in the folder: 62.31764264118136
+2024-09-11 13:37:13,890 - INFO - Image processing: podst (1).png
+2024-09-11 13:37:14,044 - INFO - Image doesn't have light flare
+2024-09-11 13:37:14,214 - INFO - Saturation: 34.847865978277795
+2024-09-11 13:37:14,380 - INFO - Brightness: 60.136045932601476
+2024-09-11 13:37:14,575 - INFO - Sharpness: 22.150100784228563
+2024-09-11 13:37:14,575 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:14,575 - INFO - Image processing: podst (10).png
+2024-09-11 13:37:14,733 - WARNING - Image has light flare
+2024-09-11 13:37:14,905 - INFO - Saturation: 28.368515454687014
+2024-09-11 13:37:15,084 - INFO - Brightness: 65.64934283517596
+2024-09-11 13:37:15,182 - INFO - Sharpness: 35.639353505538956
+2024-09-11 13:37:15,182 - INFO - Image moved to folder: ./images/to_check
+2024-09-11 13:37:15,182 - INFO - Image processing: podst (11).png
+2024-09-11 13:37:15,353 - INFO - Image doesn't have light flare
+2024-09-11 13:37:15,541 - INFO - Saturation: 35.206334021073395
+2024-09-11 13:37:15,719 - INFO - Brightness: 54.54233413137133
+2024-09-11 13:37:15,932 - INFO - Sharpness: 19.45324717757611
+2024-09-11 13:37:15,932 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:15,933 - INFO - Image processing: podst (12).png
+2024-09-11 13:37:16,086 - INFO - Image doesn't have light flare
+2024-09-11 13:37:16,257 - INFO - Saturation: 24.00590142608741
+2024-09-11 13:37:16,424 - INFO - Brightness: 61.08674640558497
+2024-09-11 13:37:16,670 - INFO - Sharpness: 12.151826488184987
+2024-09-11 13:37:16,671 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:16,671 - INFO - Image processing: podst (13).png
+2024-09-11 13:37:16,830 - INFO - Image doesn't have light flare
+2024-09-11 13:37:16,998 - INFO - Saturation: 29.368113434937197
+2024-09-11 13:37:17,165 - INFO - Brightness: 63.84113666887262
+2024-09-11 13:37:17,323 - INFO - Sharpness: 16.37058988960985
+2024-09-11 13:37:17,323 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:17,323 - INFO - Image processing: podst (14).png
+2024-09-11 13:37:17,472 - INFO - Image doesn't have light flare
+2024-09-11 13:37:17,643 - INFO - Saturation: 33.99748236855081
+2024-09-11 13:37:17,812 - INFO - Brightness: 62.27749914032493
+2024-09-11 13:37:18,017 - INFO - Sharpness: 17.39629633261103
+2024-09-11 13:37:18,018 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:18,018 - INFO - Image processing: podst (15).png
+2024-09-11 13:37:18,172 - INFO - Image doesn't have light flare
+2024-09-11 13:37:18,340 - INFO - Saturation: 40.076964114242706
+2024-09-11 13:37:18,505 - INFO - Brightness: 53.32195383058237
+2024-09-11 13:37:18,678 - INFO - Sharpness: 12.729532518587234
+2024-09-11 13:37:18,679 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:18,679 - INFO - Image processing: podst (16).png
+2024-09-11 13:37:18,836 - INFO - Image doesn't have light flare
+2024-09-11 13:37:19,001 - INFO - Saturation: 32.25179826183432
+2024-09-11 13:37:19,166 - INFO - Brightness: 58.81124390117305
+2024-09-11 13:37:19,356 - INFO - Sharpness: 18.559133403723177
+2024-09-11 13:37:19,357 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:19,357 - INFO - Image processing: podst (2).png
+2024-09-11 13:37:19,513 - INFO - Image doesn't have light flare
+2024-09-11 13:37:19,682 - INFO - Saturation: 33.41526174672999
+2024-09-11 13:37:19,845 - INFO - Brightness: 54.335254788227964
+2024-09-11 13:37:20,014 - INFO - Sharpness: 19.813881521914865
+2024-09-11 13:37:20,014 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:20,014 - INFO - Image processing: podst (3).png
+2024-09-11 13:37:20,174 - WARNING - Image has light flare
+2024-09-11 13:37:20,341 - INFO - Saturation: 25.499554185482197
+2024-09-11 13:37:20,508 - INFO - Brightness: 71.8591798699782
+2024-09-11 13:37:20,592 - INFO - Sharpness: 48.28882755871196
+2024-09-11 13:37:20,593 - INFO - Image moved to folder: ./images/to_check
+2024-09-11 13:37:20,593 - INFO - Image processing: podst (4).png
+2024-09-11 13:37:20,752 - INFO - Image doesn't have light flare
+2024-09-11 13:37:20,920 - INFO - Saturation: 44.981156571161634
+2024-09-11 13:37:21,091 - INFO - Brightness: 44.08717559431122
+2024-09-11 13:37:21,326 - INFO - Sharpness: 9.809592591304241
+2024-09-11 13:37:21,327 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:21,327 - INFO - Image processing: podst (5).png
+2024-09-11 13:37:21,480 - INFO - Image doesn't have light flare
+2024-09-11 13:37:21,646 - INFO - Saturation: 31.26913028456867
+2024-09-11 13:37:21,809 - INFO - Brightness: 63.32382638131942
+2024-09-11 13:37:21,986 - INFO - Sharpness: 10.486365967142634
+2024-09-11 13:37:21,987 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:21,987 - INFO - Image processing: podst (6).png
+2024-09-11 13:37:22,133 - INFO - Image doesn't have light flare
+2024-09-11 13:37:22,296 - INFO - Saturation: 27.960147328843558
+2024-09-11 13:37:22,462 - INFO - Brightness: 64.123568316594
+2024-09-11 13:37:22,709 - INFO - Sharpness: 14.746180314088653
+2024-09-11 13:37:22,710 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:22,710 - INFO - Image processing: podst (7).png
+2024-09-11 13:37:22,858 - WARNING - Image has light flare
+2024-09-11 13:37:23,019 - INFO - Saturation: 23.226121470466108
+2024-09-11 13:37:23,181 - INFO - Brightness: 68.45391695538773
+2024-09-11 13:37:23,278 - INFO - Sharpness: 36.693724341103895
+2024-09-11 13:37:23,278 - INFO - Image moved to folder: ./images/to_check
+2024-09-11 13:37:23,278 - INFO - Image processing: podst (8).png
+2024-09-11 13:37:23,428 - INFO - Image doesn't have light flare
+2024-09-11 13:37:23,594 - INFO - Saturation: 31.774914194695317
+2024-09-11 13:37:23,755 - INFO - Brightness: 62.35778614203779
+2024-09-11 13:37:23,987 - INFO - Sharpness: 19.229126167745964
+2024-09-11 13:37:23,988 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:23,988 - INFO - Image processing: podst (9).png
+2024-09-11 13:37:24,137 - INFO - Image doesn't have light flare
+2024-09-11 13:37:24,303 - INFO - Saturation: 28.09632399693761
+2024-09-11 13:37:24,469 - INFO - Brightness: 64.07126398188518
+2024-09-11 13:37:24,698 - INFO - Sharpness: 18.79339377671398
+2024-09-11 13:37:24,699 - INFO - Image moved to folder: ./images/checked
+2024-09-11 13:37:34,977 - INFO - All checked images have been copied to the destination folder: C:/Users/barto/Desktop/out
+2024-09-11 13:37:34,978 - INFO - Deleted file: ./images/checked\podst (1).png
+2024-09-11 13:37:34,980 - INFO - Deleted file: ./images/checked\podst (10).png
+2024-09-11 13:37:34,981 - INFO - Deleted file: ./images/checked\podst (11).png
+2024-09-11 13:37:34,982 - INFO - Deleted file: ./images/checked\podst (12).png
+2024-09-11 13:37:34,983 - INFO - Deleted file: ./images/checked\podst (13).png
+2024-09-11 13:37:34,984 - INFO - Deleted file: ./images/checked\podst (14).png
+2024-09-11 13:37:34,985 - INFO - Deleted file: ./images/checked\podst (15).png
+2024-09-11 13:37:34,986 - INFO - Deleted file: ./images/checked\podst (16).png
+2024-09-11 13:37:34,987 - INFO - Deleted file: ./images/checked\podst (2).png
+2024-09-11 13:37:34,988 - INFO - Deleted file: ./images/checked\podst (3).png
+2024-09-11 13:37:34,989 - INFO - Deleted file: ./images/checked\podst (4).png
+2024-09-11 13:37:34,990 - INFO - Deleted file: ./images/checked\podst (5).png
+2024-09-11 13:37:34,991 - INFO - Deleted file: ./images/checked\podst (6).png
+2024-09-11 13:37:34,993 - INFO - Deleted file: ./images/checked\podst (7).png
+2024-09-11 13:37:34,994 - INFO - Deleted file: ./images/checked\podst (8).png
+2024-09-11 13:37:34,995 - INFO - Deleted file: ./images/checked\podst (9).png
+2024-09-11 13:37:34,996 - INFO - Deleted file: ./images/silhouette\podst (1)_person.png
+2024-09-11 13:37:34,996 - INFO - Deleted file: ./images/silhouette\podst (10)_person.png
+2024-09-11 13:37:34,997 - INFO - Deleted file: ./images/silhouette\podst (11)_person.png
+2024-09-11 13:37:34,997 - INFO - Deleted file: ./images/silhouette\podst (12)_person.png
+2024-09-11 13:37:34,998 - INFO - Deleted file: ./images/silhouette\podst (13)_person.png
+2024-09-11 13:37:34,998 - INFO - Deleted file: ./images/silhouette\podst (14)_person.png
+2024-09-11 13:37:34,999 - INFO - Deleted file: ./images/silhouette\podst (15)_person.png
+2024-09-11 13:37:35,000 - INFO - Deleted file: ./images/silhouette\podst (16)_person.png
+2024-09-11 13:37:35,000 - INFO - Deleted file: ./images/silhouette\podst (2)_person.png
+2024-09-11 13:37:35,000 - INFO - Deleted file: ./images/silhouette\podst (3)_person.png
+2024-09-11 13:37:35,001 - INFO - Deleted file: ./images/silhouette\podst (4)_person.png
+2024-09-11 13:37:35,001 - INFO - Deleted file: ./images/silhouette\podst (5)_person.png
+2024-09-11 13:37:35,002 - INFO - Deleted file: ./images/silhouette\podst (6)_person.png
+2024-09-11 13:37:35,002 - INFO - Deleted file: ./images/silhouette\podst (7)_person.png
+2024-09-11 13:37:35,003 - INFO - Deleted file: ./images/silhouette\podst (8)_person.png
+2024-09-11 13:37:35,004 - INFO - Deleted file: ./images/silhouette\podst (9)_person.png

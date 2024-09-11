@@ -25,7 +25,7 @@ class WorkerThread(QThread):
         try:
             os.makedirs(new_folder, exist_ok=True)
         except OSError as e:
-            logger.error(f"Failed to create new folder: {e}")
+            logger.error(f"Failed to create new folder: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to create new folder: {e}"})
             return
 
@@ -33,7 +33,7 @@ class WorkerThread(QThread):
             image_files = [f for f in os.listdir(self.source_folder)
                            if os.path.isfile(os.path.join(self.source_folder, f)) and f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp'))]
         except Exception as e:
-            logger.error(f"Failed to list files in source folder: {e}")
+            logger.error(f"Failed to list files in source folder: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to list files in source folder: {e}"})
             return
 
@@ -52,21 +52,21 @@ class WorkerThread(QThread):
                 shutil.copy(source_path, new_folder)
                 progress_callback(1)
         except (OSError, IOError) as e:
-            logger.error(f"Failed to copy files: {e}")
+            logger.error(f"Failed to copy files: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to copy files: {e}"})
             return
 
         try:
             crop_images(new_folder, './images/silhouette', progress_callback)
         except Exception as e:
-            logger.error(f"Failed to crop images: {e}")
+            logger.error(f"Failed to crop images: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to crop images: {e}"})
             return
 
         try:
             detected_issues = process_folder(new_folder, './images/silhouette', progress_callback)
         except Exception as e:
-            logger.error(f"Failed to process folder: {e}")
+            logger.error(f"Failed to process folder: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to process folder: {e}"})
             return
 
@@ -121,7 +121,7 @@ class InitialWindow(QMainWindow):
             config_window = ConfigWindow(self)
             config_window.exec_()
         except Exception as e:
-            logger.error(f"Failed to open configuration window: {e}")
+            logger.error(f"Failed to open configuration window: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to open configuration window: {e}")
 
     def select_source_folder(self):
@@ -132,7 +132,7 @@ class InitialWindow(QMainWindow):
                 self.source_label.setText(f"Source folder: {self.source_folder}")
                 self.check_folders_selected()
         except Exception as e:
-            logger.error(f"Failed to select source folder: {e}")
+            logger.error(f"Failed to select source folder: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to select source folder: {e}")
 
     def select_destination_folder(self):
@@ -143,7 +143,7 @@ class InitialWindow(QMainWindow):
                 self.destination_label.setText(f"Destination folder: {self.destination_folder}")
                 self.check_folders_selected()
         except Exception as e:
-            logger.error(f"Failed to select destination folder: {e}")
+            logger.error(f"Failed to select destination folder: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to select destination folder: {e}")
 
     def check_folders_selected(self):
@@ -159,7 +159,7 @@ class InitialWindow(QMainWindow):
             self.worker.task_complete.connect(self.on_task_complete)
             self.worker.start()
         except Exception as e:
-            logger.error(f"Failed to start processing: {e}")
+            logger.error(f"Failed to start processing: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to start processing: {e}")
 
     def update_progress_bar(self, value):
@@ -167,7 +167,7 @@ class InitialWindow(QMainWindow):
 
     def on_task_complete(self, detected_issues):
         if 'error' in detected_issues:
-            logger.error(f"Error during processing: {detected_issues['error']}")
+            logger.error(f"Error during processing: {detected_issues['error']} - starting_window.py")
             QMessageBox.critical(self, "Error", detected_issues['error'])
             self.start_button.setEnabled(True)
             return

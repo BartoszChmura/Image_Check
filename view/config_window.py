@@ -79,13 +79,13 @@ class ConfigWindow(QDialog):
             self.brightness_high_slider.setValue(int(float(root.find('brightness/high_threshold').text) * 10))
             self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 100))
         except FileNotFoundError:
-            logger.error("Configuration file not found. Please ensure the config.xml file exists.")
+            logger.error("Configuration file not found. Please ensure the config.xml file exists. - config_window.py")
             QMessageBox.critical(self, "Error", "Configuration file not found. Please ensure the config.xml file exists.")
         except ET.ParseError:
-            logger.error("Error parsing configuration file. Please check the XML format.")
+            logger.error("Error parsing configuration file. Please check the XML format. - config_window.py")
             QMessageBox.critical(self, "Error", "Error parsing configuration file. Please check the XML format.")
         except Exception as e:
-            logger.error(f"An unexpected error occurred while loading config: {str(e)}")
+            logger.error(f"An unexpected error occurred while loading config: {str(e)} - config_window.py")
             QMessageBox.critical(self, "Error", f"An unexpected error occurred: {str(e)}")
 
     def save_config(self):
@@ -104,12 +104,12 @@ class ConfigWindow(QDialog):
             QMessageBox.information(self, "Success", "Configuration saved successfully.")
             self.accept()
         except FileNotFoundError:
-            logger.error("Configuration file not found. Please ensure the config.xml file exists.")
+            logger.error("Configuration file not found. Please ensure the config.xml file exists. - config_window.py")
             QMessageBox.critical(self, "Error",
                                  "Configuration file not found. Please ensure the config.xml file exists.")
         except ET.ParseError:
-            logger.error("Error parsing configuration file. Please check the XML format.")
+            logger.error("Error parsing configuration file. Please check the XML format. - config_window.py")
             QMessageBox.critical(self, "Error", "Error parsing configuration file. Please check the XML format.")
         except Exception as e:
-            logger.error(f"An unexpected error occurred while saving config: {str(e)}")
+            logger.error(f"An unexpected error occurred while saving config: {str(e)} - config_window.py")
             QMessageBox.critical(self, "Error", f"An unexpected error occurred: {str(e)}")

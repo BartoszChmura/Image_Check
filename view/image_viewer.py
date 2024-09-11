@@ -130,7 +130,7 @@ class ImageViewer(QMainWindow):
                 shutil.move(image_path, new_path)
                 del self.image_list[self.current_index]
             except (OSError, IOError) as e:
-                logger.error(f"Failed to save image: {e}")
+                logger.error(f"Failed to save image: {e} - image_viewer.py")
                 QMessageBox.critical(self, "Error", f"Failed to save image: {e}")
                 return
 
@@ -147,7 +147,7 @@ class ImageViewer(QMainWindow):
                 os.remove(image_path)
                 del self.image_list[self.current_index]
             except (OSError, IOError) as e:
-                logger.error(f"Failed to delete image: {e}")
+                logger.error(f"Failed to delete image: {e} - image_viewer.py")
                 QMessageBox.critical(self, "Error", f"Failed to delete image: {e}")
                 return
 
@@ -197,7 +197,7 @@ class ImageViewer(QMainWindow):
                         elif os.path.isdir(file_path):
                             shutil.rmtree(file_path)
                     except Exception as e:
-                        logger.error(f"Failed to delete {file_path}: {e}")
+                        logger.error(f"Failed to delete {file_path}: {e} - image_viewer.py")
                         QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
 
         self.close()
@@ -224,7 +224,7 @@ class ImageViewer(QMainWindow):
                         shutil.copy(source_path, destination_path)
                 logger.info(f'All checked images have been copied to the destination folder: {self.destination_folder}')
             except (OSError, IOError) as e:
-                logger.error(f"Failed to copy checked images: {e}")
+                logger.error(f"Failed to copy checked images: {e} - image_viewer.py")
                 QMessageBox.critical(self, "Error", f"Failed to copy checked images: {e}")
 
     def keyPressEvent(self, event):

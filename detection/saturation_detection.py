@@ -3,29 +3,25 @@ import os
 import numpy as np
 
 from config.log_config import logger
-
+from utils.helpers import get_image_files, read_image
 
 
 def calculate_saturation(image_path):
-    try:
-        img = cv2.imread(image_path)
-        if img is None:
-            raise ValueError(f"Failed to read image from {image_path}")
+    image = read_image(image_path)
+    if image is None:
+        raise Exception(f"Failed to read image from {image_path} - saturation detection")
 
-        hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-        saturation = hsv_img[:, :, 1].mean()
-        return saturation
-    except Exception as e:
-        logger.error(f"Error calculating saturation for {image_path}: {e}")
-        return None
+    hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    saturation = hsv_img[:, :, 1].mean()
+    return saturation
+
 
 
 def calculate_median_saturation(image_dir):
     saturation_values = []
-    try:
-        images = os.listdir(image_dir)
-    except OSError as e:
-        logger.error(f"Error reading directory {image_dir}: {e}")
+
+    images = get_image_files(image_dir)
+    if images is None:
         return None
 
     for image in images:
@@ -35,7 +31,7 @@ def calculate_median_saturation(image_dir):
             saturation_values.append(saturation)
 
     if not saturation_values:
-        logger.warning(f"No valid images found in directory {image_dir}.")
+        logger.warning(f"No valid images found in directory {image_dir} - saturation detection")
         return None
 
     median_saturation = np.median(saturation_values)
@@ -45,7 +41,7 @@ def detect_saturation(image_path, median_saturation, thresholds):
     saturation = calculate_saturation(image_path)
 
     if saturation is None:
-        logger.warning(f"Skipping saturation detection for {image_path} due to read error.")
+        logger.warning(f"Skipping saturation detection for {image_path} due to error - saturation detection")
         return False
 
     if saturation < thresholds['saturation']['low'] * median_saturation:

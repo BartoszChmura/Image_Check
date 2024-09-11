@@ -3,26 +3,23 @@ import os
 import numpy as np
 
 from config.log_config import logger
+from utils.helpers import get_image_files, read_image
+
 
 def calculate_brightness(image_path):
-    try:
-        img = cv2.imread(image_path)
-        if img is None:
-            raise ValueError(f"Failed to read image from {image_path}")
+    image = read_image(image_path)
+    if image is None:
+        raise Exception(f"Failed to read image from {image_path} - brightness detection")
 
-        hsv_img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-        brightness = hsv_img[:, :, 2].mean()
-        return brightness
-    except Exception as e:
-        logger.error(f"Error calculating brightness for {image_path}: {e}")
-        return None
+    hsv_img = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+    brightness = hsv_img[:, :, 2].mean()
+    return brightness
 
 def calculate_median_brightness(image_dir):
     brightness_values = []
-    try:
-        images = os.listdir(image_dir)
-    except OSError as e:
-        logger.error(f"Error reading directory {image_dir}: {e}")
+
+    images = get_image_files(image_dir)
+    if images is None:
         return None
 
     for image in images:
@@ -32,7 +29,7 @@ def calculate_median_brightness(image_dir):
             brightness_values.append(brightness)
 
     if not brightness_values:
-        logger.warning(f"No valid images found in directory {image_dir}.")
+        logger.warning(f"No valid images found in directory {image_dir} - brightness detection")
         return None
 
     median_brightness = np.median(brightness_values)
@@ -42,7 +39,7 @@ def detect_brightness(image_path, median_brightness, thresholds):
     brightness = calculate_brightness(image_path)
 
     if brightness is None:
-        logger.warning(f"Skipping brightness detection for {image_path} due to read error.")
+        logger.warning(f"Skipping brightness detection for {image_path} due to error - brightness detection")
         return None
 
     if brightness < thresholds['brightness']['low'] * median_brightness:

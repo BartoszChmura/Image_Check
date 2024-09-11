@@ -1,25 +1,23 @@
 import cv2
 
 from config.log_config import logger
+from utils.helpers import read_image
+
 
 def calculate_brightness_histogram(image_path):
-    try:
-        img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-        if img is None:
-            raise ValueError(f"Failed to read image from {image_path}")
+    image = read_image(image_path)
+    if image is None:
+        raise Exception(f"Failed to read image from {image_path} - flare detection")
 
-        histogram = cv2.calcHist([img], [0], None, [256], [0, 256])
-        return histogram
-    except Exception as e:
-        logger.error(f"Error calculating brightness histogram for {image_path}: {e}")
-        return None
+    histogram = cv2.calcHist([image], [0], None, [256], [0, 256])
+    return histogram
 
 
 def check_bright_glow(image_path, threshold):
     histogram = calculate_brightness_histogram(image_path)
 
     if histogram is None:
-        logger.warning(f"Skipping brightness histogram detection for {image_path} due to read error.")
+        logger.warning(f"Skipping brightness histogram detection for {image_path} due to empty histogram error - flare detection")
         return None
 
     total_pixels = sum(histogram)
@@ -36,7 +34,7 @@ def detect_flare(image_path, thresholds):
     bright_glow_result = check_bright_glow(image_path, thresholds['flare']['threshold'])
 
     if bright_glow_result is None:
-        logger.warning(f"Cannot detect flare for {image_path} due to previous errors.")
+        logger.warning(f"Cannot detect flare for {image_path} due to previous errors - flare detection")
         return None
     elif bright_glow_result:
         logger.warning(f'Image has light flare')
