@@ -1,13 +1,14 @@
 import os
 import shutil
 from PyQt5.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QApplication
+    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QApplication, QMessageBox
 )
 from PyQt5.QtCore import QThread, pyqtSignal
 
 from utils.utils import crop_images, process_folder
 from view.config_window import ConfigWindow
 from view.image_viewer import ImageViewer
+from config.log_config import logger
 
 
 class WorkerThread(QThread):
@@ -21,9 +22,20 @@ class WorkerThread(QThread):
 
     def run(self):
         new_folder = './images/new'
-        os.makedirs(new_folder, exist_ok=True)
+        try:
+            os.makedirs(new_folder, exist_ok=True)
+        except OSError as e:
+            logger.error(f"Failed to create new folder: {e}")
+            self.task_complete.emit({'error': f"Failed to create new folder: {e}"})
+            return
 
-        image_files = [f for f in os.listdir(self.source_folder) if os.path.isfile(os.path.join(self.source_folder, f)) and f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp'))]
+        try:
+            image_files = [f for f in os.listdir(self.source_folder)
+                           if os.path.isfile(os.path.join(self.source_folder, f)) and f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp'))]
+        except Exception as e:
+            logger.error(f"Failed to list files in source folder: {e}")
+            self.task_complete.emit({'error': f"Failed to list files in source folder: {e}"})
+            return
 
         total_steps = len(image_files) * 3
         current_step = 0
@@ -34,18 +46,31 @@ class WorkerThread(QThread):
             progress = int((current_step / total_steps) * 100)
             self.progress_update.emit(progress)
 
-        for file_name in image_files:
-            source_path = os.path.join(self.source_folder, file_name)
-            shutil.copy(source_path, new_folder)
-            progress_callback(1)
+        try:
+            for file_name in image_files:
+                source_path = os.path.join(self.source_folder, file_name)
+                shutil.copy(source_path, new_folder)
+                progress_callback(1)
+        except (OSError, IOError) as e:
+            logger.error(f"Failed to copy files: {e}")
+            self.task_complete.emit({'error': f"Failed to copy files: {e}"})
+            return
 
-        crop_images(new_folder, './images/silhouette', progress_callback)
+        try:
+            crop_images(new_folder, './images/silhouette', progress_callback)
+        except Exception as e:
+            logger.error(f"Failed to crop images: {e}")
+            self.task_complete.emit({'error': f"Failed to crop images: {e}"})
+            return
 
-        detected_issues = process_folder(new_folder, './images/silhouette', progress_callback)
+        try:
+            detected_issues = process_folder(new_folder, './images/silhouette', progress_callback)
+        except Exception as e:
+            logger.error(f"Failed to process folder: {e}")
+            self.task_complete.emit({'error': f"Failed to process folder: {e}"})
+            return
 
         self.task_complete.emit(detected_issues)
-
-
 
 
 class InitialWindow(QMainWindow):
@@ -92,39 +117,61 @@ class InitialWindow(QMainWindow):
         self.layout.addWidget(self.config_button)
 
     def open_config_window(self):
-        config_window = ConfigWindow(self)
-        config_window.exec_()
+        try:
+            config_window = ConfigWindow(self)
+            config_window.exec_()
+        except Exception as e:
+            logger.error(f"Failed to open configuration window: {e}")
+            QMessageBox.critical(self, "Error", f"Failed to open configuration window: {e}")
 
     def select_source_folder(self):
-        folder = QFileDialog.getExistingDirectory(self, "Choose source folder")
-        if folder:
-            self.source_folder = folder
-            self.source_label.setText(f"Source folder: {self.source_folder}")
-            self.check_folders_selected()
+        try:
+            folder = QFileDialog.getExistingDirectory(self, "Choose source folder")
+            if folder:
+                self.source_folder = folder
+                self.source_label.setText(f"Source folder: {self.source_folder}")
+                self.check_folders_selected()
+        except Exception as e:
+            logger.error(f"Failed to select source folder: {e}")
+            QMessageBox.critical(self, "Error", f"Failed to select source folder: {e}")
 
     def select_destination_folder(self):
-        folder = QFileDialog.getExistingDirectory(self, "Choose destination folder")
-        if folder:
-            self.destination_folder = folder
-            self.destination_label.setText(f"Destination folder: {self.destination_folder}")
-            self.check_folders_selected()
+        try:
+            folder = QFileDialog.getExistingDirectory(self, "Choose destination folder")
+            if folder:
+                self.destination_folder = folder
+                self.destination_label.setText(f"Destination folder: {self.destination_folder}")
+                self.check_folders_selected()
+        except Exception as e:
+            logger.error(f"Failed to select destination folder: {e}")
+            QMessageBox.critical(self, "Error", f"Failed to select destination folder: {e}")
 
     def check_folders_selected(self):
         if self.source_folder and self.destination_folder:
             self.start_button.setEnabled(True)
 
     def start_processing(self):
-        self.start_button.setEnabled(False)
+        try:
+            self.start_button.setEnabled(False)
 
-        self.worker = WorkerThread(self.source_folder, self.destination_folder)
-        self.worker.progress_update.connect(self.update_progress_bar)
-        self.worker.task_complete.connect(self.on_task_complete)
-        self.worker.start()
+            self.worker = WorkerThread(self.source_folder, self.destination_folder)
+            self.worker.progress_update.connect(self.update_progress_bar)
+            self.worker.task_complete.connect(self.on_task_complete)
+            self.worker.start()
+        except Exception as e:
+            logger.error(f"Failed to start processing: {e}")
+            QMessageBox.critical(self, "Error", f"Failed to start processing: {e}")
 
     def update_progress_bar(self, value):
         self.progress_bar.setValue(value)
 
     def on_task_complete(self, detected_issues):
+        if 'error' in detected_issues:
+            logger.error(f"Error during processing: {detected_issues['error']}")
+            QMessageBox.critical(self, "Error", detected_issues['error'])
+            self.start_button.setEnabled(True)
+            return
+
         self.viewer = ImageViewer(detected_issues, self.destination_folder)
         self.viewer.show()
         self.close()

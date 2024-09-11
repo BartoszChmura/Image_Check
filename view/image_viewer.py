@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QPixmap, QImage, QWheelEvent, QPainter
 from PyQt5.QtCore import Qt
+from config.log_config import logger
 
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, parent=None):
@@ -95,7 +96,16 @@ class ImageViewer(QMainWindow):
             image_name = self.image_list[self.current_index]
             image_path = os.path.join(self.folder_path, image_name)
 
+            if not os.path.exists(image_path):
+                logger.error(f"Image file not found: {image_name}")
+                QMessageBox.critical(self, "Error", f"Image file not found: {image_name}")
+                return
+
             q_image = QImage(image_path)
+            if q_image.isNull():
+                logger.error(f"Failed to load image: {image_name}")
+                QMessageBox.critical(self, "Error", f"Failed to load image: {image_name}")
+                return
 
             screen_size = QApplication.primaryScreen().availableGeometry().size()
             max_width, max_height = screen_size.width(), screen_size.height()
@@ -116,8 +126,14 @@ class ImageViewer(QMainWindow):
         if self.image_list:
             image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
             new_path = os.path.join(self.checked_folder_path, self.image_list[self.current_index])
-            shutil.move(image_path, new_path)
-            del self.image_list[self.current_index]
+            try:
+                shutil.move(image_path, new_path)
+                del self.image_list[self.current_index]
+            except (OSError, IOError) as e:
+                logger.error(f"Failed to save image: {e}")
+                QMessageBox.critical(self, "Error", f"Failed to save image: {e}")
+                return
+
             if not self.image_list:
                 self.close_app()
             elif self.current_index >= len(self.image_list):
@@ -127,8 +143,14 @@ class ImageViewer(QMainWindow):
     def delete_image(self):
         if self.image_list:
             image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
-            os.remove(image_path)
-            del self.image_list[self.current_index]
+            try:
+                os.remove(image_path)
+                del self.image_list[self.current_index]
+            except (OSError, IOError) as e:
+                logger.error(f"Failed to delete image: {e}")
+                QMessageBox.critical(self, "Error", f"Failed to delete image: {e}")
+                return
+
             if not self.image_list:
                 self.close_app()
             elif self.current_index >= len(self.image_list):
@@ -171,11 +193,12 @@ class ImageViewer(QMainWindow):
                     try:
                         if os.path.isfile(file_path) or os.path.islink(file_path):
                             os.unlink(file_path)
-                            print(f'Deleted file: {file_path}')
+                            logger.info(f'Deleted file: {file_path}')
                         elif os.path.isdir(file_path):
                             shutil.rmtree(file_path)
                     except Exception as e:
-                        print(f'Failed to delete {file_path}. Reason: {e}')
+                        logger.error(f"Failed to delete {file_path}: {e}")
+                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
 
         self.close()
 
@@ -193,12 +216,16 @@ class ImageViewer(QMainWindow):
 
     def copy_checked_images_to_destination(self):
         if self.destination_folder and os.path.exists(self.checked_folder_path):
-            for file_name in os.listdir(self.checked_folder_path):
-                source_path = os.path.join(self.checked_folder_path, file_name)
-                if os.path.isfile(source_path):
-                    destination_path = os.path.join(self.destination_folder, file_name)
-                    shutil.copy(source_path, destination_path)
-            print(f'All checked images have been copied to the destination folder: {self.destination_folder}')
+            try:
+                for file_name in os.listdir(self.checked_folder_path):
+                    source_path = os.path.join(self.checked_folder_path, file_name)
+                    if os.path.isfile(source_path):
+                        destination_path = os.path.join(self.destination_folder, file_name)
+                        shutil.copy(source_path, destination_path)
+                logger.info(f'All checked images have been copied to the destination folder: {self.destination_folder}')
+            except (OSError, IOError) as e:
+                logger.error(f"Failed to copy checked images: {e}")
+                QMessageBox.critical(self, "Error", f"Failed to copy checked images: {e}")
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:

@@ -1,8 +1,10 @@
+import xml.etree.ElementTree as ET
+
 from PyQt5.QtWidgets import (
-    QDialog, QVBoxLayout, QLabel, QSlider, QPushButton, QHBoxLayout, QFormLayout
+    QDialog, QVBoxLayout, QLabel, QSlider, QPushButton, QHBoxLayout, QFormLayout, QMessageBox
 )
 from PyQt5.QtCore import Qt
-import xml.etree.ElementTree as ET
+from config.log_config import logger
 
 class ConfigWindow(QDialog):
     def __init__(self, parent=None):
@@ -66,27 +68,48 @@ class ConfigWindow(QDialog):
         self.flare_threshold_slider.setValue(1)
 
     def load_config(self):
-        tree = ET.parse('./config/config.xml')
-        root = tree.getroot()
+        try:
+            tree = ET.parse('./config/config.xml')
+            root = tree.getroot()
 
-        self.sharpness_low_slider.setValue(int(float(root.find('sharpness/low_threshold').text) * 10))
-        self.sharpness_high_slider.setValue(int(float(root.find('sharpness/high_threshold').text) * 10))
-        self.saturation_low_slider.setValue(int(float(root.find('saturation/low_threshold').text) * 10))
-        self.brightness_low_slider.setValue(int(float(root.find('brightness/low_threshold').text) * 10))
-        self.brightness_high_slider.setValue(int(float(root.find('brightness/high_threshold').text) * 10))
-        self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 100))
+            self.sharpness_low_slider.setValue(int(float(root.find('sharpness/low_threshold').text) * 10))
+            self.sharpness_high_slider.setValue(int(float(root.find('sharpness/high_threshold').text) * 10))
+            self.saturation_low_slider.setValue(int(float(root.find('saturation/low_threshold').text) * 10))
+            self.brightness_low_slider.setValue(int(float(root.find('brightness/low_threshold').text) * 10))
+            self.brightness_high_slider.setValue(int(float(root.find('brightness/high_threshold').text) * 10))
+            self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 100))
+        except FileNotFoundError:
+            logger.error("Configuration file not found. Please ensure the config.xml file exists.")
+            QMessageBox.critical(self, "Error", "Configuration file not found. Please ensure the config.xml file exists.")
+        except ET.ParseError:
+            logger.error("Error parsing configuration file. Please check the XML format.")
+            QMessageBox.critical(self, "Error", "Error parsing configuration file. Please check the XML format.")
+        except Exception as e:
+            logger.error(f"An unexpected error occurred while loading config: {str(e)}")
+            QMessageBox.critical(self, "Error", f"An unexpected error occurred: {str(e)}")
 
     def save_config(self):
-        tree = ET.parse('./config/config.xml')
-        root = tree.getroot()
+        try:
+            tree = ET.parse('./config/config.xml')
+            root = tree.getroot()
 
-        root.find('sharpness/low_threshold').text = str(self.sharpness_low_slider.value() / 10)
-        root.find('sharpness/high_threshold').text = str(self.sharpness_high_slider.value() / 10)
-        root.find('saturation/low_threshold').text = str(self.saturation_low_slider.value() / 10)
-        root.find('brightness/low_threshold').text = str(self.brightness_low_slider.value() / 10)
-        root.find('brightness/high_threshold').text = str(self.brightness_high_slider.value() / 10)
-        root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 100)
+            root.find('sharpness/low_threshold').text = str(self.sharpness_low_slider.value() / 10)
+            root.find('sharpness/high_threshold').text = str(self.sharpness_high_slider.value() / 10)
+            root.find('saturation/low_threshold').text = str(self.saturation_low_slider.value() / 10)
+            root.find('brightness/low_threshold').text = str(self.brightness_low_slider.value() / 10)
+            root.find('brightness/high_threshold').text = str(self.brightness_high_slider.value() / 10)
+            root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 100)
 
-        tree.write('./config/config.xml')
-
-        self.accept()
+            tree.write('./config/config.xml')
+            QMessageBox.information(self, "Success", "Configuration saved successfully.")
+            self.accept()
+        except FileNotFoundError:
+            logger.error("Configuration file not found. Please ensure the config.xml file exists.")
+            QMessageBox.critical(self, "Error",
+                                 "Configuration file not found. Please ensure the config.xml file exists.")
+        except ET.ParseError:
+            logger.error("Error parsing configuration file. Please check the XML format.")
+            QMessageBox.critical(self, "Error", "Error parsing configuration file. Please check the XML format.")
+        except Exception as e:
+            logger.error(f"An unexpected error occurred while saving config: {str(e)}")
+            QMessageBox.critical(self, "Error", f"An unexpected error occurred: {str(e)}")

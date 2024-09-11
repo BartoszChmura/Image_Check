@@ -1,129 +1,74 @@
 import cv2
 import os
+
 import numpy as np
 
 from detection.size_detection import get_image_size
+from config.log_config import logger
 
 
 def calculate_image_sharpness_laplacian(image_path):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    try:
+        image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+        if image is None:
+            raise ValueError(f"Failed to read image from {image_path}")
 
-    laplacian = cv2.Laplacian(image, cv2.CV_64F)
+        laplacian = cv2.Laplacian(image, cv2.CV_64F)
 
-    variance = laplacian.var()
+        variance = laplacian.var()
 
-    image_size = get_image_size(image_path)
+        image_size = get_image_size(image_path)
+        if image_size == 0 or image_size is None:
+            logger.warning(f"Image size for {image_path} is zero, cannot compute sharpness.")
+            return None
 
-    normalized_variance = variance / (image_size) * 1000000
+        normalized_variance = variance / (image_size) * 1000000
 
-    return normalized_variance
+        return normalized_variance
 
+    except Exception as e:
+        logger.error(f"Error calculating sharpness for {image_path}: {e}")
+        return None
 
-def calculate_image_sharpness_sobel(image_path):
-    image = cv2.imread(image_path)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    sobel_x = cv2.Sobel(gray, cv2.CV_64F, 1, 0, ksize=3)
-    sobel_y = cv2.Sobel(gray, cv2.CV_64F, 0, 1, ksize=3)
-
-    sobel_magnitude = np.sqrt(sobel_x ** 2 + sobel_y ** 2)
-    sobel_var = sobel_magnitude.var()
-
-    image_size = get_image_size(image_path)
-    normalized_sobel_var = sobel_var / image_size * 1000000
-
-    return normalized_sobel_var
-
-
-def calculate_image_sharpness_fft(image_path):
-    image = cv2.imread(image_path)
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-    f = np.fft.fft2(gray)
-    fshift = np.fft.fftshift(f)
-    magnitude_spectrum = 20 * np.log(np.abs(fshift) + 1e-7)
-
-    mean_freq = np.mean(magnitude_spectrum)
-
-    return mean_freq
-
-
-def calculate_image_sharpness_canny(image_path):
-    image = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    edges = cv2.Canny(image, 100, 200)
-    edge_density = np.sum(edges) / image.size
-
-    return edge_density * 1000
-
-
-def calculate_median_sharpness_sobel(image_dir):
-    sharpness_values = []
-    images = os.listdir(image_dir)
-
-    for image in images:
-        image_path = os.path.join(image_dir, image)
-        sharpness = calculate_image_sharpness_sobel(image_path)
-        sharpness_values.append(sharpness)
-
-    median_sharpness = np.median(sharpness_values)
-    return median_sharpness
 
 
 def calculate_median_sharpness_laplacian(image_dir):
     sharpness_values = []
-    images = os.listdir(image_dir)
+    try:
+        images = os.listdir(image_dir)
+    except OSError as e:
+        logger.error(f"Error reading directory {image_dir}: {e}")
+        return None
 
     for image in images:
         image_path = os.path.join(image_dir, image)
         sharpness = calculate_image_sharpness_laplacian(image_path)
-        sharpness_values.append(sharpness)
+        if sharpness is not None:
+            sharpness_values.append(sharpness)
+
+    if not sharpness_values:
+        logger.warning(f"No valid images found in directory {image_dir}.")
+        return None
 
     median_sharpness = np.median(sharpness_values)
     return median_sharpness
-
-
-def calculate_median_sharpness_fft(image_dir):
-    sharpness_values = []
-    images = os.listdir(image_dir)
-
-    for image in images:
-        image_path = os.path.join(image_dir, image)
-        sharpness = calculate_image_sharpness_fft(image_path)
-        sharpness_values.append(sharpness)
-
-    median_sharpness = np.median(sharpness_values)
-    return median_sharpness
-
-
-def calculate_median_sharpness_canny(image_dir):
-    sharpness_values = []
-    images = os.listdir(image_dir)
-
-    for image in images:
-        image_path = os.path.join(image_dir, image)
-        sharpness = calculate_image_sharpness_canny(image_path)
-        sharpness_values.append(sharpness)
-
-    median_sharpness = np.median(sharpness_values)
-    return median_sharpness
-
-def detect_sharpness_in_folder(image_folder, median_laplacian):
-    print(f'Mediana ostrości zdjęć w folderze: {median_laplacian}')
-
-    for image_name in os.listdir(image_folder):
-        image_path = os.path.join(image_folder, image_name)
-        print(f'Przetwarzanie zdjęcia: {image_name}')
-        detect_sharpness(image_path, median_laplacian)
 
 def detect_sharpness(image_path, median_laplacian, thresholds):
     sharpness_laplacian = calculate_image_sharpness_laplacian(image_path)
 
-    if sharpness_laplacian < thresholds['sharpness']['low'] * median_laplacian:
-        print(f'Sharpness: {sharpness_laplacian} - low sharpness!')
+    if sharpness_laplacian is None:
+        logger.warning(f"Cannot detect sharpness for {image_path} due to previous errors.")
+        return None
+
+    low_threshold = thresholds['sharpness']['low']
+    high_threshold = thresholds['sharpness']['high']
+
+    if sharpness_laplacian < low_threshold * median_laplacian:
+        logger.warning(f'Sharpness: {sharpness_laplacian} - low sharpness!')
         return 'low sharpness'
-    elif sharpness_laplacian > thresholds['sharpness']['high'] * median_laplacian:
-        print(f'Sharpness: {sharpness_laplacian} - possible noise!')
+    elif sharpness_laplacian > high_threshold * median_laplacian:
+        logger.warning(f'Sharpness: {sharpness_laplacian} - possible noise!')
         return 'noise'
     else:
-        print(f'Sharpness: {sharpness_laplacian}')
-        return None
+        logger.info(f'Sharpness: {sharpness_laplacian}')
+        return False
