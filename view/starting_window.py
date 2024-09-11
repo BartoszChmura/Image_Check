@@ -22,12 +22,6 @@ class WorkerThread(QThread):
 
     def run(self):
         new_folder = './images/new'
-        try:
-            os.makedirs(new_folder, exist_ok=True)
-        except OSError as e:
-            logger.error(f"Failed to create new folder: {e} - starting_window.py")
-            self.task_complete.emit({'error': f"Failed to create new folder: {e}"})
-            return
 
         try:
             image_files = [f for f in os.listdir(self.source_folder)

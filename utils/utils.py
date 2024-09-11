@@ -29,7 +29,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
             raise Exception("Failed to calculate one or more medians. - utils.py")
 
     except Exception as e:
-        raise Exception(f"Failed to calculate medians: {e}")
+        raise Exception(f"Failed to calculate medians: {e} - utils.py")
 
     logger.info(f'Median sharpness of silhouette images in the folder: {median_laplacian}')
     logger.info(f'Median saturation of images in the folder: {median_saturation}')
@@ -116,12 +116,6 @@ def process_folder(image_folder, crop_folder, progress_callback):
 def crop_images(image_folder, crop_folder, progress_callback):
     model_path = 'model/second.pt'
     model = load_model(model_path)
-
-    if not os.path.exists(crop_folder):
-        try:
-            os.makedirs(crop_folder)
-        except OSError as e:
-            raise Exception(f"Failed to create crop folder: {e} - utils.py")
 
     image_files = get_image_files(image_folder)
     if image_files is None:
