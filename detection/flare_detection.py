@@ -20,8 +20,8 @@ def check_bright_glow(image_path, threshold):
 
 def detect_flare(image_path, thresholds):
     if check_bright_glow(image_path, thresholds['flare']['threshold']):
-        print(f'Zdjęcie ma jasną poświatę')
+        print(f'Image has light flare')
         return True
     else:
-        print(f'Zdjęcie nie ma jasnej poświaty')
+        print("Image doesn't have light flare")
         return False

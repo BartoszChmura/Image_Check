@@ -83,7 +83,7 @@ def detect_and_crop_persons(image_folder, model_path, crop_folder):
     return found_person
 
 def test_model(image_folder):
-    model = load_model('model/drugi.pt')
+    model = load_model('model/second.pt')
 
     for image_name in os.listdir(image_folder):
         image_path = os.path.join(image_folder, image_name)

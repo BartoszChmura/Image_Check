@@ -20,7 +20,7 @@ class WorkerThread(QThread):
         self.destination_folder = destination_folder
 
     def run(self):
-        new_folder = './zdjecia/nowe'
+        new_folder = './images/new'
         os.makedirs(new_folder, exist_ok=True)
 
         image_files = [f for f in os.listdir(self.source_folder) if os.path.isfile(os.path.join(self.source_folder, f)) and f.lower().endswith(('png', 'jpg', 'jpeg', 'bmp'))]
@@ -39,9 +39,9 @@ class WorkerThread(QThread):
             shutil.copy(source_path, new_folder)
             progress_callback(1)
 
-        crop_images(new_folder, './zdjecia/sylwetki', progress_callback)
+        crop_images(new_folder, './images/silhouette', progress_callback)
 
-        detected_issues = process_folder(new_folder, './zdjecia/sylwetki', progress_callback)
+        detected_issues = process_folder(new_folder, './images/silhouette', progress_callback)
 
         self.task_complete.emit(detected_issues)
 

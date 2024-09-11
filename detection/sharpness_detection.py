@@ -119,11 +119,11 @@ def detect_sharpness(image_path, median_laplacian, thresholds):
     sharpness_laplacian = calculate_image_sharpness_laplacian(image_path)
 
     if sharpness_laplacian < thresholds['sharpness']['low'] * median_laplacian:
-        print(f'Ostrość: {sharpness_laplacian} - niska ostrość!')
-        return 'niska ostrość'
+        print(f'Sharpness: {sharpness_laplacian} - low sharpness!')
+        return 'low sharpness'
     elif sharpness_laplacian > thresholds['sharpness']['high'] * median_laplacian:
-        print(f'Ostrość: {sharpness_laplacian} - możliwe zaszumienie!')
-        return 'możliwe zaszumienie'
+        print(f'Sharpness: {sharpness_laplacian} - possible noise!')
+        return 'noise'
     else:
-        print(f'Ostrość: {sharpness_laplacian}')
+        print(f'Sharpness: {sharpness_laplacian}')
         return None

@@ -19,31 +19,31 @@ def process_folder(image_folder, crop_folder, progress_callback):
     median_saturation = calculate_median_saturation(image_folder)
     median_brightness = calculate_median_brightness(image_folder)
 
-    print(f'Mediana ostrości zdjęć sylwetek w folderze: {median_laplacian}')
-    print(f'Mediana nasycenia zdjęć w folderze: {median_saturation}')
-    print(f'Mediana jasności zdjęć w folderze: {median_brightness}')
+    print(f'Median sharpness of silhouette images in the folder: {median_laplacian}')
+    print(f'Median saturation of images in the folder: {median_saturation}')
+    print(f'Median brightness of images in the folder: {median_brightness}')
 
     detected_issues = {}
     image_files = os.listdir(image_folder)
 
     for image_name in image_files:
         image_path = os.path.join(image_folder, image_name)
-        print(f'Przetwarzanie zdjęcia: {image_name}')
+        print(f'Image processing: {image_name}')
 
         move_to_check_folder = False
         issues = []
 
         if detect_flare(image_path, thresholds):
             move_to_check_folder = True
-            issues.append('jasna poświata')
+            issues.append('light flare')
 
         if detect_saturation(image_path, median_saturation, thresholds):
             move_to_check_folder = True
-            issues.append('niskie nasycenie')
+            issues.append('low saturation')
 
         if detect_brightness(image_path, median_brightness, thresholds):
             move_to_check_folder = True
-            issues.append('niska jasność')
+            issues.append('low brightness')
 
         base_name, ext = os.path.splitext(image_name)
         cropped_image_name = f"{base_name}_person{ext}"
@@ -55,22 +55,22 @@ def process_folder(image_folder, crop_folder, progress_callback):
                 move_to_check_folder = True
                 issues.append(sharpness_issue)
         else:
-            print("Sylwetka nie znaleziona")
+            print("Silhouette not found")
             move_to_check_folder = True
-            issues.append('sylwetka nie znaleziona')
+            issues.append('silhouette not found')
 
         detected_issues[image_name] = issues
 
         if move_to_check_folder:
-            destination_folder = './zdjecia/do_sprawdzenia'
+            destination_folder = './images/to_check'
             destination_path = os.path.join(destination_folder, image_name)
             shutil.move(image_path, destination_path)
-            print(f'Zdjęcie przeniesione do folderu {destination_folder}')
+            print(f'Image moved to folder: {destination_folder}')
         else:
-            destination_folder = './zdjecia/sprawdzone'
+            destination_folder = './images/checked'
             destination_path = os.path.join(destination_folder, image_name)
             shutil.move(image_path, destination_path)
-            print('Zdjęcie jest dobre')
+            print('Image is good')
 
         # Update progress after processing each image
         progress_callback()
@@ -80,7 +80,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
 
 def crop_images(image_folder, crop_folder, progress_callback):
-    model_path = 'model/drugi.pt'
+    model_path = 'model/second.pt'
     model = load_model(model_path)
 
     if not os.path.exists(crop_folder):

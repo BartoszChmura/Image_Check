@@ -21,8 +21,8 @@ class ImageViewer(QMainWindow):
     def __init__(self, detected_issues, destination_folder):
         super().__init__()
 
-        self.folder_path = './zdjecia/do_sprawdzenia'
-        self.checked_folder_path = './zdjecia/sprawdzone'
+        self.folder_path = './images/to_check'
+        self.checked_folder_path = './images/checked'
         self.detected_issues = detected_issues
         self.destination_folder = destination_folder
 
@@ -158,10 +158,10 @@ class ImageViewer(QMainWindow):
             self.copy_checked_images_to_destination()
 
         directories_to_clear = [
-            './zdjecia/do_sprawdzenia',
-            './zdjecia/nowe',
-            './zdjecia/sprawdzone',
-            './zdjecia/sylwetki'
+            './images/to_check',
+            './images/new',
+            './images/checked',
+            './images/silhouette'
         ]
 
         for directory in directories_to_clear:
@@ -198,7 +198,7 @@ class ImageViewer(QMainWindow):
                 if os.path.isfile(source_path):
                     destination_path = os.path.join(self.destination_folder, file_name)
                     shutil.copy(source_path, destination_path)
-            print(f'Wszystkie sprawdzone zdjęcia zostały skopiowane do folderu: {self.destination_folder}')
+            print(f'All checked images have been copied to the destination folder: {self.destination_folder}')
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:

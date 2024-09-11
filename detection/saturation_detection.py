@@ -26,8 +26,8 @@ def detect_saturation(image_path, median_saturation, thresholds):
     saturation = calculate_saturation(image_path)
 
     if saturation < thresholds['saturation']['low'] * median_saturation:
-        print(f'Nasycenie: {saturation} - niskie nasycenie!')
+        print(f'Saturation: {saturation} - low saturation!')
         return True
     else:
-        print(f'Nasycenie: {saturation}')
+        print(f'Saturation: {saturation}')
         return False
