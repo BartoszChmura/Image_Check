@@ -128,6 +128,7 @@ class ImageViewer(QMainWindow):
             new_path = os.path.join(self.checked_folder_path, self.image_list[self.current_index])
             try:
                 shutil.move(image_path, new_path)
+                logger.info(f"Image: {self.image_list[self.current_index]} moved to checked folder by user")
                 del self.image_list[self.current_index]
             except (OSError, IOError) as e:
                 logger.error(f"Failed to save image: {e} - image_viewer.py")
@@ -145,6 +146,7 @@ class ImageViewer(QMainWindow):
             image_path = os.path.join(self.folder_path, self.image_list[self.current_index])
             try:
                 os.remove(image_path)
+                logger.info(f"Image: {self.image_list[self.current_index]} deleted by user")
                 del self.image_list[self.current_index]
             except (OSError, IOError) as e:
                 logger.error(f"Failed to delete image: {e} - image_viewer.py")
