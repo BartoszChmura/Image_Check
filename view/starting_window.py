@@ -31,20 +31,53 @@ class WorkerThread(QThread):
             self.task_complete.emit({'error': f"Failed to list files in source folder: {e}"})
             return
 
-        total_steps = len(image_files) * 3
-        current_step = 0
+        total_files = len(image_files)
+        copy_steps = total_files
+        crop_steps = total_files
+        median_steps = 3
+        process_steps = total_files
 
-        def progress_callback(step_increment=1):
-            nonlocal current_step
-            current_step += step_increment
-            progress = int((current_step / total_steps) * 100)
-            self.progress_update.emit(progress)
+        copy_progress_range = 10
+        crop_progress_range = 30
+        median_progress_range = 20
+        process_progress_range = 40
+
+        total_copy_steps = copy_steps
+        total_crop_steps = crop_steps
+        total_median_steps = median_steps
+        total_process_steps = process_steps
+
+        current_copy_step = 0
+        current_crop_step = 0
+        current_median_step = 0
+        current_process_step = 0
+
+        def progress_callback(step_increment=1, stage="copy"):
+            nonlocal current_copy_step, current_crop_step, current_median_step, current_process_step
+
+            if stage == "copy":
+                current_copy_step += step_increment
+                progress = int((current_copy_step / total_copy_steps) * copy_progress_range)
+            elif stage == "crop":
+                current_crop_step += step_increment
+                progress = int(copy_progress_range + (current_crop_step / total_crop_steps) * crop_progress_range)
+            elif stage == "median":
+                current_median_step += step_increment
+                progress = int(copy_progress_range + crop_progress_range + (
+                            current_median_step / total_median_steps) * median_progress_range)
+            elif stage == "process":
+                current_process_step += step_increment
+                progress = int(copy_progress_range + crop_progress_range + median_progress_range + (
+                            current_process_step / total_process_steps) * process_progress_range)
+
+            self.progress_update.emit(min(progress, 100))
 
         try:
             for file_name in image_files:
                 source_path = os.path.join(self.source_folder, file_name)
                 shutil.copy(source_path, new_folder)
-                progress_callback(1)
+                progress_callback(1, "copy")
+
         except (OSError, IOError) as e:
             logger.error(f"Failed to copy files: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to copy files: {e}"})
@@ -65,6 +98,8 @@ class WorkerThread(QThread):
             return
 
         self.task_complete.emit(detected_issues)
+
+
 
 
 class InitialWindow(QMainWindow):

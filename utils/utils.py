@@ -22,8 +22,11 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
     try:
         median_laplacian = calculate_median_sharpness_laplacian(crop_folder)
+        progress_callback(1, "median")
         median_saturation = calculate_median_saturation(image_folder)
+        progress_callback(1, "median")
         median_brightness = calculate_median_brightness(image_folder)
+        progress_callback(1, "median")
 
         if median_laplacian is None or median_saturation is None or median_brightness is None:
             raise Exception("Failed to calculate one or more medians. - utils.py")
@@ -107,7 +110,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
         except (OSError, IOError) as e:
             raise Exception(f"Failed to move image {image_name}: {e} - utils.py")
 
-        progress_callback()
+        progress_callback(1, "process")
 
     return detected_issues
 
@@ -128,7 +131,7 @@ def crop_images(image_folder, crop_folder, progress_callback):
         except Exception as e:
             raise Exception(f"Failed to crop person from image {image_name}: {e} - utils.py")
 
-        progress_callback()
+        progress_callback(1, "crop")
 
 
 def load_thresholds_from_xml(file_path):
