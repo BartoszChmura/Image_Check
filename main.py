@@ -1,6 +1,5 @@
 from PyQt5.QtWidgets import QApplication
 from view.starting_window import InitialWindow
-from view.image_viewer import ImageViewer
 
 import sys
 
