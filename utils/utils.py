@@ -117,7 +117,7 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
 
 def crop_images(image_folder, crop_folder, progress_callback):
-    model_path = 'model/nowy_m.pt'
+    model_path = './model/nowy_m.pt'
     model = load_model(model_path)
 
     image_files = get_image_files(image_folder)
