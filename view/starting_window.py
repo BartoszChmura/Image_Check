@@ -212,13 +212,21 @@ class InitialWindow(QMainWindow):
             QMessageBox.critical(self, "Error", f"Failed to select destination folder: {e}")
 
     def check_folders_selected(self):
-        if self.source_folder and self.destination_folder:
+        if self.source_folder:
             self.start_button.setEnabled(True)
 
     def start_processing(self):
         try:
             self.start_button.setEnabled(False)
             self.config_button.setEnabled(False)
+
+            if not self.destination_folder:
+                self.destination_folder = os.path.join(self.source_folder,
+                                                       os.path.basename(self.source_folder) + "_out")
+
+                if not os.path.exists(self.destination_folder):
+                    os.makedirs(self.destination_folder)
+                    logger.info(f"Utworzono folder docelowy: {self.destination_folder}")
 
             self.stage_label.setVisible(True)
             self.stage_label.setText("Stage: 1/3 - Calculating...")

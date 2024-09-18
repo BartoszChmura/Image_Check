@@ -1,1104 +1,275 @@
-2024-09-15 15:25:47,460 - INFO - Median sharpness of silhouette images in the folder: 12.28323115519067
-2024-09-15 15:25:47,460 - INFO - Median saturation of images in the folder: 32.34310313505657
-2024-09-15 15:25:47,460 - INFO - Median brightness of images in the folder: 73.17651408245095
-2024-09-15 15:25:47,461 - INFO - Image processing: SK_b827ebf4b29dc (1).png
-2024-09-15 15:25:47,590 - INFO - Image doesn't have light flare
-2024-09-15 15:25:47,730 - INFO - Saturation: 31.354081915680474
-2024-09-15 15:25:47,871 - INFO - Brightness: 78.20211820694487
-2024-09-15 15:25:48,084 - INFO - Sharpness: 12.415869744644398
-2024-09-15 15:25:48,084 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:48,084 - INFO - Image processing: SK_b827ebf4b29dc (10).png
-2024-09-15 15:25:48,217 - INFO - Image doesn't have light flare
-2024-09-15 15:25:48,360 - INFO - Saturation: 41.78414215781688
-2024-09-15 15:25:48,505 - INFO - Brightness: 68.56518567359598
-2024-09-15 15:25:48,718 - INFO - Sharpness: 15.904360401747727
-2024-09-15 15:25:48,718 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:48,718 - INFO - Image processing: SK_b827ebf4b29dc (100).png
-2024-09-15 15:25:48,848 - INFO - Image doesn't have light flare
-2024-09-15 15:25:48,989 - INFO - Saturation: 40.503272036878435
-2024-09-15 15:25:49,131 - INFO - Brightness: 67.34032476253503
-2024-09-15 15:25:49,260 - INFO - Sharpness: 7.227036299592846
-2024-09-15 15:25:49,260 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:49,260 - INFO - Image processing: SK_b827ebf4b29dc (101).png
-2024-09-15 15:25:49,391 - INFO - Image doesn't have light flare
-2024-09-15 15:25:49,534 - INFO - Saturation: 36.922508564310185
-2024-09-15 15:25:49,675 - INFO - Brightness: 74.44489644970415
-2024-09-15 15:25:49,986 - INFO - Sharpness: 11.397070412079463
-2024-09-15 15:25:49,987 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:49,987 - INFO - Image processing: SK_b827ebf4b29dc (102).png
-2024-09-15 15:25:50,119 - INFO - Image doesn't have light flare
-2024-09-15 15:25:50,264 - INFO - Saturation: 38.44906116993668
-2024-09-15 15:25:50,408 - INFO - Brightness: 71.9282017219454
-2024-09-15 15:25:50,672 - INFO - Sharpness: 14.382039421385697
-2024-09-15 15:25:50,673 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:50,673 - INFO - Image processing: SK_b827ebf4b29dc (103).png
-2024-09-15 15:25:50,804 - WARNING - Image has light flare
-2024-09-15 15:25:50,948 - INFO - Saturation: 30.37582115189972
-2024-09-15 15:25:51,091 - INFO - Brightness: 76.81664785113672
-2024-09-15 15:25:51,303 - INFO - Sharpness: 22.386532637355167
-2024-09-15 15:25:51,303 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:51,303 - INFO - Image processing: SK_b827ebf4b29dc (104).png
-2024-09-15 15:25:51,433 - INFO - Image doesn't have light flare
-2024-09-15 15:25:51,577 - INFO - Saturation: 40.418085779352225
-2024-09-15 15:25:51,719 - INFO - Brightness: 64.70274195798298
-2024-09-15 15:25:51,863 - INFO - Sharpness: 15.636257198700998
-2024-09-15 15:25:51,864 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:51,864 - INFO - Image processing: SK_b827ebf4b29dc (105).png
-2024-09-15 15:25:51,993 - WARNING - Image has light flare
-2024-09-15 15:25:52,135 - INFO - Saturation: 22.276387564232326
-2024-09-15 15:25:52,276 - INFO - Brightness: 78.90811314297207
-2024-09-15 15:25:52,396 - INFO - Sharpness: 25.20360377373263
-2024-09-15 15:25:52,397 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:52,397 - INFO - Image processing: SK_b827ebf4b29dc (106).png
-2024-09-15 15:25:52,523 - WARNING - Image has light flare
-2024-09-15 15:25:52,662 - INFO - Saturation: 24.099208044612272
-2024-09-15 15:25:52,801 - INFO - Brightness: 71.33869389403613
-2024-09-15 15:25:52,883 - INFO - Sharpness: 7.270515410189573
-2024-09-15 15:25:52,883 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:52,883 - INFO - Image processing: SK_b827ebf4b29dc (107).png
-2024-09-15 15:25:53,015 - INFO - Image doesn't have light flare
-2024-09-15 15:25:53,159 - INFO - Saturation: 37.45760179850514
-2024-09-15 15:25:53,303 - INFO - Brightness: 57.61672214003945
-2024-09-15 15:25:53,500 - INFO - Sharpness: 9.113548002758739
-2024-09-15 15:25:53,500 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:53,500 - INFO - Image processing: SK_b827ebf4b29dc (108).png
-2024-09-15 15:25:53,631 - INFO - Image doesn't have light flare
-2024-09-15 15:25:53,774 - INFO - Saturation: 36.286595962446796
-2024-09-15 15:25:53,918 - INFO - Brightness: 71.82124897812209
-2024-09-15 15:25:54,103 - INFO - Sharpness: 14.095378313085588
-2024-09-15 15:25:54,103 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:54,105 - INFO - Image processing: SK_b827ebf4b29dc (109).png
-2024-09-15 15:25:54,233 - INFO - Image doesn't have light flare
-2024-09-15 15:25:54,375 - INFO - Saturation: 34.22411648110661
-2024-09-15 15:25:54,516 - INFO - Brightness: 80.52559552774318
-2024-09-15 15:25:54,867 - INFO - Sharpness: 6.570420883410979
-2024-09-15 15:25:54,867 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:54,868 - INFO - Image processing: SK_b827ebf4b29dc (11).png
-2024-09-15 15:25:54,997 - INFO - Image doesn't have light flare
-2024-09-15 15:25:55,141 - INFO - Saturation: 29.070841200171287
-2024-09-15 15:25:55,284 - INFO - Brightness: 76.02086179993252
-2024-09-15 15:25:55,524 - INFO - Sharpness: 12.175178726423098
-2024-09-15 15:25:55,524 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:55,524 - INFO - Image processing: SK_b827ebf4b29dc (110).png
-2024-09-15 15:25:55,653 - INFO - Image doesn't have light flare
-2024-09-15 15:25:55,794 - INFO - Saturation: 33.79072029417108
-2024-09-15 15:25:55,936 - INFO - Brightness: 80.54344092248002
-2024-09-15 15:25:56,256 - INFO - Sharpness: 11.2868928838405
-2024-09-15 15:25:56,256 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:56,256 - INFO - Image processing: SK_b827ebf4b29dc (111).png
-2024-09-15 15:25:56,387 - WARNING - Image has light flare
-2024-09-15 15:25:56,530 - INFO - Saturation: 25.33095625064881
-2024-09-15 15:25:56,673 - INFO - Brightness: 84.13324363516038
-2024-09-15 15:25:56,768 - INFO - Sharpness: 20.13686743494574
-2024-09-15 15:25:56,768 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:56,769 - INFO - Image processing: SK_b827ebf4b29dc (112).png
-2024-09-15 15:25:56,901 - INFO - Image doesn't have light flare
-2024-09-15 15:25:57,046 - INFO - Saturation: 34.296879217273954
-2024-09-15 15:25:57,191 - INFO - Brightness: 77.6428689952507
-2024-09-15 15:25:57,372 - INFO - Sharpness: 15.089480100888842
-2024-09-15 15:25:57,372 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:57,372 - INFO - Image processing: SK_b827ebf4b29dc (113).png
-2024-09-15 15:25:57,501 - WARNING - Image has light flare
-2024-09-15 15:25:57,642 - INFO - Saturation: 25.39535913331776
-2024-09-15 15:25:57,787 - INFO - Brightness: 86.68932981028755
-2024-09-15 15:25:57,929 - INFO - Sharpness: 14.976628726944906
-2024-09-15 15:25:57,929 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:57,929 - INFO - Image processing: SK_b827ebf4b29dc (114).png
-2024-09-15 15:25:58,055 - WARNING - Image has light flare
-2024-09-15 15:25:58,194 - INFO - Saturation: 24.73642232430188
-2024-09-15 15:25:58,334 - INFO - Brightness: 78.17738462511679
-2024-09-15 15:25:58,517 - INFO - Sharpness: 4.429507684883424
-2024-09-15 15:25:58,517 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:25:58,517 - INFO - Image processing: SK_b827ebf4b29dc (115).png
-2024-09-15 15:25:58,648 - INFO - Image doesn't have light flare
-2024-09-15 15:25:58,790 - INFO - Saturation: 31.855892504930967
-2024-09-15 15:25:58,934 - INFO - Brightness: 73.17651408245095
-2024-09-15 15:25:59,089 - INFO - Sharpness: 16.938473960780183
-2024-09-15 15:25:59,089 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:59,089 - INFO - Image processing: SK_b827ebf4b29dc (116).png
-2024-09-15 15:25:59,225 - INFO - Image doesn't have light flare
-2024-09-15 15:25:59,371 - INFO - Saturation: 41.12136292562026
-2024-09-15 15:25:59,519 - INFO - Brightness: 55.719841949548425
-2024-09-15 15:25:59,660 - INFO - Sharpness: 23.184245466348344
-2024-09-15 15:25:59,660 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:25:59,661 - INFO - Image processing: SK_b827ebf4b29dc (117).png
-2024-09-15 15:25:59,790 - INFO - Image doesn't have light flare
-2024-09-15 15:25:59,931 - INFO - Saturation: 30.868812610297933
-2024-09-15 15:26:00,074 - INFO - Brightness: 62.737288081983806
-2024-09-15 15:26:00,321 - INFO - Sharpness: 6.793416334722654
-2024-09-15 15:26:00,322 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:00,322 - INFO - Image processing: SK_b827ebf4b29dc (118).png
-2024-09-15 15:26:00,455 - INFO - Image doesn't have light flare
-2024-09-15 15:26:00,598 - INFO - Saturation: 36.77208026769957
-2024-09-15 15:26:00,744 - INFO - Brightness: 60.05247683743382
-2024-09-15 15:26:00,919 - INFO - Sharpness: 12.28323115519067
-2024-09-15 15:26:00,920 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:00,920 - INFO - Image processing: SK_b827ebf4b29dc (119).png
-2024-09-15 15:26:01,051 - INFO - Image doesn't have light flare
-2024-09-15 15:26:01,194 - INFO - Saturation: 34.947518945292224
-2024-09-15 15:26:01,338 - INFO - Brightness: 73.05732532375687
-2024-09-15 15:26:01,585 - INFO - Sharpness: 9.660991801082975
-2024-09-15 15:26:01,585 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:01,585 - INFO - Image processing: SK_b827ebf4b29dc (12).png
-2024-09-15 15:26:01,717 - INFO - Image doesn't have light flare
-2024-09-15 15:26:01,860 - INFO - Saturation: 32.18304566658881
-2024-09-15 15:26:02,005 - INFO - Brightness: 78.34109019775771
-2024-09-15 15:26:02,136 - INFO - Sharpness: 31.733531284150697
-2024-09-15 15:26:02,137 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:02,137 - INFO - Image processing: SK_b827ebf4b29dc (121).png
-2024-09-15 15:26:02,264 - WARNING - Image has light flare
-2024-09-15 15:26:02,403 - INFO - Saturation: 29.6056602304578
-2024-09-15 15:26:02,546 - INFO - Brightness: 91.99833766414928
-2024-09-15 15:26:02,746 - INFO - Sharpness: 10.962233672551742
-2024-09-15 15:26:02,746 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:02,746 - INFO - Image processing: SK_b827ebf4b29dc (122).png
-2024-09-15 15:26:02,878 - INFO - Image doesn't have light flare
-2024-09-15 15:26:03,022 - INFO - Saturation: 32.81217794625247
-2024-09-15 15:26:03,166 - INFO - Brightness: 72.19595295793107
-2024-09-15 15:26:03,387 - INFO - Sharpness: 12.960756786000792
-2024-09-15 15:26:03,387 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:03,387 - INFO - Image processing: SK_b827ebf4b29dc (124).png
-2024-09-15 15:26:03,518 - INFO - Image doesn't have light flare
-2024-09-15 15:26:03,661 - INFO - Saturation: 32.34310313505657
-2024-09-15 15:26:03,805 - INFO - Brightness: 73.19516221906467
-2024-09-15 15:26:04,019 - INFO - Sharpness: 17.903564796278367
-2024-09-15 15:26:04,019 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:04,019 - INFO - Image processing: SK_b827ebf4b29dc (125).png
-2024-09-15 15:26:04,153 - INFO - Image doesn't have light flare
-2024-09-15 15:26:04,299 - INFO - Saturation: 44.442761941373405
-2024-09-15 15:26:04,444 - INFO - Brightness: 60.59728075041524
-2024-09-15 15:26:04,694 - INFO - Sharpness: 16.437916897275034
-2024-09-15 15:26:04,695 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:04,695 - INFO - Image processing: SK_b827ebf4b29dc (126).png
-2024-09-15 15:26:04,829 - INFO - Image doesn't have light flare
-2024-09-15 15:26:04,973 - INFO - Saturation: 29.68133580530468
-2024-09-15 15:26:05,117 - INFO - Brightness: 61.20881102071006
-2024-09-15 15:26:05,238 - INFO - Sharpness: 20.592521362051023
-2024-09-15 15:26:05,238 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:05,238 - INFO - Image processing: SK_b827ebf4b29dc (127).png
-2024-09-15 15:26:05,369 - INFO - Image doesn't have light flare
-2024-09-15 15:26:05,514 - INFO - Saturation: 33.52042985375792
-2024-09-15 15:26:05,658 - INFO - Brightness: 74.08331841067165
-2024-09-15 15:26:05,840 - INFO - Sharpness: 26.87827593150077
-2024-09-15 15:26:05,840 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:05,840 - INFO - Image processing: SK_b827ebf4b29dc (128).png
-2024-09-15 15:26:05,969 - WARNING - Image has light flare
-2024-09-15 15:26:06,110 - INFO - Saturation: 28.66863945876155
-2024-09-15 15:26:06,250 - INFO - Brightness: 82.37470397980898
-2024-09-15 15:26:06,520 - INFO - Sharpness: 11.964703638408077
-2024-09-15 15:26:06,521 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:06,521 - INFO - Image processing: SK_b827ebf4b29dc (129).png
-2024-09-15 15:26:06,650 - WARNING - Image has light flare
-2024-09-15 15:26:06,791 - INFO - Saturation: 31.025584092442646
-2024-09-15 15:26:06,933 - INFO - Brightness: 92.21771100968027
-2024-09-15 15:26:07,137 - INFO - Sharpness: 12.938317249798947
-2024-09-15 15:26:07,137 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:07,137 - INFO - Image processing: SK_b827ebf4b29dc (13).png
-2024-09-15 15:26:07,270 - INFO - Image doesn't have light flare
-2024-09-15 15:26:07,415 - INFO - Saturation: 39.52810075067477
-2024-09-15 15:26:07,563 - INFO - Brightness: 73.20996533725216
-2024-09-15 15:26:07,796 - INFO - Sharpness: 18.50864727781871
-2024-09-15 15:26:07,797 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:07,797 - INFO - Image processing: SK_b827ebf4b29dc (130).png
-2024-09-15 15:26:07,923 - INFO - Image doesn't have light flare
-2024-09-15 15:26:08,061 - INFO - Saturation: 31.072700774680786
-2024-09-15 15:26:08,202 - INFO - Brightness: 62.95568310105886
-2024-09-15 15:26:08,406 - WARNING - Sharpness: 3.476382990196581 - low sharpness!
-2024-09-15 15:26:08,406 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:08,406 - INFO - Image processing: SK_b827ebf4b29dc (131).png
-2024-09-15 15:26:08,533 - INFO - Image doesn't have light flare
-2024-09-15 15:26:08,671 - INFO - Saturation: 29.12648675127167
-2024-09-15 15:26:08,809 - INFO - Brightness: 97.0726555200872
-2024-09-15 15:26:08,990 - INFO - Sharpness: 11.614782021074541
-2024-09-15 15:26:08,991 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:08,991 - INFO - Image processing: SK_b827ebf4b29dc (132).png
-2024-09-15 15:26:09,119 - INFO - Image doesn't have light flare
-2024-09-15 15:26:09,261 - INFO - Saturation: 27.060470599112428
-2024-09-15 15:26:09,403 - INFO - Brightness: 66.7438351564933
-2024-09-15 15:26:09,567 - INFO - Sharpness: 10.041854715822103
-2024-09-15 15:26:09,567 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:09,567 - INFO - Image processing: SK_b827ebf4b29dc (133).png
-2024-09-15 15:26:09,699 - INFO - Image doesn't have light flare
-2024-09-15 15:26:09,841 - INFO - Saturation: 43.054296266739335
-2024-09-15 15:26:09,984 - INFO - Brightness: 66.06883061481366
-2024-09-15 15:26:10,180 - INFO - Sharpness: 16.48704223373779
-2024-09-15 15:26:10,180 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:10,180 - INFO - Image processing: SK_b827ebf4b29dc (134).png
-2024-09-15 15:26:10,302 - INFO - Image doesn't have light flare
-2024-09-15 15:26:10,436 - INFO - Saturation: 31.33666895372677
-2024-09-15 15:26:10,570 - INFO - Brightness: 80.57330279053774
-2024-09-15 15:26:10,890 - WARNING - Sharpness: 2.6661240620224462 - low sharpness!
-2024-09-15 15:26:10,891 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:10,891 - INFO - Image processing: SK_b827ebf4b29dc (135).png
-2024-09-15 15:26:11,020 - INFO - Image doesn't have light flare
-2024-09-15 15:26:11,164 - INFO - Saturation: 29.15194424439427
-2024-09-15 15:26:11,307 - INFO - Brightness: 65.49973723139209
-2024-09-15 15:26:11,495 - INFO - Sharpness: 11.253150535446926
-2024-09-15 15:26:11,495 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:11,495 - INFO - Image processing: SK_b827ebf4b29dc (136).png
-2024-09-15 15:26:11,622 - WARNING - Image has light flare
-2024-09-15 15:26:11,760 - INFO - Saturation: 25.28431255190491
-2024-09-15 15:26:11,897 - INFO - Brightness: 89.26681719090627
-2024-09-15 15:26:12,138 - INFO - Sharpness: 7.7045072819866025
-2024-09-15 15:26:12,138 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:12,138 - INFO - Image processing: SK_b827ebf4b29dc (137).png
-2024-09-15 15:26:12,266 - WARNING - Image has light flare
-2024-09-15 15:26:12,407 - INFO - Saturation: 23.038077523227447
-2024-09-15 15:26:12,547 - INFO - Brightness: 68.25123768880411
-2024-09-15 15:26:12,653 - INFO - Sharpness: 7.090534551116048
-2024-09-15 15:26:12,653 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:12,653 - INFO - Image processing: SK_b827ebf4b29dc (138).png
-2024-09-15 15:26:12,783 - INFO - Image doesn't have light flare
-2024-09-15 15:26:12,925 - INFO - Saturation: 35.50696223268971
-2024-09-15 15:26:13,068 - INFO - Brightness: 74.84610437428631
-2024-09-15 15:26:13,196 - INFO - Sharpness: 28.598889452142203
-2024-09-15 15:26:13,196 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:13,196 - INFO - Image processing: SK_b827ebf4b29dc (139).png
-2024-09-15 15:26:13,325 - INFO - Image doesn't have light flare
-2024-09-15 15:26:13,468 - INFO - Saturation: 36.87192406636043
-2024-09-15 15:26:13,610 - INFO - Brightness: 76.30424776808886
-2024-09-15 15:26:13,851 - INFO - Sharpness: 10.035604605357442
-2024-09-15 15:26:13,851 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:13,851 - INFO - Image processing: SK_b827ebf4b29dc (14).png
-2024-09-15 15:26:13,979 - INFO - Image doesn't have light flare
-2024-09-15 15:26:14,118 - INFO - Saturation: 37.733739408154264
-2024-09-15 15:26:14,258 - INFO - Brightness: 59.60555909698432
-2024-09-15 15:26:14,438 - INFO - Sharpness: 5.760379678679358
-2024-09-15 15:26:14,438 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:14,438 - INFO - Image processing: SK_b827ebf4b29dc (141).png
-2024-09-15 15:26:14,567 - INFO - Image doesn't have light flare
-2024-09-15 15:26:14,707 - INFO - Saturation: 35.210499471218725
-2024-09-15 15:26:14,846 - INFO - Brightness: 73.34737547687637
-2024-09-15 15:26:14,989 - INFO - Sharpness: 4.375731130904069
-2024-09-15 15:26:14,989 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:14,989 - INFO - Image processing: SK_b827ebf4b29dc (142).png
-2024-09-15 15:26:15,116 - WARNING - Image has light flare
-2024-09-15 15:26:15,256 - INFO - Saturation: 23.605053510718363
-2024-09-15 15:26:15,394 - INFO - Brightness: 66.86945460915602
-2024-09-15 15:26:15,521 - INFO - Sharpness: 10.887093618642126
-2024-09-15 15:26:15,521 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:15,522 - INFO - Image processing: SK_b827ebf4b29dc (143).png
-2024-09-15 15:26:15,650 - WARNING - Image has light flare
-2024-09-15 15:26:15,791 - INFO - Saturation: 23.204595774291498
-2024-09-15 15:26:15,935 - INFO - Brightness: 89.53111675036334
-2024-09-15 15:26:16,051 - INFO - Sharpness: 14.583824794200666
-2024-09-15 15:26:16,053 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:16,053 - INFO - Image processing: SK_b827ebf4b29dc (144).png
-2024-09-15 15:26:16,183 - WARNING - Image has light flare
-2024-09-15 15:26:16,324 - INFO - Saturation: 26.0197994524032
-2024-09-15 15:26:16,467 - INFO - Brightness: 83.917265681771
-2024-09-15 15:26:16,677 - INFO - Sharpness: 13.618774777889435
-2024-09-15 15:26:16,677 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:16,677 - INFO - Image processing: SK_b827ebf4b29dc (145).png
-2024-09-15 15:26:16,809 - INFO - Image doesn't have light flare
-2024-09-15 15:26:16,955 - INFO - Saturation: 31.295986128412746
-2024-09-15 15:26:17,100 - INFO - Brightness: 78.54830968415862
-2024-09-15 15:26:17,397 - INFO - Sharpness: 9.94596786191778
-2024-09-15 15:26:17,398 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:17,398 - INFO - Image processing: SK_b827ebf4b29dc (147).png
-2024-09-15 15:26:17,528 - INFO - Image doesn't have light flare
-2024-09-15 15:26:17,671 - INFO - Saturation: 26.66921641427904
-2024-09-15 15:26:17,818 - INFO - Brightness: 73.24793467118239
-2024-09-15 15:26:18,001 - INFO - Sharpness: 8.681485061196852
-2024-09-15 15:26:18,002 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:18,002 - INFO - Image processing: SK_b827ebf4b29dc (148).png
-2024-09-15 15:26:18,133 - WARNING - Image has light flare
-2024-09-15 15:26:18,275 - INFO - Saturation: 29.031862640143256
-2024-09-15 15:26:18,417 - INFO - Brightness: 86.56906280818541
-2024-09-15 15:26:18,687 - INFO - Sharpness: 12.039671567618473
-2024-09-15 15:26:18,689 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:18,689 - INFO - Image processing: SK_b827ebf4b29dc (149).png
-2024-09-15 15:26:18,823 - INFO - Image doesn't have light flare
-2024-09-15 15:26:18,970 - INFO - Saturation: 34.39584225448977
-2024-09-15 15:26:19,116 - INFO - Brightness: 69.45779757733831
-2024-09-15 15:26:19,330 - INFO - Sharpness: 25.045444255979078
-2024-09-15 15:26:19,330 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:19,330 - INFO - Image processing: SK_b827ebf4b29dc (15).png
-2024-09-15 15:26:19,459 - INFO - Image doesn't have light flare
-2024-09-15 15:26:19,600 - INFO - Saturation: 30.843091537553203
-2024-09-15 15:26:19,741 - INFO - Brightness: 64.2638615306758
-2024-09-15 15:26:19,924 - INFO - Sharpness: 6.168143131736856
-2024-09-15 15:26:19,925 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:19,925 - INFO - Image processing: SK_b827ebf4b29dc (150).png
-2024-09-15 15:26:20,053 - INFO - Image doesn't have light flare
-2024-09-15 15:26:20,195 - INFO - Saturation: 32.397134037942486
-2024-09-15 15:26:20,337 - INFO - Brightness: 73.20499933496833
-2024-09-15 15:26:20,589 - INFO - Sharpness: 11.488291182614194
-2024-09-15 15:26:20,589 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:20,589 - INFO - Image processing: SK_b827ebf4b29dc (151).png
-2024-09-15 15:26:20,719 - INFO - Image doesn't have light flare
-2024-09-15 15:26:20,860 - INFO - Saturation: 32.33109412306654
-2024-09-15 15:26:21,003 - INFO - Brightness: 76.21332634239074
-2024-09-15 15:26:21,161 - INFO - Sharpness: 8.87712259228006
-2024-09-15 15:26:21,161 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:21,161 - INFO - Image processing: SK_b827ebf4b29dc (152).png
-2024-09-15 15:26:21,294 - INFO - Image doesn't have light flare
-2024-09-15 15:26:21,440 - INFO - Saturation: 36.21928437727084
-2024-09-15 15:26:21,586 - INFO - Brightness: 70.37213833631786
-2024-09-15 15:26:21,833 - INFO - Sharpness: 12.2422126883801
-2024-09-15 15:26:21,833 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:21,833 - INFO - Image processing: SK_b827ebf4b29dc (153).png
-2024-09-15 15:26:21,963 - INFO - Image doesn't have light flare
-2024-09-15 15:26:22,106 - INFO - Saturation: 31.907168230302087
-2024-09-15 15:26:22,248 - INFO - Brightness: 57.38186896605419
-2024-09-15 15:26:22,393 - INFO - Sharpness: 21.704597382625305
-2024-09-15 15:26:22,394 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:22,394 - INFO - Image processing: SK_b827ebf4b29dc (154).png
-2024-09-15 15:26:22,525 - WARNING - Image has light flare
-2024-09-15 15:26:22,666 - INFO - Saturation: 24.745232047389184
-2024-09-15 15:26:22,809 - INFO - Brightness: 73.6451824133188
-2024-09-15 15:26:22,886 - INFO - Sharpness: 24.946623320032153
-2024-09-15 15:26:22,887 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:22,887 - INFO - Image processing: SK_b827ebf4b29dc (155).png
-2024-09-15 15:26:23,018 - INFO - Image doesn't have light flare
-2024-09-15 15:26:23,160 - INFO - Saturation: 41.40820576079622
-2024-09-15 15:26:23,301 - INFO - Brightness: 51.40070898863282
-2024-09-15 15:26:23,545 - WARNING - Sharpness: 3.5775682003655676 - low sharpness!
-2024-09-15 15:26:23,545 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:23,545 - INFO - Image processing: SK_b827ebf4b29dc (156).png
-2024-09-15 15:26:23,673 - INFO - Image doesn't have light flare
-2024-09-15 15:26:23,816 - INFO - Saturation: 36.03814556732067
-2024-09-15 15:26:23,956 - INFO - Brightness: 75.99275910282363
-2024-09-15 15:26:24,218 - INFO - Sharpness: 4.989101757696952
-2024-09-15 15:26:24,218 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:24,218 - INFO - Image processing: SK_b827ebf4b29dc (16).png
-2024-09-15 15:26:24,346 - WARNING - Image has light flare
-2024-09-15 15:26:24,486 - INFO - Saturation: 28.084541176814078
-2024-09-15 15:26:24,628 - INFO - Brightness: 82.63476501673934
-2024-09-15 15:26:24,840 - INFO - Sharpness: 11.97441824065402
-2024-09-15 15:26:24,841 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:24,841 - INFO - Image processing: SK_b827ebf4b29dc (17).png
-2024-09-15 15:26:24,973 - INFO - Image doesn't have light flare
-2024-09-15 15:26:25,117 - INFO - Saturation: 40.40787632681927
-2024-09-15 15:26:25,262 - INFO - Brightness: 65.19342575651406
-2024-09-15 15:26:25,537 - INFO - Sharpness: 14.49021164265958
-2024-09-15 15:26:25,537 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:25,537 - INFO - Image processing: SK_b827ebf4b29dc (19).png
-2024-09-15 15:26:25,668 - INFO - Image doesn't have light flare
-2024-09-15 15:26:25,810 - INFO - Saturation: 28.360467355055537
-2024-09-15 15:26:25,953 - INFO - Brightness: 76.60736327922247
-2024-09-15 15:26:26,084 - INFO - Sharpness: 17.503057182414487
-2024-09-15 15:26:26,084 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:26,084 - INFO - Image processing: SK_b827ebf4b29dc (2).png
-2024-09-15 15:26:26,215 - INFO - Image doesn't have light flare
-2024-09-15 15:26:26,359 - INFO - Saturation: 31.284167055953493
-2024-09-15 15:26:26,501 - INFO - Brightness: 70.2561458657739
-2024-09-15 15:26:26,680 - INFO - Sharpness: 9.057612122144137
-2024-09-15 15:26:26,680 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:26,680 - INFO - Image processing: SK_b827ebf4b29dc (20).png
-2024-09-15 15:26:26,808 - WARNING - Image has light flare
-2024-09-15 15:26:26,949 - INFO - Saturation: 24.687107388015157
-2024-09-15 15:26:27,090 - INFO - Brightness: 71.73630164538565
-2024-09-15 15:26:27,201 - INFO - Sharpness: 12.738073657705183
-2024-09-15 15:26:27,201 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:27,201 - INFO - Image processing: SK_b827ebf4b29dc (21).png
-2024-09-15 15:26:27,330 - WARNING - Image has light flare
-2024-09-15 15:26:27,471 - INFO - Saturation: 28.92919740410568
-2024-09-15 15:26:27,611 - INFO - Brightness: 74.04843571576872
-2024-09-15 15:26:27,726 - INFO - Sharpness: 21.000878269810503
-2024-09-15 15:26:27,726 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:27,726 - INFO - Image processing: SK_b827ebf4b29dc (22).png
-2024-09-15 15:26:27,855 - INFO - Image doesn't have light flare
-2024-09-15 15:26:27,996 - INFO - Saturation: 33.636921179149795
-2024-09-15 15:26:28,137 - INFO - Brightness: 78.7929340385913
-2024-09-15 15:26:28,347 - INFO - Sharpness: 11.610199388839467
-2024-09-15 15:26:28,347 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:28,347 - INFO - Image processing: SK_b827ebf4b29dc (23).png
-2024-09-15 15:26:28,478 - INFO - Image doesn't have light flare
-2024-09-15 15:26:28,621 - INFO - Saturation: 31.798672045312987
-2024-09-15 15:26:28,766 - INFO - Brightness: 75.44743249117616
-2024-09-15 15:26:29,063 - INFO - Sharpness: 7.4564831235790185
-2024-09-15 15:26:29,063 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:29,063 - INFO - Image processing: SK_b827ebf4b29dc (25).png
-2024-09-15 15:26:29,195 - INFO - Image doesn't have light flare
-2024-09-15 15:26:29,337 - INFO - Saturation: 34.15656629554656
-2024-09-15 15:26:29,479 - INFO - Brightness: 67.26881439452922
-2024-09-15 15:26:29,636 - INFO - Sharpness: 23.532746770363353
-2024-09-15 15:26:29,639 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:29,639 - INFO - Image processing: SK_b827ebf4b29dc (26).png
-2024-09-15 15:26:29,769 - INFO - Image doesn't have light flare
-2024-09-15 15:26:29,914 - INFO - Saturation: 34.9117874429046
-2024-09-15 15:26:30,058 - INFO - Brightness: 77.27678415018686
-2024-09-15 15:26:30,270 - INFO - Sharpness: 14.329110698061287
-2024-09-15 15:26:30,270 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:30,270 - INFO - Image processing: SK_b827ebf4b29dc (27).png
-2024-09-15 15:26:30,395 - WARNING - Image has light flare
-2024-09-15 15:26:30,532 - INFO - Saturation: 19.782945100825287
-2024-09-15 15:26:30,670 - INFO - Brightness: 84.54246056848852
-2024-09-15 15:26:30,761 - INFO - Sharpness: 6.352353442987137
-2024-09-15 15:26:30,761 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:30,761 - INFO - Image processing: SK_b827ebf4b29dc (3).png
-2024-09-15 15:26:30,893 - INFO - Image doesn't have light flare
-2024-09-15 15:26:31,036 - INFO - Saturation: 34.438973612841274
-2024-09-15 15:26:31,179 - INFO - Brightness: 73.24360807251117
-2024-09-15 15:26:31,372 - INFO - Sharpness: 20.429510474455192
-2024-09-15 15:26:31,373 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:31,373 - INFO - Image processing: SK_b827ebf4b29dc (30).png
-2024-09-15 15:26:31,502 - INFO - Image doesn't have light flare
-2024-09-15 15:26:31,643 - INFO - Saturation: 38.75149186066127
-2024-09-15 15:26:31,786 - INFO - Brightness: 76.21914780247586
-2024-09-15 15:26:32,037 - INFO - Sharpness: 7.023432818451687
-2024-09-15 15:26:32,037 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:32,037 - INFO - Image processing: SK_b827ebf4b29dc (31).png
-2024-09-15 15:26:32,169 - INFO - Image doesn't have light flare
-2024-09-15 15:26:32,316 - INFO - Saturation: 36.041385325833076
-2024-09-15 15:26:32,462 - INFO - Brightness: 66.04914356898162
-2024-09-15 15:26:32,597 - INFO - Sharpness: 27.21945988574558
-2024-09-15 15:26:32,597 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:32,597 - INFO - Image processing: SK_b827ebf4b29dc (32).png
-2024-09-15 15:26:32,728 - INFO - Image doesn't have light flare
-2024-09-15 15:26:32,874 - INFO - Saturation: 37.25662257993356
-2024-09-15 15:26:33,019 - INFO - Brightness: 70.4150355548635
-2024-09-15 15:26:33,246 - INFO - Sharpness: 20.887084239505047
-2024-09-15 15:26:33,246 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:33,246 - INFO - Image processing: SK_b827ebf4b29dc (34).png
-2024-09-15 15:26:33,371 - WARNING - Image has light flare
-2024-09-15 15:26:33,510 - INFO - Saturation: 24.895630985284956
-2024-09-15 15:26:33,648 - INFO - Brightness: 70.58790761574795
-2024-09-15 15:26:33,816 - INFO - Sharpness: 4.845328618567766
-2024-09-15 15:26:33,817 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:33,817 - INFO - Image processing: SK_b827ebf4b29dc (35).png
-2024-09-15 15:26:33,948 - INFO - Image doesn't have light flare
-2024-09-15 15:26:34,091 - INFO - Saturation: 32.36353890921831
-2024-09-15 15:26:34,236 - INFO - Brightness: 73.83300511587771
-2024-09-15 15:26:34,421 - INFO - Sharpness: 29.975612191116504
-2024-09-15 15:26:34,421 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:34,421 - INFO - Image processing: SK_b827ebf4b29dc (37).png
-2024-09-15 15:26:34,553 - INFO - Image doesn't have light flare
-2024-09-15 15:26:34,697 - INFO - Saturation: 35.240258989281635
-2024-09-15 15:26:34,841 - INFO - Brightness: 73.14833150044119
-2024-09-15 15:26:34,939 - INFO - Sharpness: 34.411772879223804
-2024-09-15 15:26:34,939 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:34,939 - INFO - Image processing: SK_b827ebf4b29dc (38).png
-2024-09-15 15:26:35,068 - INFO - Image doesn't have light flare
-2024-09-15 15:26:35,210 - INFO - Saturation: 38.90436293210838
-2024-09-15 15:26:35,350 - INFO - Brightness: 76.19308764468494
-2024-09-15 15:26:35,671 - INFO - Sharpness: 4.649005261852138
-2024-09-15 15:26:35,671 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:35,672 - INFO - Image processing: SK_b827ebf4b29dc (4).png
-2024-09-15 15:26:35,805 - INFO - Image doesn't have light flare
-2024-09-15 15:26:35,950 - INFO - Saturation: 30.934803458813455
-2024-09-15 15:26:36,094 - INFO - Brightness: 71.21199984752933
-2024-09-15 15:26:36,310 - INFO - Sharpness: 15.152602977900127
-2024-09-15 15:26:36,310 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:36,310 - INFO - Image processing: SK_b827ebf4b29dc (40).png
-2024-09-15 15:26:36,439 - WARNING - Image has light flare
-2024-09-15 15:26:36,580 - INFO - Saturation: 24.20164571005917
-2024-09-15 15:26:36,721 - INFO - Brightness: 66.02286938453753
-2024-09-15 15:26:36,865 - INFO - Sharpness: 6.624750951273128
-2024-09-15 15:26:36,865 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:36,865 - INFO - Image processing: SK_b827ebf4b29dc (41).png
-2024-09-15 15:26:36,995 - INFO - Image doesn't have light flare
-2024-09-15 15:26:37,135 - INFO - Saturation: 26.60225210539292
-2024-09-15 15:26:37,276 - INFO - Brightness: 82.28828846802658
-2024-09-15 15:26:37,416 - INFO - Sharpness: 15.222265805850954
-2024-09-15 15:26:37,416 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:37,416 - INFO - Image processing: SK_b827ebf4b29dc (43).png
-2024-09-15 15:26:37,547 - INFO - Image doesn't have light flare
-2024-09-15 15:26:37,690 - INFO - Saturation: 47.42165602616007
-2024-09-15 15:26:37,832 - INFO - Brightness: 51.784995669184056
-2024-09-15 15:26:38,098 - INFO - Sharpness: 9.15090272460015
-2024-09-15 15:26:38,098 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:38,098 - INFO - Image processing: SK_b827ebf4b29dc (44).png
-2024-09-15 15:26:38,228 - INFO - Image doesn't have light flare
-2024-09-15 15:26:38,371 - INFO - Saturation: 38.18002407090211
-2024-09-15 15:26:38,514 - INFO - Brightness: 70.33193903768297
-2024-09-15 15:26:38,690 - INFO - Sharpness: 7.1229872971137995
-2024-09-15 15:26:38,690 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:38,690 - INFO - Image processing: SK_b827ebf4b29dc (45).png
-2024-09-15 15:26:38,821 - INFO - Image doesn't have light flare
-2024-09-15 15:26:38,965 - INFO - Saturation: 33.20313684080764
-2024-09-15 15:26:39,111 - INFO - Brightness: 65.85700545974774
-2024-09-15 15:26:39,252 - INFO - Sharpness: 23.61329395102811
-2024-09-15 15:26:39,252 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:39,252 - INFO - Image processing: SK_b827ebf4b29dc (46).png
-2024-09-15 15:26:39,383 - INFO - Image doesn't have light flare
-2024-09-15 15:26:39,526 - INFO - Saturation: 29.9853601389754
-2024-09-15 15:26:39,668 - INFO - Brightness: 72.55383836810962
-2024-09-15 15:26:39,824 - INFO - Sharpness: 13.271378869680431
-2024-09-15 15:26:39,825 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:39,825 - INFO - Image processing: SK_b827ebf4b29dc (47).png
-2024-09-15 15:26:39,953 - INFO - Image doesn't have light flare
-2024-09-15 15:26:40,093 - INFO - Saturation: 35.8184364619018
-2024-09-15 15:26:40,234 - INFO - Brightness: 68.63404272747327
-2024-09-15 15:26:40,494 - INFO - Sharpness: 7.741704272241027
-2024-09-15 15:26:40,496 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:40,496 - INFO - Image processing: SK_b827ebf4b29dc (49).png
-2024-09-15 15:26:40,632 - INFO - Image doesn't have light flare
-2024-09-15 15:26:40,777 - INFO - Saturation: 31.105767122132253
-2024-09-15 15:26:40,921 - INFO - Brightness: 77.1012712647929
-2024-09-15 15:26:41,226 - INFO - Sharpness: 11.629482621431093
-2024-09-15 15:26:41,226 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:41,227 - INFO - Image processing: SK_b827ebf4b29dc (5).png
-2024-09-15 15:26:41,358 - INFO - Image doesn't have light flare
-2024-09-15 15:26:41,503 - INFO - Saturation: 38.49102191036022
-2024-09-15 15:26:41,646 - INFO - Brightness: 50.58956711304889
-2024-09-15 15:26:41,856 - INFO - Sharpness: 10.898499160217844
-2024-09-15 15:26:41,857 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:41,857 - INFO - Image processing: SK_b827ebf4b29dc (50).png
-2024-09-15 15:26:41,989 - INFO - Image doesn't have light flare
-2024-09-15 15:26:42,132 - INFO - Saturation: 36.99517746613205
-2024-09-15 15:26:42,275 - INFO - Brightness: 58.77175610531506
-2024-09-15 15:26:42,401 - INFO - Sharpness: 10.044264287118454
-2024-09-15 15:26:42,401 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:42,401 - INFO - Image processing: SK_b827ebf4b29dc (51).png
-2024-09-15 15:26:42,527 - WARNING - Image has light flare
-2024-09-15 15:26:42,665 - INFO - Saturation: 25.14620210150005
-2024-09-15 15:26:42,802 - INFO - Brightness: 79.61054196836396
-2024-09-15 15:26:43,165 - WARNING - Sharpness: 2.6924526571704233 - low sharpness!
-2024-09-15 15:26:43,166 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:43,166 - INFO - Image processing: SK_b827ebf4b29dc (52).png
-2024-09-15 15:26:43,303 - INFO - Image doesn't have light flare
-2024-09-15 15:26:43,451 - INFO - Saturation: 39.78333511756462
-2024-09-15 15:26:43,598 - INFO - Brightness: 67.14846596659919
-2024-09-15 15:26:43,793 - INFO - Sharpness: 20.801783970694686
-2024-09-15 15:26:43,794 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:43,794 - INFO - Image processing: SK_b827ebf4b29dc (53).png
-2024-09-15 15:26:43,923 - WARNING - Image has light flare
-2024-09-15 15:26:44,064 - INFO - Saturation: 27.853677706192254
-2024-09-15 15:26:44,205 - INFO - Brightness: 69.92316378270009
-2024-09-15 15:26:44,411 - INFO - Sharpness: 9.519487448875754
-2024-09-15 15:26:44,411 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:44,411 - INFO - Image processing: SK_b827ebf4b29dc (54).png
-2024-09-15 15:26:44,544 - INFO - Image doesn't have light flare
-2024-09-15 15:26:44,687 - INFO - Saturation: 36.94879256202637
-2024-09-15 15:26:44,829 - INFO - Brightness: 73.9769995555642
-2024-09-15 15:26:45,094 - INFO - Sharpness: 15.893695226467532
-2024-09-15 15:26:45,095 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:45,095 - INFO - Image processing: SK_b827ebf4b29dc (55).png
-2024-09-15 15:26:45,227 - WARNING - Image has light flare
-2024-09-15 15:26:45,369 - INFO - Saturation: 28.085079365851758
-2024-09-15 15:26:45,511 - INFO - Brightness: 79.77260337187273
-2024-09-15 15:26:45,681 - INFO - Sharpness: 9.744720395233514
-2024-09-15 15:26:45,682 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:45,682 - INFO - Image processing: SK_b827ebf4b29dc (56).png
-2024-09-15 15:26:45,813 - INFO - Image doesn't have light flare
-2024-09-15 15:26:45,960 - INFO - Saturation: 30.75193605315063
-2024-09-15 15:26:46,107 - INFO - Brightness: 75.9006924439427
-2024-09-15 15:26:46,244 - INFO - Sharpness: 23.19788665704839
-2024-09-15 15:26:46,244 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:46,244 - INFO - Image processing: SK_b827ebf4b29dc (57).png
-2024-09-15 15:26:46,375 - INFO - Image doesn't have light flare
-2024-09-15 15:26:46,523 - INFO - Saturation: 57.82550599177307
-2024-09-15 15:26:46,670 - INFO - Brightness: 47.291698782829855
-2024-09-15 15:26:46,967 - INFO - Sharpness: 5.885210341433487
-2024-09-15 15:26:46,967 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:46,967 - INFO - Image processing: SK_b827ebf4b29dc (58).png
-2024-09-15 15:26:47,111 - INFO - Image doesn't have light flare
-2024-09-15 15:26:47,261 - INFO - Saturation: 34.62912214198588
-2024-09-15 15:26:47,409 - INFO - Brightness: 60.32035240189972
-2024-09-15 15:26:47,511 - INFO - Sharpness: 25.447501523421423
-2024-09-15 15:26:47,512 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:47,512 - INFO - Image processing: SK_b827ebf4b29dc (59).png
-2024-09-15 15:26:47,650 - INFO - Image doesn't have light flare
-2024-09-15 15:26:47,800 - INFO - Saturation: 32.71074756046922
-2024-09-15 15:26:47,951 - INFO - Brightness: 73.7253460597685
-2024-09-15 15:26:48,087 - INFO - Sharpness: 17.971973792300055
-2024-09-15 15:26:48,087 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:48,087 - INFO - Image processing: SK_b827ebf4b29dc (6).png
-2024-09-15 15:26:48,220 - WARNING - Image has light flare
-2024-09-15 15:26:48,367 - INFO - Saturation: 22.53296545728226
-2024-09-15 15:26:48,514 - INFO - Brightness: 71.41742496496418
-2024-09-15 15:26:48,642 - INFO - Sharpness: 17.059367403408263
-2024-09-15 15:26:48,643 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:48,643 - INFO - Image processing: SK_b827ebf4b29dc (60).png
-2024-09-15 15:26:48,777 - INFO - Image doesn't have light flare
-2024-09-15 15:26:48,925 - INFO - Saturation: 31.446571761782415
-2024-09-15 15:26:49,072 - INFO - Brightness: 76.67244895476487
-2024-09-15 15:26:49,211 - INFO - Sharpness: 23.62991746425056
-2024-09-15 15:26:49,212 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:49,212 - INFO - Image processing: SK_b827ebf4b29dc (61).png
-2024-09-15 15:26:49,348 - INFO - Image doesn't have light flare
-2024-09-15 15:26:49,495 - INFO - Saturation: 41.405388135186335
-2024-09-15 15:26:49,643 - INFO - Brightness: 54.137822702558914
-2024-09-15 15:26:49,876 - INFO - Sharpness: 11.162265311470263
-2024-09-15 15:26:49,876 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:49,876 - INFO - Image processing: SK_b827ebf4b29dc (62).png
-2024-09-15 15:26:50,011 - INFO - Image doesn't have light flare
-2024-09-15 15:26:50,158 - INFO - Saturation: 28.794142936390532
-2024-09-15 15:26:50,306 - INFO - Brightness: 73.814160470518
-2024-09-15 15:26:50,504 - INFO - Sharpness: 8.06378711550181
-2024-09-15 15:26:50,505 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:50,505 - INFO - Image processing: SK_b827ebf4b29dc (63).png
-2024-09-15 15:26:50,636 - INFO - Image doesn't have light flare
-2024-09-15 15:26:50,782 - INFO - Saturation: 40.288084741254025
-2024-09-15 15:26:50,928 - INFO - Brightness: 54.72226558444929
-2024-09-15 15:26:51,160 - INFO - Sharpness: 6.161103924955455
-2024-09-15 15:26:51,160 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:51,160 - INFO - Image processing: SK_b827ebf4b29dc (64).png
-2024-09-15 15:26:51,297 - INFO - Image doesn't have light flare
-2024-09-15 15:26:51,448 - INFO - Saturation: 35.55143411644867
-2024-09-15 15:26:51,601 - INFO - Brightness: 65.0485241163189
-2024-09-15 15:26:51,800 - INFO - Sharpness: 20.93543801958772
-2024-09-15 15:26:51,801 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:51,801 - INFO - Image processing: SK_b827ebf4b29dc (65).png
-2024-09-15 15:26:51,939 - INFO - Image doesn't have light flare
-2024-09-15 15:26:52,085 - INFO - Saturation: 32.28510393958268
-2024-09-15 15:26:52,236 - INFO - Brightness: 76.54233851084813
-2024-09-15 15:26:52,413 - INFO - Sharpness: 18.43013662971491
-2024-09-15 15:26:52,414 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:52,414 - INFO - Image processing: SK_b827ebf4b29dc (66).png
-2024-09-15 15:26:52,550 - INFO - Image doesn't have light flare
-2024-09-15 15:26:52,697 - INFO - Saturation: 31.479740459228694
-2024-09-15 15:26:52,845 - INFO - Brightness: 68.03009333151667
-2024-09-15 15:26:53,087 - INFO - Sharpness: 6.627270245336169
-2024-09-15 15:26:53,088 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:53,088 - INFO - Image processing: SK_b827ebf4b29dc (67).png
-2024-09-15 15:26:53,217 - WARNING - Image has light flare
-2024-09-15 15:26:53,360 - INFO - Saturation: 22.328854345089795
-2024-09-15 15:26:53,501 - INFO - Brightness: 65.7417855613516
-2024-09-15 15:26:53,608 - INFO - Sharpness: 10.507669179384488
-2024-09-15 15:26:53,608 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:53,608 - INFO - Image processing: SK_b827ebf4b29dc (68).png
-2024-09-15 15:26:53,740 - INFO - Image doesn't have light flare
-2024-09-15 15:26:53,886 - INFO - Saturation: 34.41353079907609
-2024-09-15 15:26:54,035 - INFO - Brightness: 70.74380344583723
-2024-09-15 15:26:54,234 - INFO - Sharpness: 23.96271247272594
-2024-09-15 15:26:54,234 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:54,234 - INFO - Image processing: SK_b827ebf4b29dc (70).png
-2024-09-15 15:26:54,390 - WARNING - Image has light flare
-2024-09-15 15:26:54,536 - INFO - Saturation: 30.04732697822589
-2024-09-15 15:26:54,678 - INFO - Brightness: 85.13158851733624
-2024-09-15 15:26:54,938 - INFO - Sharpness: 10.945861081068854
-2024-09-15 15:26:54,939 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:54,939 - INFO - Image processing: SK_b827ebf4b29dc (71).png
-2024-09-15 15:26:55,073 - WARNING - Image has light flare
-2024-09-15 15:26:55,219 - INFO - Saturation: 31.041470644529223
-2024-09-15 15:26:55,367 - INFO - Brightness: 79.19564047415136
-2024-09-15 15:26:55,649 - INFO - Sharpness: 17.46649634983451
-2024-09-15 15:26:55,650 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:55,650 - INFO - Image processing: SK_b827ebf4b29dc (72).png
-2024-09-15 15:26:55,783 - WARNING - Image has light flare
-2024-09-15 15:26:55,928 - INFO - Saturation: 27.273783235362814
-2024-09-15 15:26:56,075 - INFO - Brightness: 86.22684148889235
-2024-09-15 15:26:56,259 - INFO - Sharpness: 26.884708481175856
-2024-09-15 15:26:56,260 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:26:56,260 - INFO - Image processing: SK_b827ebf4b29dc (73).png
-2024-09-15 15:26:56,396 - INFO - Image doesn't have light flare
-2024-09-15 15:26:56,543 - INFO - Saturation: 35.07996543457386
-2024-09-15 15:26:56,692 - INFO - Brightness: 70.01600179720752
-2024-09-15 15:26:56,927 - INFO - Sharpness: 9.622904336178788
-2024-09-15 15:26:56,928 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:56,928 - INFO - Image processing: SK_b827ebf4b29dc (75).png
-2024-09-15 15:26:57,061 - INFO - Image doesn't have light flare
-2024-09-15 15:26:57,209 - INFO - Saturation: 37.31099662293678
-2024-09-15 15:26:57,355 - INFO - Brightness: 75.45056965638949
-2024-09-15 15:26:57,640 - INFO - Sharpness: 10.000040380324378
-2024-09-15 15:26:57,641 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:57,641 - INFO - Image processing: SK_b827ebf4b29dc (76).png
-2024-09-15 15:26:57,773 - INFO - Image doesn't have light flare
-2024-09-15 15:26:57,919 - INFO - Saturation: 33.62976535736531
-2024-09-15 15:26:58,065 - INFO - Brightness: 78.24583884823004
-2024-09-15 15:26:58,295 - INFO - Sharpness: 6.436500700761532
-2024-09-15 15:26:58,295 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:58,296 - INFO - Image processing: SK_b827ebf4b29dc (77).png
-2024-09-15 15:26:58,431 - INFO - Image doesn't have light flare
-2024-09-15 15:26:58,583 - INFO - Saturation: 33.6523879502751
-2024-09-15 15:26:58,731 - INFO - Brightness: 61.09698221608014
-2024-09-15 15:26:58,950 - INFO - Sharpness: 9.311697047112032
-2024-09-15 15:26:58,951 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:58,951 - INFO - Image processing: SK_b827ebf4b29dc (78).png
-2024-09-15 15:26:59,086 - INFO - Image doesn't have light flare
-2024-09-15 15:26:59,233 - INFO - Saturation: 29.971385796221323
-2024-09-15 15:26:59,382 - INFO - Brightness: 77.04401349852071
-2024-09-15 15:26:59,665 - INFO - Sharpness: 13.684885440688763
-2024-09-15 15:26:59,665 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:26:59,665 - INFO - Image processing: SK_b827ebf4b29dc (79).png
-2024-09-15 15:26:59,802 - INFO - Image doesn't have light flare
-2024-09-15 15:26:59,950 - INFO - Saturation: 28.788201365099138
-2024-09-15 15:27:00,103 - INFO - Brightness: 69.18449697653898
-2024-09-15 15:27:00,248 - INFO - Sharpness: 20.299858477328893
-2024-09-15 15:27:00,248 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:00,248 - INFO - Image processing: SK_b827ebf4b29dc (8).png
-2024-09-15 15:27:00,387 - INFO - Image doesn't have light flare
-2024-09-15 15:27:00,571 - INFO - Saturation: 32.66696544430603
-2024-09-15 15:27:00,719 - INFO - Brightness: 76.4250793171909
-2024-09-15 15:27:00,963 - INFO - Sharpness: 13.648186040047971
-2024-09-15 15:27:00,964 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:00,964 - INFO - Image processing: SK_b827ebf4b29dc (80).png
-2024-09-15 15:27:01,098 - INFO - Image doesn't have light flare
-2024-09-15 15:27:01,245 - INFO - Saturation: 37.058590911450224
-2024-09-15 15:27:01,395 - INFO - Brightness: 70.6287991961227
-2024-09-15 15:27:01,621 - INFO - Sharpness: 18.64169913102225
-2024-09-15 15:27:01,621 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:01,621 - INFO - Image processing: SK_b827ebf4b29dc (81).png
-2024-09-15 15:27:01,755 - INFO - Image doesn't have light flare
-2024-09-15 15:27:01,902 - INFO - Saturation: 40.112021258304786
-2024-09-15 15:27:02,048 - INFO - Brightness: 55.47714156415447
-2024-09-15 15:27:02,170 - INFO - Sharpness: 8.029087506077282
-2024-09-15 15:27:02,171 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:02,171 - INFO - Image processing: SK_b827ebf4b29dc (83).png
-2024-09-15 15:27:02,305 - INFO - Image doesn't have light flare
-2024-09-15 15:27:02,452 - INFO - Saturation: 31.890284779533893
-2024-09-15 15:27:02,600 - INFO - Brightness: 70.50486786956296
-2024-09-15 15:27:02,834 - INFO - Sharpness: 14.099970287692908
-2024-09-15 15:27:02,834 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:02,835 - INFO - Image processing: SK_b827ebf4b29dc (84).png
-2024-09-15 15:27:02,968 - INFO - Image doesn't have light flare
-2024-09-15 15:27:03,115 - INFO - Saturation: 29.570963095608846
-2024-09-15 15:27:03,260 - INFO - Brightness: 75.95416050295859
-2024-09-15 15:27:03,539 - INFO - Sharpness: 10.178891687341403
-2024-09-15 15:27:03,540 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:03,540 - INFO - Image processing: SK_b827ebf4b29dc (86).png
-2024-09-15 15:27:03,676 - INFO - Image doesn't have light flare
-2024-09-15 15:27:03,823 - INFO - Saturation: 33.05931449833904
-2024-09-15 15:27:03,969 - INFO - Brightness: 57.882129301619436
-2024-09-15 15:27:04,103 - INFO - Sharpness: 10.960949409455798
-2024-09-15 15:27:04,103 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:04,103 - INFO - Image processing: SK_b827ebf4b29dc (87).png
-2024-09-15 15:27:04,244 - INFO - Image doesn't have light flare
-2024-09-15 15:27:04,396 - INFO - Saturation: 33.58620878425724
-2024-09-15 15:27:04,546 - INFO - Brightness: 67.0066650770788
-2024-09-15 15:27:04,641 - WARNING - Sharpness: 51.04447737703224 - possible noise!
-2024-09-15 15:27:04,641 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:27:04,641 - INFO - Image processing: SK_b827ebf4b29dc (88).png
-2024-09-15 15:27:04,777 - INFO - Image doesn't have light flare
-2024-09-15 15:27:04,926 - INFO - Saturation: 57.53439024706737
-2024-09-15 15:27:05,078 - INFO - Brightness: 48.47190525083048
-2024-09-15 15:27:05,228 - INFO - Sharpness: 22.639205507892036
-2024-09-15 15:27:05,228 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:05,229 - INFO - Image processing: SK_b827ebf4b29dc (89).png
-2024-09-15 15:27:05,363 - INFO - Image doesn't have light flare
-2024-09-15 15:27:05,513 - INFO - Saturation: 31.305942868914148
-2024-09-15 15:27:05,660 - INFO - Brightness: 77.99536748676425
-2024-09-15 15:27:05,903 - INFO - Sharpness: 18.672601749331818
-2024-09-15 15:27:05,903 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:05,903 - INFO - Image processing: SK_b827ebf4b29dc (9).png
-2024-09-15 15:27:06,039 - WARNING - Image has light flare
-2024-09-15 15:27:06,187 - INFO - Saturation: 27.960856236374962
-2024-09-15 15:27:06,336 - INFO - Brightness: 66.10772596478252
-2024-09-15 15:27:06,400 - INFO - Sharpness: 36.917243995326295
-2024-09-15 15:27:06,400 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:27:06,400 - INFO - Image processing: SK_b827ebf4b29dc (91).png
-2024-09-15 15:27:06,533 - INFO - Image doesn't have light flare
-2024-09-15 15:27:06,678 - INFO - Saturation: 33.553316399356376
-2024-09-15 15:27:06,824 - INFO - Brightness: 68.7333471205751
-2024-09-15 15:27:07,002 - INFO - Sharpness: 21.3997776649207
-2024-09-15 15:27:07,002 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:07,002 - INFO - Image processing: SK_b827ebf4b29dc (92).png
-2024-09-15 15:27:07,137 - INFO - Image doesn't have light flare
-2024-09-15 15:27:07,286 - INFO - Saturation: 32.720006342131214
-2024-09-15 15:27:07,431 - INFO - Brightness: 74.04294823134019
-2024-09-15 15:27:07,693 - INFO - Sharpness: 8.747459492890748
-2024-09-15 15:27:07,694 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:07,694 - INFO - Image processing: SK_b827ebf4b29dc (94).png
-2024-09-15 15:27:07,825 - INFO - Image doesn't have light flare
-2024-09-15 15:27:07,970 - INFO - Saturation: 28.254703476980172
-2024-09-15 15:27:08,114 - INFO - Brightness: 76.02566194980795
-2024-09-15 15:27:08,336 - INFO - Sharpness: 5.77629896468691
-2024-09-15 15:27:08,336 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:08,336 - INFO - Image processing: SK_b827ebf4b29dc (96).png
-2024-09-15 15:27:08,469 - INFO - Image doesn't have light flare
-2024-09-15 15:27:08,616 - INFO - Saturation: 33.21619352096958
-2024-09-15 15:27:08,763 - INFO - Brightness: 88.40528935365411
-2024-09-15 15:27:08,970 - INFO - Sharpness: 18.571905916225706
-2024-09-15 15:27:08,970 - INFO - Image moved to folder: ./images/checked
-2024-09-15 15:27:08,970 - INFO - Image processing: SK_b827ebf4b29dc (99).png
-2024-09-15 15:27:09,103 - WARNING - Image has light flare
-2024-09-15 15:27:09,251 - INFO - Saturation: 25.77957476902315
-2024-09-15 15:27:09,398 - INFO - Brightness: 61.91424246405585
-2024-09-15 15:27:09,470 - INFO - Sharpness: 14.549532303568498
-2024-09-15 15:27:09,473 - INFO - Image moved to folder: ./images/to_check
-2024-09-15 15:27:13,895 - INFO - Image: SK_b827ebf4b29dc (103).png moved to checked folder by user
-2024-09-15 15:27:14,356 - INFO - Image: SK_b827ebf4b29dc (105).png moved to checked folder by user
-2024-09-15 15:27:14,715 - INFO - Image: SK_b827ebf4b29dc (106).png moved to checked folder by user
-2024-09-15 15:27:15,154 - INFO - Image: SK_b827ebf4b29dc (111).png moved to checked folder by user
-2024-09-15 15:27:15,516 - INFO - Image: SK_b827ebf4b29dc (113).png moved to checked folder by user
-2024-09-15 15:27:15,848 - INFO - Image: SK_b827ebf4b29dc (114).png moved to checked folder by user
-2024-09-15 15:27:16,114 - INFO - Image: SK_b827ebf4b29dc (121).png moved to checked folder by user
-2024-09-15 15:27:16,415 - INFO - Image: SK_b827ebf4b29dc (128).png moved to checked folder by user
-2024-09-15 15:27:16,717 - INFO - Image: SK_b827ebf4b29dc (129).png moved to checked folder by user
-2024-09-15 15:27:17,038 - INFO - Image: SK_b827ebf4b29dc (130).png moved to checked folder by user
-2024-09-15 15:27:17,703 - INFO - Image: SK_b827ebf4b29dc (134).png moved to checked folder by user
-2024-09-15 15:27:18,158 - INFO - Image: SK_b827ebf4b29dc (136).png moved to checked folder by user
-2024-09-15 15:27:18,503 - INFO - Image: SK_b827ebf4b29dc (137).png moved to checked folder by user
-2024-09-15 15:27:18,834 - INFO - Image: SK_b827ebf4b29dc (142).png moved to checked folder by user
-2024-09-15 15:27:19,047 - INFO - Image: SK_b827ebf4b29dc (143).png moved to checked folder by user
-2024-09-15 15:27:19,221 - INFO - Image: SK_b827ebf4b29dc (144).png moved to checked folder by user
-2024-09-15 15:27:19,376 - INFO - Image: SK_b827ebf4b29dc (148).png moved to checked folder by user
-2024-09-15 15:27:19,562 - INFO - Image: SK_b827ebf4b29dc (154).png moved to checked folder by user
-2024-09-15 15:27:19,710 - INFO - Image: SK_b827ebf4b29dc (155).png moved to checked folder by user
-2024-09-15 15:27:19,856 - INFO - Image: SK_b827ebf4b29dc (16).png moved to checked folder by user
-2024-09-15 15:27:20,133 - INFO - Image: SK_b827ebf4b29dc (20).png moved to checked folder by user
-2024-09-15 15:27:20,298 - INFO - Image: SK_b827ebf4b29dc (21).png moved to checked folder by user
-2024-09-15 15:27:20,456 - INFO - Image: SK_b827ebf4b29dc (27).png moved to checked folder by user
-2024-09-15 15:27:20,604 - INFO - Image: SK_b827ebf4b29dc (34).png moved to checked folder by user
-2024-09-15 15:27:20,748 - INFO - Image: SK_b827ebf4b29dc (40).png moved to checked folder by user
-2024-09-15 15:27:20,893 - INFO - Image: SK_b827ebf4b29dc (51).png moved to checked folder by user
-2024-09-15 15:27:21,045 - INFO - Image: SK_b827ebf4b29dc (53).png moved to checked folder by user
-2024-09-15 15:27:21,196 - INFO - Image: SK_b827ebf4b29dc (55).png moved to checked folder by user
-2024-09-15 15:27:21,345 - INFO - Image: SK_b827ebf4b29dc (6).png moved to checked folder by user
-2024-09-15 15:27:21,533 - INFO - Image: SK_b827ebf4b29dc (67).png moved to checked folder by user
-2024-09-15 15:27:21,677 - INFO - Image: SK_b827ebf4b29dc (70).png moved to checked folder by user
-2024-09-15 15:27:21,831 - INFO - Image: SK_b827ebf4b29dc (71).png moved to checked folder by user
-2024-09-15 15:27:21,988 - INFO - Image: SK_b827ebf4b29dc (72).png moved to checked folder by user
-2024-09-15 15:27:22,141 - INFO - Image: SK_b827ebf4b29dc (87).png moved to checked folder by user
-2024-09-15 15:27:22,288 - INFO - Image: SK_b827ebf4b29dc (9).png moved to checked folder by user
-2024-09-15 15:27:22,450 - INFO - Image: SK_b827ebf4b29dc (99).png moved to checked folder by user
-2024-09-15 15:27:23,038 - INFO - All checked images have been copied to the destination folder: C:/Users/barto/Desktop/out
-2024-09-15 15:27:23,039 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (1).png
-2024-09-15 15:27:23,040 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (10).png
-2024-09-15 15:27:23,041 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (100).png
-2024-09-15 15:27:23,042 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (101).png
-2024-09-15 15:27:23,043 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (102).png
-2024-09-15 15:27:23,043 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (103).png
-2024-09-15 15:27:23,045 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (104).png
-2024-09-15 15:27:23,046 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (105).png
-2024-09-15 15:27:23,046 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (106).png
-2024-09-15 15:27:23,047 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (107).png
-2024-09-15 15:27:23,048 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (108).png
-2024-09-15 15:27:23,049 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (109).png
-2024-09-15 15:27:23,050 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (11).png
-2024-09-15 15:27:23,051 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (110).png
-2024-09-15 15:27:23,052 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (111).png
-2024-09-15 15:27:23,052 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (112).png
-2024-09-15 15:27:23,053 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (113).png
-2024-09-15 15:27:23,054 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (114).png
-2024-09-15 15:27:23,055 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (115).png
-2024-09-15 15:27:23,056 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (116).png
-2024-09-15 15:27:23,057 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (117).png
-2024-09-15 15:27:23,057 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (118).png
-2024-09-15 15:27:23,058 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (119).png
-2024-09-15 15:27:23,059 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (12).png
-2024-09-15 15:27:23,060 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (121).png
-2024-09-15 15:27:23,061 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (122).png
-2024-09-15 15:27:23,062 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (124).png
-2024-09-15 15:27:23,063 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (125).png
-2024-09-15 15:27:23,063 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (126).png
-2024-09-15 15:27:23,064 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (127).png
-2024-09-15 15:27:23,065 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (128).png
-2024-09-15 15:27:23,065 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (129).png
-2024-09-15 15:27:23,066 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (13).png
-2024-09-15 15:27:23,067 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (130).png
-2024-09-15 15:27:23,068 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (131).png
-2024-09-15 15:27:23,069 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (132).png
-2024-09-15 15:27:23,070 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (133).png
-2024-09-15 15:27:23,070 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (134).png
-2024-09-15 15:27:23,071 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (135).png
-2024-09-15 15:27:23,073 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (136).png
-2024-09-15 15:27:23,074 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (137).png
-2024-09-15 15:27:23,075 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (138).png
-2024-09-15 15:27:23,076 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (139).png
-2024-09-15 15:27:23,077 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (14).png
-2024-09-15 15:27:23,078 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (141).png
-2024-09-15 15:27:23,078 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (142).png
-2024-09-15 15:27:23,079 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (143).png
-2024-09-15 15:27:23,080 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (144).png
-2024-09-15 15:27:23,081 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (145).png
-2024-09-15 15:27:23,082 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (147).png
-2024-09-15 15:27:23,083 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (148).png
-2024-09-15 15:27:23,083 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (149).png
-2024-09-15 15:27:23,086 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (15).png
-2024-09-15 15:27:23,088 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (150).png
-2024-09-15 15:27:23,090 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (151).png
-2024-09-15 15:27:23,092 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (152).png
-2024-09-15 15:27:23,093 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (153).png
-2024-09-15 15:27:23,095 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (154).png
-2024-09-15 15:27:23,097 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (155).png
-2024-09-15 15:27:23,100 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (156).png
-2024-09-15 15:27:23,102 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (16).png
-2024-09-15 15:27:23,103 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (17).png
-2024-09-15 15:27:23,104 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (19).png
-2024-09-15 15:27:23,105 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (2).png
-2024-09-15 15:27:23,107 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (20).png
-2024-09-15 15:27:23,109 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (21).png
-2024-09-15 15:27:23,110 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (22).png
-2024-09-15 15:27:23,111 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (23).png
-2024-09-15 15:27:23,111 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (25).png
-2024-09-15 15:27:23,113 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (26).png
-2024-09-15 15:27:23,114 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (27).png
-2024-09-15 15:27:23,115 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (3).png
-2024-09-15 15:27:23,116 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (30).png
-2024-09-15 15:27:23,117 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (31).png
-2024-09-15 15:27:23,118 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (32).png
-2024-09-15 15:27:23,119 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (34).png
-2024-09-15 15:27:23,120 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (35).png
-2024-09-15 15:27:23,121 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (37).png
-2024-09-15 15:27:23,123 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (38).png
-2024-09-15 15:27:23,124 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (4).png
-2024-09-15 15:27:23,125 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (40).png
-2024-09-15 15:27:23,126 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (41).png
-2024-09-15 15:27:23,127 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (43).png
-2024-09-15 15:27:23,128 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (44).png
-2024-09-15 15:27:23,129 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (45).png
-2024-09-15 15:27:23,130 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (46).png
-2024-09-15 15:27:23,131 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (47).png
-2024-09-15 15:27:23,132 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (49).png
-2024-09-15 15:27:23,133 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (5).png
-2024-09-15 15:27:23,134 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (50).png
-2024-09-15 15:27:23,135 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (51).png
-2024-09-15 15:27:23,136 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (52).png
-2024-09-15 15:27:23,136 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (53).png
-2024-09-15 15:27:23,137 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (54).png
-2024-09-15 15:27:23,138 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (55).png
-2024-09-15 15:27:23,139 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (56).png
-2024-09-15 15:27:23,140 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (57).png
-2024-09-15 15:27:23,141 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (58).png
-2024-09-15 15:27:23,142 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (59).png
-2024-09-15 15:27:23,143 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (6).png
-2024-09-15 15:27:23,144 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (60).png
-2024-09-15 15:27:23,145 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (61).png
-2024-09-15 15:27:23,145 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (62).png
-2024-09-15 15:27:23,146 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (63).png
-2024-09-15 15:27:23,147 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (64).png
-2024-09-15 15:27:23,148 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (65).png
-2024-09-15 15:27:23,149 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (66).png
-2024-09-15 15:27:23,150 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (67).png
-2024-09-15 15:27:23,150 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (68).png
-2024-09-15 15:27:23,151 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (70).png
-2024-09-15 15:27:23,151 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (71).png
-2024-09-15 15:27:23,152 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (72).png
-2024-09-15 15:27:23,153 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (73).png
-2024-09-15 15:27:23,154 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (75).png
-2024-09-15 15:27:23,155 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (76).png
-2024-09-15 15:27:23,156 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (77).png
-2024-09-15 15:27:23,157 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (78).png
-2024-09-15 15:27:23,158 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (79).png
-2024-09-15 15:27:23,159 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (8).png
-2024-09-15 15:27:23,160 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (80).png
-2024-09-15 15:27:23,161 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (81).png
-2024-09-15 15:27:23,162 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (83).png
-2024-09-15 15:27:23,163 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (84).png
-2024-09-15 15:27:23,164 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (86).png
-2024-09-15 15:27:23,165 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (87).png
-2024-09-15 15:27:23,166 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (88).png
-2024-09-15 15:27:23,167 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (89).png
-2024-09-15 15:27:23,167 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (9).png
-2024-09-15 15:27:23,171 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (91).png
-2024-09-15 15:27:23,171 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (92).png
-2024-09-15 15:27:23,173 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (94).png
-2024-09-15 15:27:23,174 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (96).png
-2024-09-15 15:27:23,177 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (99).png
-2024-09-15 15:27:23,178 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (1)_person.png
-2024-09-15 15:27:23,179 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (10)_person.png
-2024-09-15 15:27:23,179 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (100)_person.png
-2024-09-15 15:27:23,180 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (101)_person.png
-2024-09-15 15:27:23,181 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (102)_person.png
-2024-09-15 15:27:23,181 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (103)_person.png
-2024-09-15 15:27:23,181 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (104)_person.png
-2024-09-15 15:27:23,182 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (105)_person.png
-2024-09-15 15:27:23,182 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (106)_person.png
-2024-09-15 15:27:23,182 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (107)_person.png
-2024-09-15 15:27:23,183 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (108)_person.png
-2024-09-15 15:27:23,183 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (109)_person.png
-2024-09-15 15:27:23,183 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (11)_person.png
-2024-09-15 15:27:23,184 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (110)_person.png
-2024-09-15 15:27:23,184 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (111)_person.png
-2024-09-15 15:27:23,185 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (112)_person.png
-2024-09-15 15:27:23,185 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (113)_person.png
-2024-09-15 15:27:23,185 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (114)_person.png
-2024-09-15 15:27:23,186 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (115)_person.png
-2024-09-15 15:27:23,186 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (116)_person.png
-2024-09-15 15:27:23,186 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (117)_person.png
-2024-09-15 15:27:23,187 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (118)_person.png
-2024-09-15 15:27:23,187 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (119)_person.png
-2024-09-15 15:27:23,188 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (12)_person.png
-2024-09-15 15:27:23,188 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (121)_person.png
-2024-09-15 15:27:23,188 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (122)_person.png
-2024-09-15 15:27:23,189 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (124)_person.png
-2024-09-15 15:27:23,190 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (125)_person.png
-2024-09-15 15:27:23,190 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (126)_person.png
-2024-09-15 15:27:23,190 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (127)_person.png
-2024-09-15 15:27:23,191 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (128)_person.png
-2024-09-15 15:27:23,191 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (129)_person.png
-2024-09-15 15:27:23,191 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (13)_person.png
-2024-09-15 15:27:23,193 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (130)_person.png
-2024-09-15 15:27:23,193 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (131)_person.png
-2024-09-15 15:27:23,193 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (132)_person.png
-2024-09-15 15:27:23,194 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (133)_person.png
-2024-09-15 15:27:23,194 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (134)_person.png
-2024-09-15 15:27:23,195 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (135)_person.png
-2024-09-15 15:27:23,195 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (136)_person.png
-2024-09-15 15:27:23,195 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (137)_person.png
-2024-09-15 15:27:23,196 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (138)_person.png
-2024-09-15 15:27:23,196 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (139)_person.png
-2024-09-15 15:27:23,196 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (14)_person.png
-2024-09-15 15:27:23,197 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (141)_person.png
-2024-09-15 15:27:23,197 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (142)_person.png
-2024-09-15 15:27:23,197 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (143)_person.png
-2024-09-15 15:27:23,198 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (144)_person.png
-2024-09-15 15:27:23,198 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (145)_person.png
-2024-09-15 15:27:23,199 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (147)_person.png
-2024-09-15 15:27:23,199 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (148)_person.png
-2024-09-15 15:27:23,199 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (149)_person.png
-2024-09-15 15:27:23,200 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (15)_person.png
-2024-09-15 15:27:23,200 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (150)_person.png
-2024-09-15 15:27:23,201 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (151)_person.png
-2024-09-15 15:27:23,201 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (152)_person.png
-2024-09-15 15:27:23,201 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (153)_person.png
-2024-09-15 15:27:23,202 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (154)_person.png
-2024-09-15 15:27:23,202 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (155)_person.png
-2024-09-15 15:27:23,203 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (156)_person.png
-2024-09-15 15:27:23,203 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (16)_person.png
-2024-09-15 15:27:23,203 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (17)_person.png
-2024-09-15 15:27:23,203 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (19)_person.png
-2024-09-15 15:27:23,204 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (2)_person.png
-2024-09-15 15:27:23,204 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (20)_person.png
-2024-09-15 15:27:23,204 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (21)_person.png
-2024-09-15 15:27:23,205 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (22)_person.png
-2024-09-15 15:27:23,206 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (23)_person.png
-2024-09-15 15:27:23,206 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (25)_person.png
-2024-09-15 15:27:23,206 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (26)_person.png
-2024-09-15 15:27:23,207 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (27)_person.png
-2024-09-15 15:27:23,207 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (3)_person.png
-2024-09-15 15:27:23,208 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (30)_person.png
-2024-09-15 15:27:23,208 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (31)_person.png
-2024-09-15 15:27:23,208 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (32)_person.png
-2024-09-15 15:27:23,209 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (34)_person.png
-2024-09-15 15:27:23,209 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (35)_person.png
-2024-09-15 15:27:23,209 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (37)_person.png
-2024-09-15 15:27:23,210 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (38)_person.png
-2024-09-15 15:27:23,211 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (4)_person.png
-2024-09-15 15:27:23,211 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (40)_person.png
-2024-09-15 15:27:23,211 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (41)_person.png
-2024-09-15 15:27:23,211 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (43)_person.png
-2024-09-15 15:27:23,213 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (44)_person.png
-2024-09-15 15:27:23,213 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (45)_person.png
-2024-09-15 15:27:23,213 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (46)_person.png
-2024-09-15 15:27:23,214 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (47)_person.png
-2024-09-15 15:27:23,215 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (49)_person.png
-2024-09-15 15:27:23,215 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (5)_person.png
-2024-09-15 15:27:23,215 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (50)_person.png
-2024-09-15 15:27:23,216 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (51)_person.png
-2024-09-15 15:27:23,216 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (52)_person.png
-2024-09-15 15:27:23,216 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (53)_person.png
-2024-09-15 15:27:23,217 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (54)_person.png
-2024-09-15 15:27:23,217 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (55)_person.png
-2024-09-15 15:27:23,218 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (56)_person.png
-2024-09-15 15:27:23,218 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (57)_person.png
-2024-09-15 15:27:23,219 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (58)_person.png
-2024-09-15 15:27:23,219 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (59)_person.png
-2024-09-15 15:27:23,219 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (6)_person.png
-2024-09-15 15:27:23,219 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (60)_person.png
-2024-09-15 15:27:23,220 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (61)_person.png
-2024-09-15 15:27:23,220 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (62)_person.png
-2024-09-15 15:27:23,221 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (63)_person.png
-2024-09-15 15:27:23,221 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (64)_person.png
-2024-09-15 15:27:23,221 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (65)_person.png
-2024-09-15 15:27:23,223 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (66)_person.png
-2024-09-15 15:27:23,223 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (67)_person.png
-2024-09-15 15:27:23,223 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (68)_person.png
-2024-09-15 15:27:23,224 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (70)_person.png
-2024-09-15 15:27:23,225 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (71)_person.png
-2024-09-15 15:27:23,225 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (72)_person.png
-2024-09-15 15:27:23,226 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (73)_person.png
-2024-09-15 15:27:23,226 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (75)_person.png
-2024-09-15 15:27:23,227 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (76)_person.png
-2024-09-15 15:27:23,227 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (77)_person.png
-2024-09-15 15:27:23,228 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (78)_person.png
-2024-09-15 15:27:23,228 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (79)_person.png
-2024-09-15 15:27:23,229 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (8)_person.png
-2024-09-15 15:27:23,229 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (80)_person.png
-2024-09-15 15:27:23,230 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (81)_person.png
-2024-09-15 15:27:23,230 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (83)_person.png
-2024-09-15 15:27:23,231 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (84)_person.png
-2024-09-15 15:27:23,231 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (86)_person.png
-2024-09-15 15:27:23,231 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (87)_person.png
-2024-09-15 15:27:23,232 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (88)_person.png
-2024-09-15 15:27:23,232 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (89)_person.png
-2024-09-15 15:27:23,232 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (9)_person.png
-2024-09-15 15:27:23,233 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (91)_person.png
-2024-09-15 15:27:23,233 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (92)_person.png
-2024-09-15 15:27:23,234 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (94)_person.png
-2024-09-15 15:27:23,234 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (96)_person.png
-2024-09-15 15:27:23,236 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (99)_person.png
+2024-09-18 14:52:55,586 - INFO - Utworzono folder docelowy: C:/Users/barto/Desktop/zdjecia do demo\zdjecia do demo_out
+2024-09-18 14:53:26,729 - INFO - Median sharpness of silhouette images in the folder: 14.537018218430124
+2024-09-18 14:53:26,729 - INFO - Median saturation of images in the folder: 31.75985731015779
+2024-09-18 14:53:26,729 - INFO - Median brightness of images in the folder: 74.98487932919392
+2024-09-18 14:53:26,729 - INFO - Image processing: 1_szum.jpg
+2024-09-18 14:53:26,834 - INFO - Image doesn't have light flare
+2024-09-18 14:53:26,951 - INFO - Saturation: 58.09729494316412
+2024-09-18 14:53:27,067 - INFO - Brightness: 86.77101459501193
+2024-09-18 14:53:27,425 - WARNING - Sharpness: 471.8106155881358 - possible noise!
+2024-09-18 14:53:27,425 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:27,425 - INFO - Image processing: SK_b827ebf4b29dc (10).png
+2024-09-18 14:53:27,559 - INFO - Image doesn't have light flare
+2024-09-18 14:53:27,705 - INFO - Saturation: 41.78414215781688
+2024-09-18 14:53:27,849 - INFO - Brightness: 68.56518567359598
+2024-09-18 14:53:28,058 - INFO - Sharpness: 15.904360401747727
+2024-09-18 14:53:28,058 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:28,058 - INFO - Image processing: SK_b827ebf4b29dc (103).png
+2024-09-18 14:53:28,191 - WARNING - Image has light flare
+2024-09-18 14:53:28,337 - INFO - Saturation: 30.37582115189972
+2024-09-18 14:53:28,482 - INFO - Brightness: 76.81664785113672
+2024-09-18 14:53:28,694 - INFO - Sharpness: 22.386532637355167
+2024-09-18 14:53:28,694 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:28,694 - INFO - Image processing: SK_b827ebf4b29dc (105).png
+2024-09-18 14:53:28,824 - WARNING - Image has light flare
+2024-09-18 14:53:28,966 - INFO - Saturation: 22.276387564232326
+2024-09-18 14:53:29,109 - INFO - Brightness: 78.90811314297207
+2024-09-18 14:53:29,229 - INFO - Sharpness: 25.20360377373263
+2024-09-18 14:53:29,229 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:29,229 - INFO - Image processing: SK_b827ebf4b29dc (107).png
+2024-09-18 14:53:29,361 - INFO - Image doesn't have light flare
+2024-09-18 14:53:29,505 - INFO - Saturation: 37.45760179850514
+2024-09-18 14:53:29,649 - INFO - Brightness: 57.61672214003945
+2024-09-18 14:53:29,843 - INFO - Sharpness: 9.113548002758739
+2024-09-18 14:53:29,843 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:29,843 - INFO - Image processing: SK_b827ebf4b29dc (110).png
+2024-09-18 14:53:29,972 - INFO - Image doesn't have light flare
+2024-09-18 14:53:30,115 - INFO - Saturation: 33.79072029417108
+2024-09-18 14:53:30,256 - INFO - Brightness: 80.54344092248002
+2024-09-18 14:53:30,576 - INFO - Sharpness: 11.2868928838405
+2024-09-18 14:53:30,576 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:30,576 - INFO - Image processing: SK_b827ebf4b29dc (118).png
+2024-09-18 14:53:30,709 - INFO - Image doesn't have light flare
+2024-09-18 14:53:30,852 - INFO - Saturation: 36.77208026769957
+2024-09-18 14:53:30,995 - INFO - Brightness: 60.05247683743382
+2024-09-18 14:53:31,169 - INFO - Sharpness: 12.28323115519067
+2024-09-18 14:53:31,169 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:31,169 - INFO - Image processing: SK_b827ebf4b29dc (12).png
+2024-09-18 14:53:31,300 - INFO - Image doesn't have light flare
+2024-09-18 14:53:31,445 - INFO - Saturation: 32.18304566658881
+2024-09-18 14:53:31,589 - INFO - Brightness: 78.34109019775771
+2024-09-18 14:53:31,720 - INFO - Sharpness: 31.733531284150697
+2024-09-18 14:53:31,720 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:31,720 - INFO - Image processing: SK_b827ebf4b29dc (134).png
+2024-09-18 14:53:31,841 - INFO - Image doesn't have light flare
+2024-09-18 14:53:31,976 - INFO - Saturation: 31.33666895372677
+2024-09-18 14:53:32,110 - INFO - Brightness: 80.57330279053774
+2024-09-18 14:53:32,423 - WARNING - Sharpness: 2.6661240620224462 - low sharpness!
+2024-09-18 14:53:32,423 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:32,423 - INFO - Image processing: SK_b827ebf4b29dc (143).png
+2024-09-18 14:53:32,552 - WARNING - Image has light flare
+2024-09-18 14:53:32,693 - INFO - Saturation: 23.204595774291498
+2024-09-18 14:53:32,834 - INFO - Brightness: 89.53111675036334
+2024-09-18 14:53:32,949 - INFO - Sharpness: 14.583824794200666
+2024-09-18 14:53:32,950 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:32,950 - INFO - Image processing: SK_b827ebf4b29dc (145).png
+2024-09-18 14:53:33,080 - INFO - Image doesn't have light flare
+2024-09-18 14:53:33,224 - INFO - Saturation: 31.295986128412746
+2024-09-18 14:53:33,369 - INFO - Brightness: 78.54830968415862
+2024-09-18 14:53:33,663 - INFO - Sharpness: 9.94596786191778
+2024-09-18 14:53:33,663 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:33,663 - INFO - Image processing: SK_b827ebf4b29dc (15).png
+2024-09-18 14:53:33,795 - INFO - Image doesn't have light flare
+2024-09-18 14:53:33,936 - INFO - Saturation: 30.843091537553203
+2024-09-18 14:53:34,077 - INFO - Brightness: 64.2638615306758
+2024-09-18 14:53:34,256 - INFO - Sharpness: 6.168143131736856
+2024-09-18 14:53:34,256 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:34,256 - INFO - Image processing: SK_b827ebf4b29dc (154).png
+2024-09-18 14:53:34,387 - WARNING - Image has light flare
+2024-09-18 14:53:34,530 - INFO - Saturation: 24.745232047389184
+2024-09-18 14:53:34,672 - INFO - Brightness: 73.6451824133188
+2024-09-18 14:53:34,750 - INFO - Sharpness: 24.946623320032153
+2024-09-18 14:53:34,750 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:34,750 - INFO - Image processing: SK_b827ebf4b29dc (156).png
+2024-09-18 14:53:34,879 - INFO - Image doesn't have light flare
+2024-09-18 14:53:35,021 - INFO - Saturation: 36.03814556732067
+2024-09-18 14:53:35,163 - INFO - Brightness: 75.99275910282363
+2024-09-18 14:53:35,424 - INFO - Sharpness: 4.989101757696952
+2024-09-18 14:53:35,424 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:35,424 - INFO - Image processing: SK_b827ebf4b29dc (17).png
+2024-09-18 14:53:35,557 - INFO - Image doesn't have light flare
+2024-09-18 14:53:35,703 - INFO - Saturation: 40.40787632681927
+2024-09-18 14:53:35,847 - INFO - Brightness: 65.19342575651406
+2024-09-18 14:53:36,121 - INFO - Sharpness: 14.49021164265958
+2024-09-18 14:53:36,121 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:36,122 - INFO - Image processing: SK_b827ebf4b29dc (19).png
+2024-09-18 14:53:36,255 - INFO - Image doesn't have light flare
+2024-09-18 14:53:36,398 - INFO - Saturation: 28.360467355055537
+2024-09-18 14:53:36,539 - INFO - Brightness: 76.60736327922247
+2024-09-18 14:53:36,670 - INFO - Sharpness: 17.503057182414487
+2024-09-18 14:53:36,670 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:36,670 - INFO - Image processing: SK_b827ebf4b29dc (2).png
+2024-09-18 14:53:36,833 - INFO - Image doesn't have light flare
+2024-09-18 14:53:37,005 - INFO - Saturation: 144.5898701079622
+2024-09-18 14:53:37,180 - WARNING - Brightness: 219.80322418703935 - possible overexposure!
+2024-09-18 14:53:37,648 - WARNING - Sharpness: 14865.048588066811 - possible noise!
+2024-09-18 14:53:37,648 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:37,648 - INFO - Image processing: SK_b827ebf4b29dc (20).png
+2024-09-18 14:53:37,777 - WARNING - Image has light flare
+2024-09-18 14:53:37,917 - INFO - Saturation: 24.687107388015157
+2024-09-18 14:53:38,059 - INFO - Brightness: 71.73630164538565
+2024-09-18 14:53:38,168 - INFO - Sharpness: 12.738073657705183
+2024-09-18 14:53:38,169 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:38,169 - INFO - Image processing: SK_b827ebf4b29dc (27).png
+2024-09-18 14:53:38,294 - WARNING - Image has light flare
+2024-09-18 14:53:38,432 - INFO - Saturation: 19.782945100825287
+2024-09-18 14:53:38,570 - INFO - Brightness: 84.54246056848852
+2024-09-18 14:53:38,659 - INFO - Sharpness: 6.352353442987137
+2024-09-18 14:53:38,660 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:38,660 - INFO - Image processing: SK_b827ebf4b29dc (3).png
+2024-09-18 14:53:38,823 - INFO - Image doesn't have light flare
+2024-09-18 14:53:38,997 - INFO - Saturation: 143.19543828830584
+2024-09-18 14:53:39,169 - WARNING - Brightness: 220.4302776750493 - possible overexposure!
+2024-09-18 14:53:39,631 - WARNING - Sharpness: 14587.984836722188 - possible noise!
+2024-09-18 14:53:39,632 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:39,632 - INFO - Image processing: SK_b827ebf4b29dc (30).png
+2024-09-18 14:53:39,764 - INFO - Image doesn't have light flare
+2024-09-18 14:53:39,907 - INFO - Saturation: 38.75149186066127
+2024-09-18 14:53:40,049 - INFO - Brightness: 76.21914780247586
+2024-09-18 14:53:40,294 - INFO - Sharpness: 7.023432818451687
+2024-09-18 14:53:40,294 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:40,295 - INFO - Image processing: SK_b827ebf4b29dc (32).png
+2024-09-18 14:53:40,425 - INFO - Image doesn't have light flare
+2024-09-18 14:53:40,568 - INFO - Saturation: 37.25662257993356
+2024-09-18 14:53:40,713 - INFO - Brightness: 70.4150355548635
+2024-09-18 14:53:40,936 - INFO - Sharpness: 20.887084239505047
+2024-09-18 14:53:40,937 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:40,937 - INFO - Image processing: SK_b827ebf4b29dc (34).png
+2024-09-18 14:53:41,062 - WARNING - Image has light flare
+2024-09-18 14:53:41,201 - INFO - Saturation: 24.895630985284956
+2024-09-18 14:53:41,339 - INFO - Brightness: 70.58790761574795
+2024-09-18 14:53:41,503 - INFO - Sharpness: 4.845328618567766
+2024-09-18 14:53:41,503 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:41,504 - INFO - Image processing: SK_b827ebf4b29dc (37).png
+2024-09-18 14:53:41,635 - INFO - Image doesn't have light flare
+2024-09-18 14:53:41,779 - INFO - Saturation: 35.240258989281635
+2024-09-18 14:53:41,921 - INFO - Brightness: 73.14833150044119
+2024-09-18 14:53:42,017 - INFO - Sharpness: 34.411772879223804
+2024-09-18 14:53:42,017 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:42,017 - INFO - Image processing: SK_b827ebf4b29dc (46).png
+2024-09-18 14:53:42,148 - INFO - Image doesn't have light flare
+2024-09-18 14:53:42,289 - INFO - Saturation: 29.9853601389754
+2024-09-18 14:53:42,432 - INFO - Brightness: 72.55383836810962
+2024-09-18 14:53:42,588 - INFO - Sharpness: 13.271378869680431
+2024-09-18 14:53:42,588 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:42,588 - INFO - Image processing: SK_b827ebf4b29dc (51).png
+2024-09-18 14:53:42,710 - WARNING - Image has light flare
+2024-09-18 14:53:42,845 - INFO - Saturation: 25.14620210150005
+2024-09-18 14:53:42,981 - INFO - Brightness: 79.61054196836396
+2024-09-18 14:53:43,330 - WARNING - Sharpness: 2.6924526571704233 - low sharpness!
+2024-09-18 14:53:43,331 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:43,331 - INFO - Image processing: SK_b827ebf4b29dc (53).png
+2024-09-18 14:53:43,459 - WARNING - Image has light flare
+2024-09-18 14:53:43,601 - INFO - Saturation: 27.853677706192254
+2024-09-18 14:53:43,742 - INFO - Brightness: 69.92316378270009
+2024-09-18 14:53:43,942 - INFO - Sharpness: 9.519487448875754
+2024-09-18 14:53:43,943 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:43,943 - INFO - Image processing: SK_b827ebf4b29dc (54).png
+2024-09-18 14:53:44,074 - INFO - Image doesn't have light flare
+2024-09-18 14:53:44,219 - INFO - Saturation: 36.94879256202637
+2024-09-18 14:53:44,363 - INFO - Brightness: 73.9769995555642
+2024-09-18 14:53:44,617 - INFO - Sharpness: 15.893695226467532
+2024-09-18 14:53:44,618 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:44,618 - INFO - Image processing: SK_b827ebf4b29dc (58).png
+2024-09-18 14:53:44,750 - INFO - Image doesn't have light flare
+2024-09-18 14:53:44,895 - INFO - Saturation: 34.62912214198588
+2024-09-18 14:53:45,039 - INFO - Brightness: 60.32035240189972
+2024-09-18 14:53:45,135 - INFO - Sharpness: 25.447501523421423
+2024-09-18 14:53:45,136 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:45,136 - INFO - Image processing: SK_b827ebf4b29dc (67).png
+2024-09-18 14:53:45,262 - WARNING - Image has light flare
+2024-09-18 14:53:45,400 - INFO - Saturation: 22.328854345089795
+2024-09-18 14:53:45,540 - INFO - Brightness: 65.7417855613516
+2024-09-18 14:53:45,642 - INFO - Sharpness: 10.507669179384488
+2024-09-18 14:53:45,642 - INFO - Image moved to folder: ./images/to_check
+2024-09-18 14:53:45,643 - INFO - Image processing: SK_b827ebf4b29dc (88).png
+2024-09-18 14:53:45,776 - INFO - Image doesn't have light flare
+2024-09-18 14:53:45,924 - INFO - Saturation: 57.53439024706737
+2024-09-18 14:53:46,070 - INFO - Brightness: 48.47190525083048
+2024-09-18 14:53:46,212 - INFO - Sharpness: 22.639205507892036
+2024-09-18 14:53:46,212 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:46,212 - INFO - Image processing: SK_b827ebf4b29dc (89).png
+2024-09-18 14:53:46,344 - INFO - Image doesn't have light flare
+2024-09-18 14:53:46,489 - INFO - Saturation: 31.305942868914148
+2024-09-18 14:53:46,632 - INFO - Brightness: 77.99536748676425
+2024-09-18 14:53:46,834 - INFO - Sharpness: 18.672601749331818
+2024-09-18 14:53:46,834 - INFO - Image moved to folder: ./images/checked
+2024-09-18 14:53:47,961 - INFO - Image: 1_szum.jpg moved to checked folder by user
+2024-09-18 14:53:48,108 - INFO - Image: SK_b827ebf4b29dc (103).png moved to checked folder by user
+2024-09-18 14:53:48,376 - INFO - Image: SK_b827ebf4b29dc (105).png moved to checked folder by user
+2024-09-18 14:53:48,517 - INFO - Image: SK_b827ebf4b29dc (134).png moved to checked folder by user
+2024-09-18 14:53:48,668 - INFO - Image: SK_b827ebf4b29dc (143).png moved to checked folder by user
+2024-09-18 14:53:48,822 - INFO - Image: SK_b827ebf4b29dc (154).png moved to checked folder by user
+2024-09-18 14:53:49,020 - INFO - Image: SK_b827ebf4b29dc (2).png moved to checked folder by user
+2024-09-18 14:53:49,171 - INFO - Image: SK_b827ebf4b29dc (20).png moved to checked folder by user
+2024-09-18 14:53:49,313 - INFO - Image: SK_b827ebf4b29dc (27).png moved to checked folder by user
+2024-09-18 14:53:49,557 - INFO - Image: SK_b827ebf4b29dc (3).png moved to checked folder by user
+2024-09-18 14:53:49,706 - INFO - Image: SK_b827ebf4b29dc (34).png moved to checked folder by user
+2024-09-18 14:53:49,999 - INFO - Image: SK_b827ebf4b29dc (51).png moved to checked folder by user
+2024-09-18 14:53:50,267 - INFO - Image: SK_b827ebf4b29dc (53).png moved to checked folder by user
+2024-09-18 14:53:50,679 - INFO - Image: SK_b827ebf4b29dc (67).png moved to checked folder by user
+2024-09-18 14:53:50,820 - INFO - All checked images have been copied to the destination folder: C:/Users/barto/Desktop/zdjecia do demo\zdjecia do demo_out
+2024-09-18 14:53:50,821 - INFO - Deleted file: ./images/checked\1_szum.jpg
+2024-09-18 14:53:50,822 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (10).png
+2024-09-18 14:53:50,823 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (103).png
+2024-09-18 14:53:50,823 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (105).png
+2024-09-18 14:53:50,824 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (107).png
+2024-09-18 14:53:50,825 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (110).png
+2024-09-18 14:53:50,826 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (118).png
+2024-09-18 14:53:50,827 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (12).png
+2024-09-18 14:53:50,827 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (134).png
+2024-09-18 14:53:50,828 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (143).png
+2024-09-18 14:53:50,829 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (145).png
+2024-09-18 14:53:50,830 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (15).png
+2024-09-18 14:53:50,830 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (154).png
+2024-09-18 14:53:50,831 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (156).png
+2024-09-18 14:53:50,833 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (17).png
+2024-09-18 14:53:50,834 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (19).png
+2024-09-18 14:53:50,836 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (2).png
+2024-09-18 14:53:50,837 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (20).png
+2024-09-18 14:53:50,838 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (27).png
+2024-09-18 14:53:50,840 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (3).png
+2024-09-18 14:53:50,841 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (30).png
+2024-09-18 14:53:50,842 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (32).png
+2024-09-18 14:53:50,843 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (34).png
+2024-09-18 14:53:50,844 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (37).png
+2024-09-18 14:53:50,845 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (46).png
+2024-09-18 14:53:50,846 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (51).png
+2024-09-18 14:53:50,847 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (53).png
+2024-09-18 14:53:50,847 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (54).png
+2024-09-18 14:53:50,848 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (58).png
+2024-09-18 14:53:50,849 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (67).png
+2024-09-18 14:53:50,850 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (88).png
+2024-09-18 14:53:50,850 - INFO - Deleted file: ./images/checked\SK_b827ebf4b29dc (89).png
+2024-09-18 14:53:50,851 - INFO - Deleted file: ./images/silhouette\1_szum_person.jpg
+2024-09-18 14:53:50,851 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (10)_person.png
+2024-09-18 14:53:50,852 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (103)_person.png
+2024-09-18 14:53:50,852 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (105)_person.png
+2024-09-18 14:53:50,853 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (107)_person.png
+2024-09-18 14:53:50,853 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (110)_person.png
+2024-09-18 14:53:50,854 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (118)_person.png
+2024-09-18 14:53:50,854 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (12)_person.png
+2024-09-18 14:53:50,854 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (134)_person.png
+2024-09-18 14:53:50,855 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (143)_person.png
+2024-09-18 14:53:50,855 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (145)_person.png
+2024-09-18 14:53:50,856 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (15)_person.png
+2024-09-18 14:53:50,856 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (154)_person.png
+2024-09-18 14:53:50,857 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (156)_person.png
+2024-09-18 14:53:50,857 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (17)_person.png
+2024-09-18 14:53:50,858 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (19)_person.png
+2024-09-18 14:53:50,859 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (2)_person.png
+2024-09-18 14:53:50,860 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (20)_person.png
+2024-09-18 14:53:50,860 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (27)_person.png
+2024-09-18 14:53:50,861 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (3)_person.png
+2024-09-18 14:53:50,862 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (30)_person.png
+2024-09-18 14:53:50,862 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (32)_person.png
+2024-09-18 14:53:50,863 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (34)_person.png
+2024-09-18 14:53:50,863 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (37)_person.png
+2024-09-18 14:53:50,863 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (46)_person.png
+2024-09-18 14:53:50,864 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (51)_person.png
+2024-09-18 14:53:50,865 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (53)_person.png
+2024-09-18 14:53:50,865 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (54)_person.png
+2024-09-18 14:53:50,865 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (58)_person.png
+2024-09-18 14:53:50,866 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (67)_person.png
+2024-09-18 14:53:50,866 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (88)_person.png
+2024-09-18 14:53:50,866 - INFO - Deleted file: ./images/silhouette\SK_b827ebf4b29dc (89)_person.png
