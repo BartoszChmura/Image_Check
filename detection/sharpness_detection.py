@@ -5,11 +5,11 @@ import numpy as np
 
 from detection.size_detection import get_image_size
 from config.log_config import logger
-from utils.helpers import get_image_files, read_image
+from utils.helpers import get_image_files, read_image, resource_path
 
 
 def calculate_image_sharpness_laplacian(image_path):
-    image = read_image(image_path)
+    image = read_image(resource_path(image_path))
     if image is None:
         raise Exception(f"Failed to read image from {image_path}")
 
@@ -51,7 +51,7 @@ def calculate_median_sharpness_laplacian(image_dir):
     return median_sharpness
 
 def detect_sharpness(image_path, median_laplacian, thresholds):
-    sharpness_laplacian = calculate_image_sharpness_laplacian(image_path)
+    sharpness_laplacian = calculate_image_sharpness_laplacian(resource_path(image_path))
 
     if sharpness_laplacian is None:
         logger.warning(f"Cannot detect sharpness for {image_path} due to previous errors - sharpness detection")

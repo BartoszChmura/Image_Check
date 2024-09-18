@@ -5,6 +5,8 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtCore import Qt
 from config.log_config import logger
+from utils.helpers import resource_path
+
 
 class ConfigWindow(QDialog):
     def __init__(self, parent=None):
@@ -69,7 +71,7 @@ class ConfigWindow(QDialog):
 
     def load_config(self):
         try:
-            tree = ET.parse('./config/config.xml')
+            tree = ET.parse(resource_path('./config/config.xml'))
             root = tree.getroot()
 
             self.sharpness_low_slider.setValue(int(float(root.find('sharpness/low_threshold').text) * 10))
@@ -90,7 +92,7 @@ class ConfigWindow(QDialog):
 
     def save_config(self):
         try:
-            tree = ET.parse('./config/config.xml')
+            tree = ET.parse(resource_path('./config/config.xml'))
             root = tree.getroot()
 
             root.find('sharpness/low_threshold').text = str(self.sharpness_low_slider.value() / 10)
@@ -100,7 +102,7 @@ class ConfigWindow(QDialog):
             root.find('brightness/high_threshold').text = str(self.brightness_high_slider.value() / 10)
             root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 100)
 
-            tree.write('./config/config.xml')
+            tree.write(resource_path('./config/config.xml'))
             QMessageBox.information(self, "Success", "Configuration saved successfully.")
             self.accept()
         except FileNotFoundError:

@@ -6,6 +6,7 @@ from PyQt5.QtWidgets import (
 from PyQt5.QtGui import QPixmap, QImage, QWheelEvent, QPainter
 from PyQt5.QtCore import Qt
 from config.log_config import logger
+from utils.helpers import resource_path
 
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, parent=None):
@@ -22,8 +23,8 @@ class ImageViewer(QMainWindow):
     def __init__(self, detected_issues, destination_folder):
         super().__init__()
 
-        self.folder_path = './images/to_check'
-        self.checked_folder_path = './images/checked'
+        self.folder_path = resource_path('./images/to_check')
+        self.checked_folder_path = resource_path('./images/checked')
         self.detected_issues = detected_issues
         self.destination_folder = destination_folder
 
@@ -182,10 +183,10 @@ class ImageViewer(QMainWindow):
             self.copy_checked_images_to_destination()
 
         directories_to_clear = [
-            './images/to_check',
-            './images/new',
-            './images/checked',
-            './images/silhouette'
+            resource_path('./images/to_check'),
+            resource_path('./images/new'),
+            resource_path('./images/checked'),
+            resource_path('./images/silhouette')
         ]
 
         for directory in directories_to_clear:

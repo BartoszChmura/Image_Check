@@ -11,12 +11,12 @@ from detection.saturation_detection import calculate_median_saturation, detect_s
 from detection.sharpness_detection import calculate_median_sharpness_laplacian, detect_sharpness
 from model.model import detect_and_crop_person, load_model
 from config.log_config import logger
-from utils.helpers import get_image_files
+from utils.helpers import get_image_files, resource_path
 
 
 def process_folder(image_folder, crop_folder, progress_callback):
     try:
-        thresholds = load_thresholds_from_xml('./config/config.xml')
+        thresholds = load_thresholds_from_xml(resource_path('./config/config.xml'))
     except Exception as e:
         raise Exception(f"Failed to load thresholds from config file: {e} - utils.py")
 
@@ -102,7 +102,9 @@ def process_folder(image_folder, crop_folder, progress_callback):
 
         detected_issues[image_name] = issues
 
-        destination_folder = './images/to_check' if move_to_check_folder else './images/checked'
+        destination_folder = resource_path('./images/to_check') if move_to_check_folder else resource_path(
+            './images/checked')
+
         destination_path = os.path.join(destination_folder, image_name)
         try:
             shutil.move(image_path, destination_path)
@@ -115,9 +117,8 @@ def process_folder(image_folder, crop_folder, progress_callback):
     return detected_issues
 
 
-
 def crop_images(image_folder, crop_folder, progress_callback):
-    model_path = './model/nowy_m.pt'
+    model_path = resource_path('./model/nowy_m.pt')
     model = load_model(model_path)
 
     image_files = get_image_files(image_folder)

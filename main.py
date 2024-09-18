@@ -1,3 +1,5 @@
+import multiprocessing
+
 from PyQt5.QtWidgets import QApplication
 from view.starting_window import InitialWindow
 
@@ -12,4 +14,5 @@ def init_interface():
 
 
 if __name__ == "__main__":
+    multiprocessing.freeze_support()
     init_interface()

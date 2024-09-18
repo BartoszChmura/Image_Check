@@ -3,11 +3,11 @@ import os
 import numpy as np
 
 from config.log_config import logger
-from utils.helpers import get_image_files, read_image
+from utils.helpers import get_image_files, read_image, resource_path
 
 
 def calculate_saturation(image_path):
-    image = read_image(image_path)
+    image = read_image(resource_path(image_path))
     if image is None:
         raise Exception(f"Failed to read image from {image_path} - saturation detection")
 
@@ -38,7 +38,7 @@ def calculate_median_saturation(image_dir):
     return median_saturation
 
 def detect_saturation(image_path, median_saturation, thresholds):
-    saturation = calculate_saturation(image_path)
+    saturation = calculate_saturation(resource_path(image_path))
 
     if saturation is None:
         logger.warning(f"Skipping saturation detection for {image_path} due to error - saturation detection")

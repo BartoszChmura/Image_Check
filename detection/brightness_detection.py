@@ -3,11 +3,11 @@ import os
 import numpy as np
 
 from config.log_config import logger
-from utils.helpers import get_image_files, read_image
+from utils.helpers import get_image_files, read_image, resource_path
 
 
 def calculate_brightness(image_path):
-    image = read_image(image_path)
+    image = read_image(resource_path(image_path))
     if image is None:
         raise Exception(f"Failed to read image from {image_path} - brightness detection")
 

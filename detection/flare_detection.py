@@ -1,11 +1,11 @@
 import cv2
 
 from config.log_config import logger
-from utils.helpers import read_image
+from utils.helpers import read_image, resource_path
 
 
 def calculate_brightness_histogram(image_path):
-    image = read_image(image_path)
+    image = read_image(resource_path(image_path))
     if image is None:
         raise Exception(f"Failed to read image from {image_path} - flare detection")
 
@@ -31,7 +31,7 @@ def check_bright_glow(image_path, threshold):
 
 
 def detect_flare(image_path, thresholds):
-    bright_glow_result = check_bright_glow(image_path, thresholds['flare']['threshold'])
+    bright_glow_result = check_bright_glow(resource_path(image_path), thresholds['flare']['threshold'])
 
     if bright_glow_result is None:
         logger.warning(f"Cannot detect flare for {image_path} due to previous errors - flare detection")

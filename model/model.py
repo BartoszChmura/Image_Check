@@ -4,12 +4,12 @@ import cv2
 from config.log_config import logger
 from ultralytics import YOLO
 
-from utils.helpers import read_image
+from utils.helpers import read_image, resource_path
 
 
 def load_model(model_path):
     try:
-        return YOLO(model_path)
+        return YOLO(resource_path(model_path))
     except Exception as e:
         raise Exception(f"Failed to load model from {model_path}: {e} - model.py")
 

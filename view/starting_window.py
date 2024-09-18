@@ -10,6 +10,7 @@ from utils.utils import crop_images, process_folder
 from view.config_window import ConfigWindow
 from view.image_viewer import ImageViewer
 from config.log_config import logger
+from utils.helpers import resource_path
 
 
 class WorkerThread(QThread):
@@ -23,12 +24,13 @@ class WorkerThread(QThread):
         self.start_time = time.time()
 
     def run(self):
-        new_folder = './images/new'
+        new_folder = resource_path('./images/new')
 
         try:
-            image_files = [f for f in os.listdir(self.source_folder)
-                           if os.path.isfile(os.path.join(self.source_folder, f)) and f.lower().endswith(
-                    ('png', 'jpg', 'jpeg', 'bmp'))]
+            image_files = [f for f in os.listdir(self.source_folder) if
+                           os.path.isfile(os.path.join(self.source_folder, f))
+                           and f.lower().endswith(
+                               ('png', 'jpg', 'jpeg', 'bmp'))]
         except Exception as e:
             logger.error(f"Failed to list files in source folder: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to list files in source folder: {e}"})
@@ -111,7 +113,7 @@ class WorkerThread(QThread):
             return
 
         try:
-            crop_images(new_folder, './images/silhouette', progress_callback)
+            crop_images(new_folder, resource_path('./images/silhouette'), progress_callback)
         except Exception as e:
             logger.error(f"Failed to crop images: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to crop images: {e}"})
@@ -121,7 +123,7 @@ class WorkerThread(QThread):
         stage_start_time = time.time()
 
         try:
-            detected_issues = process_folder(new_folder, './images/silhouette', progress_callback)
+            detected_issues = process_folder(new_folder, resource_path('./images/silhouette'), progress_callback)
         except Exception as e:
             logger.error(f"Failed to process folder: {e} - starting_window.py")
             self.task_complete.emit({'error': f"Failed to process folder: {e}"})
@@ -252,6 +254,10 @@ class InitialWindow(QMainWindow):
             self.config_button.setEnabled(True)
             return
 
+        self.worker.quit()
+        self.worker.wait()
+
         self.viewer = ImageViewer(detected_issues, self.destination_folder)
         self.viewer.show()
-        self.close()
+
+        self.hide()
