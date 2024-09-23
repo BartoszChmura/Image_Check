@@ -13,6 +13,7 @@ from config.log_config import logger
 from utils.helpers import resource_path
 
 
+
 class WorkerThread(QThread):
     progress_update = pyqtSignal(int, str)
     task_complete = pyqtSignal(dict)
@@ -222,6 +223,8 @@ class InitialWindow(QMainWindow):
             self.start_button.setEnabled(False)
             self.config_button.setEnabled(False)
 
+            self.clear_directories()
+
             if not self.destination_folder:
                 self.destination_folder = os.path.join(self.source_folder,
                                                        os.path.basename(self.source_folder) + "_out")
@@ -241,6 +244,28 @@ class InitialWindow(QMainWindow):
         except Exception as e:
             logger.error(f"Failed to start processing: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to start processing: {e}")
+
+    def clear_directories(self):
+        directories_to_clear = [
+            resource_path('./images/to_check'),
+            resource_path('./images/new'),
+            resource_path('./images/checked'),
+            resource_path('./images/silhouette')
+        ]
+
+        for directory in directories_to_clear:
+            if os.path.exists(directory):
+                for filename in os.listdir(directory):
+                    file_path = os.path.join(directory, filename)
+                    try:
+                        if os.path.isfile(file_path) or os.path.islink(file_path):
+                            os.unlink(file_path)
+                            logger.info(f'Deleted file: {file_path}')
+                        elif os.path.isdir(file_path):
+                            shutil.rmtree(file_path)
+                    except Exception as e:
+                        logger.error(f"Failed to delete {file_path}: {e} - starting_window.py")
+                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
 
     def update_progress_bar(self, value, stage_info):
         self.progress_bar.setValue(value)

@@ -182,26 +182,7 @@ class ImageViewer(QMainWindow):
             self.user_initiated_close = True
             self.copy_checked_images_to_destination()
 
-        directories_to_clear = [
-            resource_path('./images/to_check'),
-            resource_path('./images/new'),
-            resource_path('./images/checked'),
-            resource_path('./images/silhouette')
-        ]
-
-        for directory in directories_to_clear:
-            if os.path.exists(directory):
-                for filename in os.listdir(directory):
-                    file_path = os.path.join(directory, filename)
-                    try:
-                        if os.path.isfile(file_path) or os.path.islink(file_path):
-                            os.unlink(file_path)
-                            logger.info(f'Deleted file: {file_path}')
-                        elif os.path.isdir(file_path):
-                            shutil.rmtree(file_path)
-                    except Exception as e:
-                        logger.error(f"Failed to delete {file_path}: {e} - image_viewer.py")
-                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
+        self.clear_directories()
 
         self.close()
 
@@ -229,6 +210,28 @@ class ImageViewer(QMainWindow):
             except (OSError, IOError) as e:
                 logger.error(f"Failed to copy checked images: {e} - image_viewer.py")
                 QMessageBox.critical(self, "Error", f"Failed to copy checked images: {e}")
+
+    def clear_directories(self):
+        directories_to_clear = [
+            resource_path('./images/to_check'),
+            resource_path('./images/new'),
+            resource_path('./images/checked'),
+            resource_path('./images/silhouette')
+        ]
+
+        for directory in directories_to_clear:
+            if os.path.exists(directory):
+                for filename in os.listdir(directory):
+                    file_path = os.path.join(directory, filename)
+                    try:
+                        if os.path.isfile(file_path) or os.path.islink(file_path):
+                            os.unlink(file_path)
+                            logger.info(f'Deleted file: {file_path}')
+                        elif os.path.isdir(file_path):
+                            shutil.rmtree(file_path)
+                    except Exception as e:
+                        logger.error(f"Failed to delete {file_path}: {e} - image_viewer.py")
+                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:
