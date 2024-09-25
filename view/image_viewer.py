@@ -74,15 +74,39 @@ class ImageViewer(QMainWindow):
 
         self.issues_label = QLabel(self)
         self.issues_label.setText("No issues detected")
+        self.issues_label.setAlignment(Qt.AlignCenter)
+        self.issues_label.setStyleSheet("font-size: 14px; color: #343a40;")
         self.layout.addWidget(self.issues_label)
 
+        button_style = """
+                    QPushButton {
+                        background-color: #007bff;
+                        color: #fff;
+                        border: none;
+                        padding: 8px;
+                        font-size: 12px;
+                        border-radius: 4px;
+                        margin: 4px;
+                    }
+                    QPushButton:hover {
+                        background-color: #0056b3;
+                    }
+                """
+
         self.prev_button = QPushButton("Previous", self)
+        self.prev_button.setStyleSheet(button_style)
         self.prev_button.setFocusPolicy(Qt.NoFocus)
+
         self.next_button = QPushButton("Next", self)
+        self.next_button.setStyleSheet(button_style)
         self.next_button.setFocusPolicy(Qt.NoFocus)
+
         self.keep_button = QPushButton("Save", self)
+        self.keep_button.setStyleSheet(button_style)
         self.keep_button.setFocusPolicy(Qt.NoFocus)
+
         self.delete_button = QPushButton("Delete", self)
+        self.delete_button.setStyleSheet(button_style)
         self.delete_button.setFocusPolicy(Qt.NoFocus)
 
         self.button_layout.addWidget(self.prev_button)

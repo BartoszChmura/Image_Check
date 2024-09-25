@@ -148,7 +148,42 @@ class InitialWindow(QMainWindow):
         self.include_logs = False
 
         self.setWindowTitle("Starting Window")
-        self.setGeometry(200, 200, 400, 200)
+        self.setGeometry(200, 200, 400, 300)
+        self.setStyleSheet("""
+                    QMainWindow {
+                        background-color: #f8f9fa;
+                    }
+                    QLabel {
+                        font-size: 14px;
+                        color: #343a40;
+                    }
+                    QPushButton {
+                        background-color: #007bff;
+                        color: #fff;
+                        border: none;
+                        padding: 8px;
+                        font-size: 12px;
+                        border-radius: 4px;
+                        margin: 4px;
+                    }
+                    QPushButton:hover {
+                        background-color: #0056b3;
+                    }
+                    QProgressBar {
+                        border: 1px solid #ced4da;
+                        border-radius: 5px;
+                        text-align: center;
+                        height: 20px;
+                    }
+                    QProgressBar::chunk {
+                        background-color: #28a745;
+                        border-radius: 5px;
+                    }
+                    QCheckBox {
+                        font-size: 14px;
+                        margin: 5px;
+                    }
+                """)
         self.init_ui()
 
     def init_ui(self):
@@ -250,7 +285,7 @@ class InitialWindow(QMainWindow):
 
                 if not os.path.exists(self.destination_folder):
                     os.makedirs(self.destination_folder)
-                    logger.info(f"Utworzono folder docelowy: {self.destination_folder}")
+                    logger.info(f"Created destination folder: {self.destination_folder}")
 
             self.stage_label.setVisible(True)
             self.stage_label.setText("Stage: 1/3 - Calculating...")
