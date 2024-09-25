@@ -149,41 +149,8 @@ class InitialWindow(QMainWindow):
 
         self.setWindowTitle("Starting Window")
         self.setGeometry(200, 200, 400, 300)
-        self.setStyleSheet("""
-                    QMainWindow {
-                        background-color: #f8f9fa;
-                    }
-                    QLabel {
-                        font-size: 14px;
-                        color: #343a40;
-                    }
-                    QPushButton {
-                        background-color: #007bff;
-                        color: #fff;
-                        border: none;
-                        padding: 8px;
-                        font-size: 12px;
-                        border-radius: 4px;
-                        margin: 4px;
-                    }
-                    QPushButton:hover {
-                        background-color: #0056b3;
-                    }
-                    QProgressBar {
-                        border: 1px solid #ced4da;
-                        border-radius: 5px;
-                        text-align: center;
-                        height: 20px;
-                    }
-                    QProgressBar::chunk {
-                        background-color: #28a745;
-                        border-radius: 5px;
-                    }
-                    QCheckBox {
-                        font-size: 14px;
-                        margin: 5px;
-                    }
-                """)
+
+
         self.init_ui()
 
     def init_ui(self):
@@ -239,6 +206,7 @@ class InitialWindow(QMainWindow):
             logger.error(f"Failed to open configuration window: {e} - starting_window.py")
             QMessageBox.critical(self, "Error", f"Failed to open configuration window: {e}")
 
+
     def select_source_folder(self):
         try:
             folder = QFileDialog.getExistingDirectory(self, "Choose source folder")
@@ -276,6 +244,10 @@ class InitialWindow(QMainWindow):
         try:
             self.start_button.setEnabled(False)
             self.config_button.setEnabled(False)
+            self.source_button.setEnabled(False)
+            self.destination_button.setEnabled(False)
+            self.include_deleted_checkbox.setEnabled(False)
+            self.include_logs_checkbox.setEnabled(False)
 
             self.clear_directories()
 
@@ -331,6 +303,10 @@ class InitialWindow(QMainWindow):
             QMessageBox.critical(self, "Error", detected_issues['error'])
             self.start_button.setEnabled(True)
             self.config_button.setEnabled(True)
+            self.source_button.setEnabled(True)
+            self.destination_button.setEnabled(True)
+            self.include_deleted_checkbox.setEnabled(True)
+            self.include_logs_checkbox.setEnabled(True)
             return
 
         self.worker.quit()

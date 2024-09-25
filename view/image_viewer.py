@@ -72,41 +72,20 @@ class ImageViewer(QMainWindow):
 
         self.layout.addWidget(self.graphics_view)
 
-        self.issues_label = QLabel(self)
-        self.issues_label.setText("No issues detected")
-        self.issues_label.setAlignment(Qt.AlignCenter)
-        self.issues_label.setStyleSheet("font-size: 14px; color: #343a40;")
-        self.layout.addWidget(self.issues_label)
-
-        button_style = """
-                    QPushButton {
-                        background-color: #007bff;
-                        color: #fff;
-                        border: none;
-                        padding: 8px;
-                        font-size: 12px;
-                        border-radius: 4px;
-                        margin: 4px;
-                    }
-                    QPushButton:hover {
-                        background-color: #0056b3;
-                    }
-                """
+        self.progress_label = QLabel(self)
+        self.progress_label.setAlignment(Qt.AlignCenter)
+        self.layout.addWidget(self.progress_label)
 
         self.prev_button = QPushButton("Previous", self)
-        self.prev_button.setStyleSheet(button_style)
         self.prev_button.setFocusPolicy(Qt.NoFocus)
 
         self.next_button = QPushButton("Next", self)
-        self.next_button.setStyleSheet(button_style)
         self.next_button.setFocusPolicy(Qt.NoFocus)
 
         self.keep_button = QPushButton("Save", self)
-        self.keep_button.setStyleSheet(button_style)
         self.keep_button.setFocusPolicy(Qt.NoFocus)
 
         self.delete_button = QPushButton("Delete", self)
-        self.delete_button.setStyleSheet(button_style)
         self.delete_button.setFocusPolicy(Qt.NoFocus)
 
         self.button_layout.addWidget(self.prev_button)
@@ -150,7 +129,8 @@ class ImageViewer(QMainWindow):
             self.setWindowTitle(f"Image Viewer - {image_name}")
 
             issues = self.detected_issues.get(image_name, [])
-            self.issues_label.setText("Issues:\n" + "\n".join(issues) if issues else "No issues detected")
+            issues_text = "\n".join(issues) if issues else "No detected issues"
+            self.progress_label.setText(f"Image {self.current_index + 1}/{len(self.image_list)}\n{issues_text}")
         else:
             self.close_app()
 

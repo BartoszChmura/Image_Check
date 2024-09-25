@@ -170,3 +170,17 @@ def load_thresholds_from_xml(file_path):
     }
 
     return thresholds
+
+def load_styles():
+    qss_path = resource_path('./qss/styles.qss')
+    try:
+        if os.path.exists(qss_path):
+            with open(qss_path, 'r') as file:
+                return file.read()
+        else:
+            logger.warning(f"Stylesheet file not found at: {qss_path}")
+    except Exception as e:
+        logger.error(f"Failed to load stylesheet: {e}")
+        raise Exception(f"Failed to load stylesheet: {e} - utils.py")
+    return ""
+
