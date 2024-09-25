@@ -22,11 +22,15 @@ class ConfigWindow(QDialog):
         self.form_layout = QFormLayout()
 
         self.sharpness_low_slider, self.sharpness_low_value = self.create_slider("Sharpness Low Threshold", 1, 100, 0.3)
-        self.sharpness_high_slider, self.sharpness_high_value = self.create_slider("Sharpness High Threshold", 1, 100, 4)
-        self.saturation_low_slider, self.saturation_low_value = self.create_slider("Saturation Low Threshold", 1, 100, 0.5)
-        self.brightness_low_slider, self.brightness_low_value = self.create_slider("Brightness Low Threshold", 1, 100, 0.25)
-        self.brightness_high_slider, self.brightness_high_value = self.create_slider("Brightness High Threshold", 1, 100, 2)
-        self.flare_threshold_slider, self.flare_threshold_value = self.create_slider("Flare Threshold", 1, 100, 0.01)
+        self.sharpness_high_slider, self.sharpness_high_value = self.create_slider("Sharpness High Threshold", 1, 100,
+                                                                                   4)
+        self.saturation_low_slider, self.saturation_low_value = self.create_slider("Saturation Low Threshold", 1, 100,
+                                                                                   0.5)
+        self.brightness_low_slider, self.brightness_low_value = self.create_slider("Brightness Low Threshold", 1, 100,
+                                                                                   0.25)
+        self.brightness_high_slider, self.brightness_high_value = self.create_slider("Brightness High Threshold", 1,
+                                                                                     100, 2)
+        self.flare_threshold_slider, self.flare_threshold_value = self.create_slider("Flare Threshold", 1, 30, 0.01)
 
         self.layout.addLayout(self.form_layout)
 
@@ -41,16 +45,20 @@ class ConfigWindow(QDialog):
     def create_slider(self, label_text, min_val, max_val, default_val):
         slider_layout = QHBoxLayout()
 
-        min_label = QLabel(f"{min_val / 100:.2f}", self)
-        max_label = QLabel(f"{max_val / 10:.1f}", self)
-        current_value_label = QLabel(f"{default_val:.2f}", self)
+        min_label = QLabel(f"{min_val / 1000:.3f}", self) if "Flare Threshold" in label_text else QLabel(
+            f"{min_val / 100:.2f}", self)
+        max_label = QLabel(f"{max_val / 1000:.3f}", self) if "Flare Threshold" in label_text else QLabel(
+            f"{max_val / 10:.1f}", self)
+        current_value_label = QLabel(f"{default_val:.3f}" if "Flare Threshold" in label_text else f"{default_val:.2f}",
+                                     self)
 
         current_value_label.setStyleSheet("color: red; font-weight: bold;")
 
         slider = QSlider(Qt.Horizontal, self)
         slider.setRange(min_val, max_val)
-        slider.setValue(int(default_val * 10))
-        slider.valueChanged.connect(lambda: current_value_label.setText(f"{slider.value() / 10:.2f}"))
+        slider.setValue(int(default_val * 1000) if "Flare Threshold" in label_text else int(default_val * 10))
+        slider.valueChanged.connect(lambda: current_value_label.setText(
+            f"{slider.value() / 1000:.3f}" if "Flare Threshold" in label_text else f"{slider.value() / 10:.2f}"))
 
         slider_layout.addWidget(min_label)
         slider_layout.addWidget(slider)
@@ -67,7 +75,7 @@ class ConfigWindow(QDialog):
         self.saturation_low_slider.setValue(5)
         self.brightness_low_slider.setValue(2)
         self.brightness_high_slider.setValue(20)
-        self.flare_threshold_slider.setValue(1)
+        self.flare_threshold_slider.setValue(10)
 
     def load_config(self):
         try:
@@ -79,10 +87,11 @@ class ConfigWindow(QDialog):
             self.saturation_low_slider.setValue(int(float(root.find('saturation/low_threshold').text) * 10))
             self.brightness_low_slider.setValue(int(float(root.find('brightness/low_threshold').text) * 10))
             self.brightness_high_slider.setValue(int(float(root.find('brightness/high_threshold').text) * 10))
-            self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 100))
+            self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 1000))
         except FileNotFoundError:
             logger.error("Configuration file not found. Please ensure the config.xml file exists. - config_window.py")
-            QMessageBox.critical(self, "Error", "Configuration file not found. Please ensure the config.xml file exists.")
+            QMessageBox.critical(self, "Error",
+                                 "Configuration file not found. Please ensure the config.xml file exists.")
         except ET.ParseError:
             logger.error("Error parsing configuration file. Please check the XML format. - config_window.py")
             QMessageBox.critical(self, "Error", "Error parsing configuration file. Please check the XML format.")
@@ -100,7 +109,7 @@ class ConfigWindow(QDialog):
             root.find('saturation/low_threshold').text = str(self.saturation_low_slider.value() / 10)
             root.find('brightness/low_threshold').text = str(self.brightness_low_slider.value() / 10)
             root.find('brightness/high_threshold').text = str(self.brightness_high_slider.value() / 10)
-            root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 100)
+            root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 1000)
 
             tree.write(resource_path('./config/config.xml'))
             QMessageBox.information(self, "Success", "Configuration saved successfully.")

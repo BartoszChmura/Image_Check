@@ -2,9 +2,10 @@ import os
 import shutil
 import time
 from PyQt5.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QApplication, QMessageBox
+    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QApplication, QMessageBox,
+    QCheckBox
 )
-from PyQt5.QtCore import QThread, pyqtSignal
+from PyQt5.QtCore import QThread, pyqtSignal, Qt
 
 from utils.utils import crop_images, process_folder
 from view.config_window import ConfigWindow
@@ -143,6 +144,9 @@ class InitialWindow(QMainWindow):
         self.source_folder = ""
         self.destination_folder = ""
 
+        self.include_deleted_images_list = False
+        self.include_logs = False
+
         self.setWindowTitle("Starting Window")
         self.setGeometry(200, 200, 400, 200)
         self.init_ui()
@@ -166,6 +170,14 @@ class InitialWindow(QMainWindow):
         self.destination_button = QPushButton("Choose destination folder", self)
         self.destination_button.clicked.connect(self.select_destination_folder)
         self.layout.addWidget(self.destination_button)
+
+        self.include_deleted_checkbox = QCheckBox("Include deleted images list", self)
+        self.include_deleted_checkbox.stateChanged.connect(self.toggle_include_deleted)
+        self.layout.addWidget(self.include_deleted_checkbox)
+
+        self.include_logs_checkbox = QCheckBox("Include app.logs", self)
+        self.include_logs_checkbox.stateChanged.connect(self.toggle_include_logs)
+        self.layout.addWidget(self.include_logs_checkbox)
 
         self.stage_label = QLabel("", self)
         self.layout.addWidget(self.stage_label)
@@ -217,6 +229,13 @@ class InitialWindow(QMainWindow):
     def check_folders_selected(self):
         if self.source_folder:
             self.start_button.setEnabled(True)
+
+    def toggle_include_deleted(self, state):
+        self.include_deleted_images_list = state == Qt.Checked
+
+    # Update state when "Include app.logs" checkbox is toggled
+    def toggle_include_logs(self, state):
+        self.include_logs = state == Qt.Checked
 
     def start_processing(self):
         try:
@@ -282,7 +301,12 @@ class InitialWindow(QMainWindow):
         self.worker.quit()
         self.worker.wait()
 
-        self.viewer = ImageViewer(detected_issues, self.destination_folder)
+        self.viewer = ImageViewer(
+            detected_issues,
+            self.destination_folder,
+            include_deleted_list=self.include_deleted_images_list,
+            include_logs=self.include_logs
+        )
         self.viewer.show()
 
         self.hide()

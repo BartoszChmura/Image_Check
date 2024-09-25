@@ -1,12 +1,14 @@
 import os
 import shutil
 from PyQt5.QtWidgets import (
-    QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QMessageBox, QHBoxLayout, QGraphicsView, QGraphicsScene
+    QApplication, QMainWindow, QLabel, QPushButton, QVBoxLayout, QWidget, QMessageBox, QHBoxLayout, QGraphicsView,
+    QGraphicsScene
 )
 from PyQt5.QtGui import QPixmap, QImage, QWheelEvent, QPainter
 from PyQt5.QtCore import Qt
 from config.log_config import logger
 from utils.helpers import resource_path
+
 
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, parent=None):
@@ -19,14 +21,19 @@ class CustomGraphicsView(QGraphicsView):
     def wheelEvent(self, event: QWheelEvent):
         event.ignore()
 
+
 class ImageViewer(QMainWindow):
-    def __init__(self, detected_issues, destination_folder):
+    def __init__(self, detected_issues, destination_folder, include_deleted_list=False, include_logs=False):
         super().__init__()
 
         self.folder_path = resource_path('./images/to_check')
         self.checked_folder_path = resource_path('./images/checked')
         self.detected_issues = detected_issues
         self.destination_folder = destination_folder
+        self.include_deleted_list = include_deleted_list
+        self.include_logs = include_logs
+
+        self.deleted_images = []
 
         self.image_list = [f for f in os.listdir(self.folder_path) if f.endswith(('png', 'jpg', 'jpeg', 'bmp'))]
         self.current_index = 0
@@ -148,6 +155,7 @@ class ImageViewer(QMainWindow):
             try:
                 os.remove(image_path)
                 logger.info(f"Image: {self.image_list[self.current_index]} deleted by user")
+                self.deleted_images.append(self.image_list[self.current_index])
                 del self.image_list[self.current_index]
             except (OSError, IOError) as e:
                 logger.error(f"Failed to delete image: {e} - image_viewer.py")
@@ -176,11 +184,16 @@ class ImageViewer(QMainWindow):
             self.current_index = len(self.image_list) - 1
             self.show_image()
 
-
     def close_app(self):
         if not self.user_initiated_close:
             self.user_initiated_close = True
             self.copy_checked_images_to_destination()
+
+            if self.include_deleted_list:
+                self.save_deleted_images_list()
+
+            if self.include_logs:
+                self.copy_log_file_to_destination()
 
         self.clear_directories()
 
@@ -211,6 +224,19 @@ class ImageViewer(QMainWindow):
                 logger.error(f"Failed to copy checked images: {e} - image_viewer.py")
                 QMessageBox.critical(self, "Error", f"Failed to copy checked images: {e}")
 
+    def copy_log_file_to_destination(self):
+        log_file_path = resource_path('./logs/app.logs')
+        if os.path.exists(log_file_path):
+            try:
+                log_destination_path = os.path.join(self.destination_folder, 'app.logs')
+                shutil.copy(log_file_path, log_destination_path)
+                logger.info(f'Log file copied to the destination folder: {log_destination_path}')
+            except (OSError, IOError) as e:
+                logger.error(f"Failed to copy log file: {e} - image_viewer.py")
+                QMessageBox.critical(self, "Error", f"Failed to copy log file: {e}")
+        else:
+            logger.warning(f'Log file not found at: {log_file_path}')
+
     def clear_directories(self):
         directories_to_clear = [
             resource_path('./images/to_check'),
@@ -231,7 +257,18 @@ class ImageViewer(QMainWindow):
                             shutil.rmtree(file_path)
                     except Exception as e:
                         logger.error(f"Failed to delete {file_path}: {e} - image_viewer.py")
-                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}. Reason: {e}")
+                        QMessageBox.critical(self, "Error", f"Failed to delete {file_path}: {e}")
+
+    def save_deleted_images_list(self):
+        try:
+            deleted_images_file = os.path.join(self.destination_folder, "deleted_images.txt")
+            with open(deleted_images_file, 'w') as file:
+                for image_name in self.deleted_images:
+                    file.write(f"{image_name}\n")
+            logger.info(f"Deleted images list saved to {deleted_images_file}")
+        except Exception as e:
+            logger.error(f"Failed to save deleted images list: {e} - image_viewer.py")
+            QMessageBox.critical(self, "Error", f"Failed to save deleted images list: {e}")
 
     def keyPressEvent(self, event):
         if event.key() == Qt.Key_Escape:

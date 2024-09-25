@@ -1,0 +1,87 @@
+2024-09-25 10:42:10,848 - INFO - Utworzono folder docelowy: C:/Users/barto/Desktop/10\10_out
+2024-09-25 10:42:23,009 - INFO - Median sharpness of silhouette images in the folder: 10.460676542895097
+2024-09-25 10:42:23,009 - INFO - Median saturation of images in the folder: 39.05302739443839
+2024-09-25 10:42:23,009 - INFO - Median brightness of images in the folder: 70.85990284860635
+2024-09-25 10:42:23,009 - INFO - Image processing: D (129).png
+2024-09-25 10:42:23,157 - INFO - Image doesn't have light flare
+2024-09-25 10:42:23,318 - INFO - Saturation: 38.431735554214676
+2024-09-25 10:42:23,477 - INFO - Brightness: 69.59896036086889
+2024-09-25 10:42:23,672 - INFO - Sharpness: 22.551866050752416
+2024-09-25 10:42:23,673 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:23,673 - INFO - Image processing: D (130).png
+2024-09-25 10:42:23,816 - WARNING - Image has light flare
+2024-09-25 10:42:23,974 - INFO - Saturation: 35.06453921415966
+2024-09-25 10:42:24,134 - INFO - Brightness: 73.51562418898578
+2024-09-25 10:42:24,394 - INFO - Sharpness: 14.42404052056481
+2024-09-25 10:42:24,395 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/to_check
+2024-09-25 10:42:24,395 - INFO - Image processing: D (131).png
+2024-09-25 10:42:24,539 - INFO - Image doesn't have light flare
+2024-09-25 10:42:24,697 - INFO - Saturation: 41.789744887366346
+2024-09-25 10:42:24,856 - INFO - Brightness: 84.53090856301256
+2024-09-25 10:42:25,098 - INFO - Sharpness: 11.450794975602012
+2024-09-25 10:42:25,099 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:25,099 - INFO - Image processing: D (132).png
+2024-09-25 10:42:25,240 - INFO - Image doesn't have light flare
+2024-09-25 10:42:25,396 - INFO - Saturation: 44.09847602317554
+2024-09-25 10:42:25,552 - INFO - Brightness: 59.32383254502751
+2024-09-25 10:42:25,760 - INFO - Sharpness: 4.285677664404912
+2024-09-25 10:42:25,761 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:25,761 - INFO - Image processing: D (133).png
+2024-09-25 10:42:25,898 - WARNING - Image has light flare
+2024-09-25 10:42:26,060 - INFO - Saturation: 26.43962274862452
+2024-09-25 10:42:26,213 - INFO - Brightness: 107.61942800788955
+2024-09-25 10:42:26,407 - INFO - Sharpness: 7.124644918950671
+2024-09-25 10:42:26,408 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/to_check
+2024-09-25 10:42:26,408 - INFO - Image processing: D (134).png
+2024-09-25 10:42:26,552 - INFO - Image doesn't have light flare
+2024-09-25 10:42:26,712 - INFO - Saturation: 39.6743192346621
+2024-09-25 10:42:26,870 - INFO - Brightness: 62.27856546182394
+2024-09-25 10:42:27,062 - INFO - Sharpness: 10.19181298164411
+2024-09-25 10:42:27,063 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:27,063 - INFO - Image processing: D (135).png
+2024-09-25 10:42:27,208 - INFO - Image doesn't have light flare
+2024-09-25 10:42:27,368 - INFO - Saturation: 59.03763965664902
+2024-09-25 10:42:27,527 - INFO - Brightness: 57.872886010329076
+2024-09-25 10:42:27,742 - INFO - Sharpness: 15.125482486740225
+2024-09-25 10:42:27,743 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:27,743 - INFO - Image processing: D (136).png
+2024-09-25 10:42:27,879 - INFO - Image doesn't have light flare
+2024-09-25 10:42:28,045 - INFO - Saturation: 51.740395239670924
+2024-09-25 10:42:28,197 - INFO - Brightness: 72.12084533634382
+2024-09-25 10:42:28,496 - WARNING - Sharpness: 2.9798211107648624 - low sharpness!
+2024-09-25 10:42:28,497 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/to_check
+2024-09-25 10:42:28,497 - INFO - Image processing: D (137).png
+2024-09-25 10:42:28,642 - INFO - Image doesn't have light flare
+2024-09-25 10:42:28,803 - INFO - Saturation: 38.36553149006021
+2024-09-25 10:42:28,962 - INFO - Brightness: 61.207236598800996
+2024-09-25 10:42:29,169 - INFO - Sharpness: 10.729540104146086
+2024-09-25 10:42:29,170 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked
+2024-09-25 10:42:29,170 - INFO - Image processing: D (138).png
+2024-09-25 10:42:29,309 - WARNING - Image has light flare
+2024-09-25 10:42:29,462 - INFO - Saturation: 34.02814697848542
+2024-09-25 10:42:29,615 - INFO - Brightness: 81.89036231249351
+2024-09-25 10:42:29,869 - INFO - Sharpness: 9.679924427542781
+2024-09-25 10:42:29,869 - INFO - Image moved to folder: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/to_check
+2024-09-25 10:42:31,788 - INFO - Image: D (130).png deleted by user
+2024-09-25 10:42:31,944 - INFO - Image: D (133).png deleted by user
+2024-09-25 10:42:32,144 - INFO - Image: D (136).png deleted by user
+2024-09-25 10:42:32,305 - INFO - Image: D (138).png deleted by user
+2024-09-25 10:42:32,342 - INFO - All checked images have been copied to the destination folder: C:/Users/barto/Desktop/10\10_out
+2024-09-25 10:42:32,342 - INFO - Deleted images list saved to C:/Users/barto/Desktop/10\10_out\deleted_images.txt
+2024-09-25 10:42:32,348 - INFO - Log file copied to the destination folder: C:/Users/barto/Desktop/10\10_out\app.logs
+2024-09-25 10:42:32,349 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (129).png
+2024-09-25 10:42:32,350 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (131).png
+2024-09-25 10:42:32,351 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (132).png
+2024-09-25 10:42:32,352 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (134).png
+2024-09-25 10:42:32,353 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (135).png
+2024-09-25 10:42:32,354 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/checked\D (137).png
+2024-09-25 10:42:32,355 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (129)_person.png
+2024-09-25 10:42:32,355 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (130)_person.png
+2024-09-25 10:42:32,356 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (131)_person.png
+2024-09-25 10:42:32,356 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (132)_person.png
+2024-09-25 10:42:32,357 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (133)_person.png
+2024-09-25 10:42:32,357 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (134)_person.png
+2024-09-25 10:42:32,358 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (135)_person.png
+2024-09-25 10:42:32,358 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (136)_person.png
+2024-09-25 10:42:32,358 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (137)_person.png
+2024-09-25 10:42:32,359 - INFO - Deleted file: C:\Users\barto\PycharmProjects\Skaner_Fotograficzny\./images/silhouette\D (138)_person.png
