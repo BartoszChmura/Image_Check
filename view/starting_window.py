@@ -2,7 +2,7 @@ import os
 import shutil
 import time
 from PyQt5.QtWidgets import (
-    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QApplication, QMessageBox,
+    QMainWindow, QWidget, QVBoxLayout, QLabel, QPushButton, QFileDialog, QProgressBar, QMessageBox,
     QCheckBox
 )
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
@@ -297,16 +297,28 @@ class InitialWindow(QMainWindow):
         self.progress_bar.setValue(value)
         self.stage_label.setText(stage_info)
 
+    def reset_ui_state(self):
+        self.start_button.setEnabled(True)
+        self.config_button.setEnabled(True)
+        self.source_button.setEnabled(True)
+        self.destination_button.setEnabled(True)
+        self.include_deleted_checkbox.setEnabled(True)
+        self.include_logs_checkbox.setEnabled(True)
+        self.progress_bar.setVisible(False)
+        self.stage_label.setVisible(False)
+        self.stage_label.setText("")
+        self.progress_bar.setValue(0)
+
+        self.source_folder = ""
+        self.destination_folder = ""
+        self.source_label.setText("Source folder not selected")
+        self.destination_label.setText("Destination folder not selected")
+
     def on_task_complete(self, detected_issues):
         if 'error' in detected_issues:
             logger.error(f"Error during processing: {detected_issues['error']} - starting_window.py")
             QMessageBox.critical(self, "Error", detected_issues['error'])
-            self.start_button.setEnabled(True)
-            self.config_button.setEnabled(True)
-            self.source_button.setEnabled(True)
-            self.destination_button.setEnabled(True)
-            self.include_deleted_checkbox.setEnabled(True)
-            self.include_logs_checkbox.setEnabled(True)
+            self.reset_ui_state()
             return
 
         self.worker.quit()
@@ -319,5 +331,8 @@ class InitialWindow(QMainWindow):
             include_logs=self.include_logs
         )
         self.viewer.show()
+
+        self.viewer.closed.connect(self.reset_ui_state)
+        self.viewer.closed.connect(self.show)
 
         self.hide()

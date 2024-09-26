@@ -1,6 +1,3 @@
-import cv2
-
-from config.log_config import logger
 from utils.helpers import read_image, resource_path
 
 

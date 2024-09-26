@@ -3,7 +3,6 @@ import shutil
 
 import xml.etree.ElementTree as ET
 
-import cv2
 
 from detection.brightness_detection import calculate_median_brightness, detect_brightness
 from detection.flare_detection import detect_flare

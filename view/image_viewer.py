@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (
     QGraphicsScene
 )
 from PyQt5.QtGui import QPixmap, QImage, QWheelEvent, QPainter
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, pyqtSignal
 from config.log_config import logger
 from utils.helpers import resource_path
 
@@ -23,6 +23,7 @@ class CustomGraphicsView(QGraphicsView):
 
 
 class ImageViewer(QMainWindow):
+    closed = pyqtSignal()
     def __init__(self, detected_issues, destination_folder, include_deleted_list=False, include_logs=False):
         super().__init__()
 
@@ -39,6 +40,7 @@ class ImageViewer(QMainWindow):
         self.current_index = 0
 
         self.user_initiated_close = False
+        self.close_app_called = False
 
         self.setWindowTitle("Image Viewer")
 
@@ -189,6 +191,9 @@ class ImageViewer(QMainWindow):
             self.show_image()
 
     def close_app(self):
+        if self.close_app_called:
+            return
+        self.close_app_called = True
         if not self.user_initiated_close:
             self.user_initiated_close = True
             self.copy_checked_images_to_destination()
@@ -201,6 +206,9 @@ class ImageViewer(QMainWindow):
 
         self.clear_directories()
 
+        QMessageBox.information(self, "Process Complete", "All images have been successfully checked and saved.")
+
+        self.closed.emit()
         self.close()
 
     def closeEvent(self, event):
@@ -210,7 +218,9 @@ class ImageViewer(QMainWindow):
             reply = QMessageBox.question(self, 'Close', 'Do you want to exit?',
                                          QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
             if reply == QMessageBox.Yes:
+                self.clear_directories()
                 self.user_initiated_close = False
+                self.closed.emit()
                 event.accept()
             else:
                 event.ignore()
