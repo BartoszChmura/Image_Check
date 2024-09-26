@@ -24,12 +24,11 @@ class ConfigWindow(QDialog):
         self.sharpness_low_slider, self.sharpness_low_value = self.create_slider("Sharpness Low Threshold", 1, 100, 0.3)
         self.sharpness_high_slider, self.sharpness_high_value = self.create_slider("Sharpness High Threshold", 1, 100,
                                                                                    4)
-        self.saturation_low_slider, self.saturation_low_value = self.create_slider("Saturation Low Threshold", 1, 100,
-                                                                                   0.5)
         self.brightness_low_slider, self.brightness_low_value = self.create_slider("Brightness Low Threshold", 1, 100,
-                                                                                   0.25)
+                                                                                   0.2)
         self.brightness_high_slider, self.brightness_high_value = self.create_slider("Brightness High Threshold", 1,
-                                                                                     100, 2)
+                                                                                     100, 2.0)
+        self.saturation_low_slider, self.saturation_low_value = self.create_slider("Saturation Threshold", 1, 100, 0.5)
         self.flare_threshold_slider, self.flare_threshold_value = self.create_slider("Flare Threshold", 1, 30, 0.01)
 
         self.layout.addLayout(self.form_layout)
@@ -41,6 +40,11 @@ class ConfigWindow(QDialog):
         self.reset_button = QPushButton("Reset to Default", self)
         self.reset_button.clicked.connect(self.reset_to_default)
         self.layout.addWidget(self.reset_button)
+
+        self.sharpness_low_slider.valueChanged.connect(self.validate_sharpness_values)
+        self.sharpness_high_slider.valueChanged.connect(self.validate_sharpness_values)
+        self.brightness_low_slider.valueChanged.connect(self.validate_brightness_values)
+        self.brightness_high_slider.valueChanged.connect(self.validate_brightness_values)
 
     def create_slider(self, label_text, min_val, max_val, default_val):
         slider_layout = QHBoxLayout()
@@ -77,6 +81,21 @@ class ConfigWindow(QDialog):
         self.brightness_high_slider.setValue(20)
         self.flare_threshold_slider.setValue(10)
 
+    def validate_sharpness_values(self):
+        low_value = self.sharpness_low_slider.value() / 10
+        high_value = self.sharpness_high_slider.value() / 10
+        if high_value <= low_value:
+            self.sharpness_high_slider.setValue(
+                self.sharpness_low_slider.value() + 1)
+
+    # New function to validate brightness values
+    def validate_brightness_values(self):
+        low_value = self.brightness_low_slider.value() / 10
+        high_value = self.brightness_high_slider.value() / 10
+        if high_value <= low_value:
+            self.brightness_high_slider.setValue(
+                self.brightness_low_slider.value() + 1)
+
     def load_config(self):
         try:
             tree = ET.parse(resource_path('./config/config.xml'))
@@ -84,9 +103,9 @@ class ConfigWindow(QDialog):
 
             self.sharpness_low_slider.setValue(int(float(root.find('sharpness/low_threshold').text) * 10))
             self.sharpness_high_slider.setValue(int(float(root.find('sharpness/high_threshold').text) * 10))
-            self.saturation_low_slider.setValue(int(float(root.find('saturation/low_threshold').text) * 10))
             self.brightness_low_slider.setValue(int(float(root.find('brightness/low_threshold').text) * 10))
             self.brightness_high_slider.setValue(int(float(root.find('brightness/high_threshold').text) * 10))
+            self.saturation_low_slider.setValue(int(float(root.find('saturation/threshold').text) * 10))
             self.flare_threshold_slider.setValue(int(float(root.find('flare/threshold').text) * 1000))
         except FileNotFoundError:
             logger.error("Configuration file not found. Please ensure the config.xml file exists. - config_window.py")
@@ -106,9 +125,9 @@ class ConfigWindow(QDialog):
 
             root.find('sharpness/low_threshold').text = str(self.sharpness_low_slider.value() / 10)
             root.find('sharpness/high_threshold').text = str(self.sharpness_high_slider.value() / 10)
-            root.find('saturation/low_threshold').text = str(self.saturation_low_slider.value() / 10)
             root.find('brightness/low_threshold').text = str(self.brightness_low_slider.value() / 10)
             root.find('brightness/high_threshold').text = str(self.brightness_high_slider.value() / 10)
+            root.find('saturation/threshold').text = str(self.saturation_low_slider.value() / 10)
             root.find('flare/threshold').text = str(self.flare_threshold_slider.value() / 1000)
 
             tree.write(resource_path('./config/config.xml'))

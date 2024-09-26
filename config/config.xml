@@ -3,13 +3,13 @@
         <low_threshold>0.3</low_threshold>
         <high_threshold>4.0</high_threshold>
     </sharpness>
-    <saturation>
-        <low_threshold>0.5</low_threshold>
-    </saturation>
     <brightness>
         <low_threshold>0.2</low_threshold>
         <high_threshold>2.0</high_threshold>
     </brightness>
+    <saturation>
+        <threshold>0.5</threshold>
+    </saturation>
     <flare>
         <threshold>0.01</threshold>
     </flare>
