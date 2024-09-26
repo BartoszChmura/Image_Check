@@ -1,7 +1,7 @@
 <config>
     <sharpness>
         <low_threshold>0.3</low_threshold>
-        <high_threshold>4.0</high_threshold>
+        <high_threshold>5.0</high_threshold>
     </sharpness>
     <brightness>
         <low_threshold>0.2</low_threshold>

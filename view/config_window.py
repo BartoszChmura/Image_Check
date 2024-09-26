@@ -37,9 +37,13 @@ class ConfigWindow(QDialog):
         self.save_button.clicked.connect(self.save_config)
         self.layout.addWidget(self.save_button)
 
-        self.reset_button = QPushButton("Reset to Default", self)
-        self.reset_button.clicked.connect(self.reset_to_default)
-        self.layout.addWidget(self.reset_button)
+        self.reset_raspberry_button = QPushButton("Raspberry Default Config", self)
+        self.reset_raspberry_button.clicked.connect(self.reset_to_raspberry_defaults)
+        self.layout.addWidget(self.reset_raspberry_button)
+
+        self.reset_camera_button = QPushButton("Camera Default Config", self)
+        self.reset_camera_button.clicked.connect(self.reset_to_camera_defaults)
+        self.layout.addWidget(self.reset_camera_button)
 
         self.sharpness_low_slider.valueChanged.connect(self.validate_sharpness_values)
         self.sharpness_high_slider.valueChanged.connect(self.validate_sharpness_values)
@@ -73,9 +77,18 @@ class ConfigWindow(QDialog):
 
         return slider, current_value_label
 
-    def reset_to_default(self):
+    def reset_to_raspberry_defaults(self):
         self.sharpness_low_slider.setValue(3)
-        self.sharpness_high_slider.setValue(40)
+        self.sharpness_high_slider.setValue(50)
+        self.saturation_threshold_slider.setValue(5)
+        self.brightness_low_slider.setValue(2)
+        self.brightness_high_slider.setValue(20)
+        self.flare_threshold_slider.setValue(10)
+
+    # Define Camera default values
+    def reset_to_camera_defaults(self):
+        self.sharpness_low_slider.setValue(1)
+        self.sharpness_high_slider.setValue(100)
         self.saturation_threshold_slider.setValue(5)
         self.brightness_low_slider.setValue(2)
         self.brightness_high_slider.setValue(20)
