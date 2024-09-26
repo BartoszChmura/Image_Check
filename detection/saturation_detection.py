@@ -44,7 +44,7 @@ def detect_saturation(image_path, median_saturation, thresholds):
         logger.warning(f"Skipping saturation detection for {image_path} due to error - saturation detection")
         return False
 
-    if saturation < thresholds['saturation']['low'] * median_saturation:
+    if saturation < thresholds['saturation']['threshold'] * median_saturation:
         logger.warning(f'Saturation: {saturation} - low saturation!')
         return True
     else:

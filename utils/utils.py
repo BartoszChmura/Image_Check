@@ -144,9 +144,9 @@ def load_thresholds_from_xml(file_path):
     try:
         sharpness_low_threshold = float(root.find('sharpness/low_threshold').text)
         sharpness_high_threshold = float(root.find('sharpness/high_threshold').text)
-        saturation_low_threshold = float(root.find('saturation/low_threshold').text)
         brightness_low_threshold = float(root.find('brightness/low_threshold').text)
         brightness_high_threshold = float(root.find('brightness/high_threshold').text)
+        saturation_threshold = float(root.find('saturation/threshold').text)
         flare_threshold = float(root.find('flare/threshold').text)
     except (AttributeError, ValueError) as e:
         raise Exception(f"Error reading thresholds from config file: {e} - utils.py")
@@ -156,12 +156,12 @@ def load_thresholds_from_xml(file_path):
             'low': sharpness_low_threshold,
             'high': sharpness_high_threshold
         },
-        'saturation': {
-            'low': saturation_low_threshold
-        },
         'brightness': {
             'low': brightness_low_threshold,
             'high': brightness_high_threshold
+        },
+        'saturation': {
+            'threshold': saturation_threshold
         },
         'flare': {
             'threshold': flare_threshold
