@@ -15,7 +15,7 @@ In the field of 3D modeling and reconstruction, the quality of input images is c
 
 ## Gallery
 
-![image](https://github.com/user-attachments/assets/990cd967-38ef-4a39-885b-e872afd5546c)
+![image](https://github.com/user-attachments/assets/990cd967-38ef-4a39-885b-e872afd5546c) ![image](https://github.com/user-attachments/assets/f34bf8a9-de8f-41b2-ad04-422bbaabe3f5)
 
 
 ## Technologies Used
