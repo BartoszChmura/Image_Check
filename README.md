@@ -31,7 +31,7 @@ You can use **Image Check** in two ways: by running the pre-built `.exe` file or
 
 ### Option 1: Using the Pre-built `.exe` File
 
-1. Download the latest release of `image_check.exe` from the [Releases]([https://github.com/your-repo/image-check/releases](https://github.com/BartoszChmura/Image_Check/releases/tag/v1.0)) section on GitHub.
+1. Download the latest release of `image_check.exe` from the [Releases](https://github.com/BartoszChmura/Image_Check/releases) section on GitHub.
 2. Run the `.exe` file directly on your Windows machine.
 3. Follow the on-screen prompts to select the images and view the results.
 
