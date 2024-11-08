@@ -9,7 +9,7 @@ In the field of 3D modeling and reconstruction, the quality of input images is c
 
 - **Automatic Image Filtering**: Automatically classifies good and bad images based on quality metrics like blur, noise, distortions, overexposure, and saturation issues.
 - **Defect Detection**: Detects defects such as blur, noise, distortions, overexposure and poor saturation.
-- **Silhouette Extraction**: Utilizes YOLOv8 to accurately extract silhouettes for further analysis.
+- **Object Extraction**: Utilizes YOLOv8 to accurately extract objects such as silhouette for further analysis.
 - **3D Keypoint Detection**: Identifies keypoints critical for 3D reconstruction.
 - **Configurable Filters**: Allows customizable threshold settings for filters/detections.
 
