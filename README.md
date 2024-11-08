@@ -34,14 +34,14 @@ You can use **Image Check** in two ways: by running the pre-built `.exe` file or
 - **Operating System**: Windows (currently the only supported OS)
 - **Python Version**: Python 3.14+ (if using the manual setup)
 
-### Installation
-### Option 1: Using the Pre-built `.exe` File
+###Installation
+**Option 1**: Using the Pre-built `.exe` File
 
 1. Download the latest release of `image_check.exe` from the [Releases](https://github.com/BartoszChmura/Image_Check/releases) section on GitHub.
 2. Run the `.exe` file directly on your Windows machine.
 3. Follow the on-screen prompts to select the images and view the results.
 
-### Option 2: Manual Setup
+**Option 2**: Manual Setup
 
 If you prefer more control over the environment or want to customize the project, follow these steps:
 
