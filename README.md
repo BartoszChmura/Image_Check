@@ -34,6 +34,7 @@ You can use **Image Check** in two ways: by running the pre-built `.exe` file or
 - **Operating System**: Windows (currently the only supported OS)
 - **Python Version**: Python 3.14+ (if using the manual setup)
 
+### Installation
 ### Option 1: Using the Pre-built `.exe` File
 
 1. Download the latest release of `image_check.exe` from the [Releases](https://github.com/BartoszChmura/Image_Check/releases) section on GitHub.
